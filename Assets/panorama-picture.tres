@@ -1,0 +1,6 @@
+[gd_resource type="PanoramaSkyMaterial" load_steps=2 format=3 uid="uid://obrb52j3r8kb"]
+
+[ext_resource type="Texture2D" uid="uid://b1at3250k1fim" path="res://Assets/backgrounds/park.hdr" id="1_f76pl"]
+
+[resource]
+panorama = ExtResource("1_f76pl")

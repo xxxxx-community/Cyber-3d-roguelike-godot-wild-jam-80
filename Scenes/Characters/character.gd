@@ -27,5 +27,5 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
-		if global_position.y < -100:
-			velocity.y = JUMP_VELOCITY * 9
+		if global_position.y < -50:
+			velocity.y = JUMP_VELOCITY * 7
