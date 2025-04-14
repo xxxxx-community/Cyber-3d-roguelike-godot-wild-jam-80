@@ -74,9 +74,10 @@ data = {
 }
 script = ExtResource("3_wowpa")
 metadata/_editor_floor_ = Vector3(0, 0, 0)
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_ebmjs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Sonya" parent="." instance=ExtResource("2_qxrlw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1759, 12.7706, 3.18002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05323, 12.7706, 3.18002)

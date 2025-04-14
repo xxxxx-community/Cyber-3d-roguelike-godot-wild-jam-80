@@ -18,6 +18,8 @@ mesh = SubResource("SphereMesh_1bece")
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 shape = SubResource("SphereShape3D_1bece")
 
-[node name="FreezingComponent" parent="." instance=ExtResource("2_aihi3")]
+[node name="Effects" type="Node3D" parent="."]
+
+[node name="FreezingComponent" parent="Effects" instance=ExtResource("2_aihi3")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

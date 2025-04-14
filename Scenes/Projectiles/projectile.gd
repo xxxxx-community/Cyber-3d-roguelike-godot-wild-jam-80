@@ -1,6 +1,10 @@
 class_name Projectile extends Area3D
 
 
+@onready var mesh_instance_3d : MeshInstance3D = $MeshInstance3D
+@onready var collision_shape_3d : CollisionShape3D = $CollisionShape3D
+
+
 var move_direction : Vector3
 var projectile_speed : int
 
@@ -15,6 +19,9 @@ func _physics_process(delta):
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.name != "Player":
-		$FreezingComponent.emitting = false
-		await get_tree().create_timer(1).timeout
+		mesh_instance_3d.hide()
+		collision_shape_3d.set_deferred("disabled", true)
+		for effect in $Effects.get_children():
+			effect.emitting = false
+		await get_tree().create_timer(0.4).timeout
 		queue_free()

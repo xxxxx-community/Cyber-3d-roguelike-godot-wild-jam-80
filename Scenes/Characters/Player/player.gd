@@ -27,7 +27,8 @@ func _input(event) -> void:
 	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 	
 func _process(_delta: float) -> void:
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and $DleayShoot.is_stopped():
+		$DleayShoot.start()
 		var new_bullet : Area3D = BULLET_SCENE.instantiate()
 		get_tree().current_scene.add_child(new_bullet)
 		
