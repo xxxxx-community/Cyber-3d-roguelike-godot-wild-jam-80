@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmmofrthbtcrg"]
+[gd_scene load_steps=6 format=3 uid="uid://dmmofrthbtcrg"]
 
 [ext_resource type="PackedScene" uid="uid://dhgcyjovuvqhx" path="res://Scenes/Characters/character.tscn" id="1_27cb7"]
 [ext_resource type="Script" uid="uid://b6aunna0itrhq" path="res://Scenes/Characters/Player/player.gd" id="2_lyjr2"]
+[ext_resource type="PackedScene" uid="uid://dshwjiu4i0eur" path="res://Assets/3D_models/Player/Player_rifle.glb" id="3_siygm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lyjr2"]
 
@@ -18,8 +19,11 @@ mesh = SubResource("CapsuleMesh_lyjr2")
 
 [node name="Camera3D" type="Camera3D" parent="Body" index="0"]
 unique_name_in_owner = true
-fov = 100.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000350118, -0.00477588, 0.00289416)
 
-[node name="Marker3D" type="Marker3D" parent="Body/Camera3D" index="0"]
+[node name="Player_rifle" parent="Body/Camera3D" index="0" instance=ExtResource("3_siygm")]
+transform = Transform3D(-0.997889, -0.000141289, -0.0649507, -0.000412901, 0.999991, 0.00416839, 0.0649495, 0.00418638, -0.99788, 0.481593, -0.326191, -0.657777)
+
+[node name="Marker3D" type="Marker3D" parent="Body/Camera3D/Player_rifle" index="1"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+transform = Transform3D(-0.997888, -0.000412898, 0.0649495, -0.000141291, 0.999991, 0.00418641, -0.0649507, 0.00416836, -0.99788, 0.00672823, 0.0136005, 0.671536)

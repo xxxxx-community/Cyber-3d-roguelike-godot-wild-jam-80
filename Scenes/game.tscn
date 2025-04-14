@@ -13,8 +13,18 @@ sky_material = ExtResource("2_wowpa")
 background_mode = 2
 sky = SubResource("Sky_wowpa")
 tonemap_mode = 4
-fog_density = 0.0015
+ssr_enabled = true
+ssr_max_steps = 56
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(1, 0, 0, 1)
 fog_sky_affect = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.04
+volumetric_fog_albedo = Color(0, 0, 1, 1)
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_ebmjs"]
 albedo_color = Color(0.301961, 1, 0.6, 1)
@@ -51,6 +61,7 @@ environment = SubResource("Environment_3dryh")
 [node name="DirectionalLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 100, 0)
 shadow_enabled = true
+shadow_bias = 0.01
 directional_shadow_fade_start = 1.0
 directional_shadow_max_distance = 55.0
 metadata/_edit_lock_ = true

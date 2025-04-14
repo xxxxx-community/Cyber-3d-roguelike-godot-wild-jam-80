@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0mmlivrbu315"]
+[gd_scene load_steps=5 format=3 uid="uid://c0mmlivrbu315"]
 
 [ext_resource type="Script" uid="uid://dwyefov2uektv" path="res://Scenes/Projectiles/projectile.gd" id="1_2re41"]
+[ext_resource type="PackedScene" uid="uid://dww8lkrlbtp4i" path="res://Scenes/ECS/freezing_component.tscn" id="2_aihi3"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_1bece"]
 
@@ -16,5 +17,7 @@ mesh = SubResource("SphereMesh_1bece")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 shape = SubResource("SphereShape3D_1bece")
+
+[node name="FreezingComponent" parent="." instance=ExtResource("2_aihi3")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
