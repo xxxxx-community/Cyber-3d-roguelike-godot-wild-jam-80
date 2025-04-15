@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c0mmlivrbu315"]
 
 [ext_resource type="Script" uid="uid://dwyefov2uektv" path="res://Scenes/Projectiles/projectile.gd" id="1_2re41"]
-[ext_resource type="PackedScene" uid="uid://dww8lkrlbtp4i" path="res://Scenes/ECS/freezing_component.tscn" id="2_aihi3"]
+[ext_resource type="PackedScene" uid="uid://chmc3a45b6xl4" path="res://Scenes/ECS/black_hole_component.tscn" id="2_aihi3"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_1bece"]
 
@@ -10,6 +10,10 @@
 [node name="Projectile" type="Area3D"]
 script = ExtResource("1_2re41")
 
+[node name="Components" type="Node3D" parent="."]
+
+[node name="BlackHoleComponent" parent="Components" instance=ExtResource("2_aihi3")]
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 mesh = SubResource("SphereMesh_1bece")
@@ -17,9 +21,5 @@ mesh = SubResource("SphereMesh_1bece")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 shape = SubResource("SphereShape3D_1bece")
-
-[node name="Effects" type="Node3D" parent="."]
-
-[node name="FreezingComponent" parent="Effects" instance=ExtResource("2_aihi3")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

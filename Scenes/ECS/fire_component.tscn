@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://br3klqiaductd"]
+
+[ext_resource type="PackedScene" uid="uid://bpfv7iyb2l0t4" path="res://Scenes/ECS/component.tscn" id="1_2dtju"]
+[ext_resource type="Material" uid="uid://4k75y5aqbcl0" path="res://Assets/test.tres" id="2_1q7yw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1q7yw"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.27, 0.27, 0.27, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xu1d6"]
+material = SubResource("StandardMaterial3D_1q7yw")
+size = Vector3(0.25, 0.25, 0.25)
+
+[node name="FireComponent" instance=ExtResource("1_2dtju")]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="0"]
+amount = 125
+fixed_fps = 0
+interpolate = false
+process_material = ExtResource("2_1q7yw")
+draw_pass_1 = SubResource("BoxMesh_xu1d6")

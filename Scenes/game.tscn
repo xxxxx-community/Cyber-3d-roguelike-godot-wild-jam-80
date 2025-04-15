@@ -12,7 +12,7 @@ sky_material = ExtResource("2_wowpa")
 [sub_resource type="Environment" id="Environment_3dryh"]
 background_mode = 2
 sky = SubResource("Sky_wowpa")
-tonemap_mode = 4
+tonemap_mode = 3
 ssr_enabled = true
 ssr_max_steps = 56
 ssao_enabled = true
@@ -47,4 +47,4 @@ script = ExtResource("3_wowpa")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Sonya" parent="." instance=ExtResource("2_qxrlw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05323, 12.7706, 3.18002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.94677, 12.7706, 9.18002)

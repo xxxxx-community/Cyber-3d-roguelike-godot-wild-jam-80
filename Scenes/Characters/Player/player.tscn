@@ -46,11 +46,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_qqvsf")
 }
 
-[node name="DleayShoot" type="Timer" parent="." index="2"]
-wait_time = 0.1
-one_shot = true
-
-[node name="Body" type="MeshInstance3D" parent="." index="3"]
+[node name="Body" type="MeshInstance3D" parent="." index="2"]
 mesh = SubResource("CapsuleMesh_lyjr2")
 metadata/_edit_lock_ = true
 

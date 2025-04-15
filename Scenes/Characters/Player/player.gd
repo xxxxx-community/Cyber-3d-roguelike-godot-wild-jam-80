@@ -4,6 +4,8 @@ const BULLET_SCENE : PackedScene = preload("res://Scenes/Projectiles/projectile.
 
 @onready var body   : MeshInstance3D = get_node(^"Body")
 @onready var camera : Camera3D = get_node(^"%Camera3D")
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 
 func _input(event) -> void:
 	# Прыжок
@@ -27,11 +29,16 @@ func _input(event) -> void:
 	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 	
 func _process(_delta: float) -> void:
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and $DleayShoot.is_stopped():
-		$DleayShoot.start()
-		var new_bullet : Area3D = BULLET_SCENE.instantiate()
-		get_tree().current_scene.add_child(new_bullet)
-		$AnimationPlayer.current_animation = "recoil"
-		# Получаем направление взгляда игрока (вперед от камеры)
-		var shoot_direction : Vector3 = -camera.global_transform.basis.z.normalized()
-		new_bullet.launch(%Marker3D.global_position, shoot_direction, 20) 
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not animation_player.is_playing():
+		animation_player.play(&"recoil")
+		shoot()
+		
+
+func shoot() -> void:
+	var new_bullet : Area3D = BULLET_SCENE.instantiate()
+	get_tree().current_scene.add_child(new_bullet)
+	# Получаем направление взгляда игрока (вперед от камеры)
+	var shoot_direction : Vector3 = -camera.global_transform.basis.z.normalized()
+	new_bullet.launch(%Marker3D.global_position, shoot_direction, 5, 0.1) 
+	
+	

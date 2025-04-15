@@ -6,6 +6,10 @@ const JUMP_VELOCITY     : float = 5.5
 const MOUSE_SENSITIVITY : float = 0.01
 const FRICTION          : float = 0.1
 
+@export var max_health_ponts: int = 5
+@export var health_ponts: int = 5: set = set_hp
+signal hp_changed(new_hp)
+
 var move_direction : Vector3
 
 func _ready() -> void:
@@ -29,3 +33,8 @@ func _physics_process(delta: float) -> void:
 		
 		if global_position.y < -50:
 			velocity.y = JUMP_VELOCITY * 7
+
+func set_hp(new_hp: int) -> void:
+	health_ponts = clamp(new_hp, 0, max_health_ponts)
+	emit_signal("hp_changed", health_ponts)
+	
