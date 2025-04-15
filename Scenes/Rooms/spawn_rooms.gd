@@ -1,15 +1,23 @@
 extends Node3D
 
 
+# комнаты спавна
 const SPAWN_ROOMS        : Array[PackedScene] = [
 	preload("res://Scenes/Rooms/SpawnRooms/spawn_room_1.tscn")
 	]
+	
+# обычные комнаты
 const INTERMEDIATE_ROOMS : Array[PackedScene] = [
 	preload("res://Scenes/Rooms/IntermediateRooms/intermediate_room_1.tscn"),
 	preload("res://Scenes/Rooms/IntermediateRooms/intermediate_room_2.tscn")
 	]
-
-var number_levels : int = 100
+	
+# обычные комнаты
+const END_ROOMS : Array[PackedScene] = [
+	]
+	
+# Количество комнат
+var number_levels : int = 10
 
 @onready var player : CharacterBody3D = get_tree().current_scene.get_node("Player")
 
