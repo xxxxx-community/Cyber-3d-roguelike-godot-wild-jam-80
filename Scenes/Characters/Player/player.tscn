@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmmofrthbtcrg"]
+[gd_scene load_steps=10 format=3 uid="uid://dmmofrthbtcrg"]
 
 [ext_resource type="PackedScene" uid="uid://dhgcyjovuvqhx" path="res://Scenes/Characters/character.tscn" id="1_27cb7"]
 [ext_resource type="Script" uid="uid://b6aunna0itrhq" path="res://Scenes/Characters/Player/player.gd" id="2_lyjr2"]
@@ -9,9 +9,31 @@
 [sub_resource type="Animation" id="Animation_siygm"]
 resource_name = "Recharge"
 
+[sub_resource type="Animation" id="Animation_qqvsf"]
+resource_name = "recoil"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Camera3D/Player_rifle")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.501085, -0.29339, -0.491592, 0.0666667, 1, 0.501085, -0.29339, -0.491592, 0.0667667, 1, 0.501085, -0.29339, -0.370024, 0.166667, 1, 0.501085, -0.29339, -0.491592)
+
+[sub_resource type="Animation" id="Animation_apx8m"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Camera3D/Player_rifle")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.501085, -0.29339, -0.491592)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qqvsf"]
 _data = {
-&"Recharge": SubResource("Animation_siygm")
+&"RESET": SubResource("Animation_apx8m"),
+&"Recharge": SubResource("Animation_siygm"),
+&"recoil": SubResource("Animation_qqvsf")
 }
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_lyjr2"]
@@ -42,7 +64,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000350118, -0.00477588, 0.0
 metadata/_edit_lock_ = true
 
 [node name="Player_rifle" parent="Body/Camera3D" index="0" instance=ExtResource("3_siygm")]
-transform = Transform3D(-0.997889, -0.000141289, -0.0649507, -0.000412901, 0.999991, 0.00416839, 0.0649495, 0.00418638, -0.99788, 0.481593, -0.326191, -0.657777)
+transform = Transform3D(-0.997889, -0.000141289, -0.0649507, -0.000412901, 0.999991, 0.00416839, 0.0649495, 0.00418638, -0.99788, 0.501085, -0.29339, -0.491592)
 
 [node name="Marker3D" type="Marker3D" parent="Body/Camera3D/Player_rifle" index="1"]
 unique_name_in_owner = true

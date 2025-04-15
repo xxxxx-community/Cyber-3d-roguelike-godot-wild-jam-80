@@ -31,7 +31,7 @@ func _process(_delta: float) -> void:
 		$DleayShoot.start()
 		var new_bullet : Area3D = BULLET_SCENE.instantiate()
 		get_tree().current_scene.add_child(new_bullet)
-		
+		$AnimationPlayer.current_animation = "recoil"
 		# Получаем направление взгляда игрока (вперед от камеры)
 		var shoot_direction : Vector3 = -camera.global_transform.basis.z.normalized()
 		new_bullet.launch(%Marker3D.global_position, shoot_direction, 20) 
