@@ -1,23 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmmofrthbtcrg"]
+[gd_scene load_steps=9 format=3 uid="uid://dmmofrthbtcrg"]
 
 [ext_resource type="PackedScene" uid="uid://dhgcyjovuvqhx" path="res://Scenes/Characters/character.tscn" id="1_27cb7"]
 [ext_resource type="Script" uid="uid://b6aunna0itrhq" path="res://Scenes/Characters/Player/player.gd" id="2_lyjr2"]
 [ext_resource type="PackedScene" uid="uid://dshwjiu4i0eur" path="res://Assets/3D_models/Player/Player_rifle.glb" id="3_siygm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lyjr2"]
-
-[sub_resource type="Animation" id="Animation_siygm"]
-resource_name = "Recharge"
-
-[sub_resource type="Animation" id="Animation_qqvsf"]
-resource_name = "recoil"
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/Camera3D/Player_rifle")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.501085, -0.29339, -0.491592, 0.0666667, 1, 0.501085, -0.29339, -0.491592, 0.0667667, 1, 0.501085, -0.29339, -0.370024, 0.166667, 1, 0.501085, -0.29339, -0.491592)
 
 [sub_resource type="Animation" id="Animation_apx8m"]
 length = 0.001
@@ -29,10 +16,19 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0.501085, -0.29339, -0.491592)
 
+[sub_resource type="Animation" id="Animation_qqvsf"]
+resource_name = "recoil"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Camera3D/Player_rifle")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.501085, -0.29339, -0.491592, 0.0666667, 1, 0.501085, -0.29339, -0.491592, 0.0667667, 1, 0.501085, -0.29339, -0.370024, 0.166667, 1, 0.501085, -0.29339, -0.491592)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qqvsf"]
 _data = {
 &"RESET": SubResource("Animation_apx8m"),
-&"Recharge": SubResource("Animation_siygm"),
 &"recoil": SubResource("Animation_qqvsf")
 }
 
