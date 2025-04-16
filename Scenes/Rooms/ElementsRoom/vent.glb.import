@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bae0y6tmx8raa"
-path="res://.godot/imported/wire_2.glb-066d25fe07a13a76060ae1bfdd710c2f.scn"
+uid="uid://bwp30xd53qelf"
+path="res://.godot/imported/vent.glb-f6c008d2c2b46218ca7055cb2094e979.scn"
 
 [deps]
 
-source_file="res://Scenes/Rooms/Assets/wire_2.glb"
-dest_files=["res://.godot/imported/wire_2.glb-066d25fe07a13a76060ae1bfdd710c2f.scn"]
+source_file="res://Scenes/Rooms/ElementsRoom/vent.glb"
+dest_files=["res://.godot/imported/vent.glb-f6c008d2c2b46218ca7055cb2094e979.scn"]
 
 [params]
 

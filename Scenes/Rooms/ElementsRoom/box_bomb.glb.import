@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c5uiw0x6v7coe"
-path="res://.godot/imported/window.glb-dce219733dd3a838854e8a1f00eee131.scn"
+uid="uid://dubjw300lscvf"
+path="res://.godot/imported/box_bomb.glb-29648674545717d064e22e3713dab367.scn"
 
 [deps]
 
-source_file="res://Scenes/Rooms/Assets/window.glb"
-dest_files=["res://.godot/imported/window.glb-dce219733dd3a838854e8a1f00eee131.scn"]
+source_file="res://Scenes/Rooms/ElementsRoom/box_bomb.glb"
+dest_files=["res://.godot/imported/box_bomb.glb-29648674545717d064e22e3713dab367.scn"]
 
 [params]
 

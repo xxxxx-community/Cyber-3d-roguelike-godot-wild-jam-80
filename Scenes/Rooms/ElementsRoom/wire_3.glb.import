@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bphoiuv7wxcpg"
-path="res://.godot/imported/box_container.glb-c84518dc703dbf2d723ae42d1ab13e41.scn"
+uid="uid://c1ne80okhf80w"
+path="res://.godot/imported/wire_3.glb-6910a0272966cd75492e46c7acdd3b8b.scn"
 
 [deps]
 
-source_file="res://Scenes/Rooms/Assets/box_container.glb"
-dest_files=["res://.godot/imported/box_container.glb-c84518dc703dbf2d723ae42d1ab13e41.scn"]
+source_file="res://Scenes/Rooms/ElementsRoom/wire_3.glb"
+dest_files=["res://.godot/imported/wire_3.glb-6910a0272966cd75492e46c7acdd3b8b.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c1ne80okhf80w"
-path="res://.godot/imported/wire_3.glb-ebfd347203e13770a756271636da2e9f.scn"
+uid="uid://8t0dw3g562fp"
+path="res://.godot/imported/wire_1.glb-13f8113958928eb2cb040d045f5a5c99.scn"
 
 [deps]
 
-source_file="res://Scenes/Rooms/Assets/wire_3.glb"
-dest_files=["res://.godot/imported/wire_3.glb-ebfd347203e13770a756271636da2e9f.scn"]
+source_file="res://Scenes/Rooms/ElementsRoom/wire_1.glb"
+dest_files=["res://.godot/imported/wire_1.glb-13f8113958928eb2cb040d045f5a5c99.scn"]
 
 [params]
 

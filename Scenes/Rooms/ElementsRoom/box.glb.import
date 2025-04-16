@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bwp30xd53qelf"
-path="res://.godot/imported/vent.glb-891bcb10cca6f8b2755a7dc915aaa988.scn"
+uid="uid://c1dwd8kk657yf"
+path="res://.godot/imported/box.glb-885134d2ea173f7ac13d6658bcd92e10.scn"
 
 [deps]
 
-source_file="res://Scenes/Rooms/Assets/vent.glb"
-dest_files=["res://.godot/imported/vent.glb-891bcb10cca6f8b2755a7dc915aaa988.scn"]
+source_file="res://Scenes/Rooms/ElementsRoom/box.glb"
+dest_files=["res://.godot/imported/box.glb-885134d2ea173f7ac13d6658bcd92e10.scn"]
 
 [params]
 
