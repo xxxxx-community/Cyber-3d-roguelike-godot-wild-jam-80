@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://br3klqiaductd"]
+[gd_scene load_steps=10 format=3 uid="uid://br3klqiaductd"]
 
 [ext_resource type="PackedScene" uid="uid://bpfv7iyb2l0t4" path="res://Scenes/ECS/component.tscn" id="1_2dtju"]
+[ext_resource type="Script" uid="uid://de3pbckv4202e" path="res://Scenes/ECS/fire_component.gd" id="2_1q7yw"]
 
 [sub_resource type="Gradient" id="Gradient_2dtju"]
 interpolation_mode = 2
@@ -45,6 +46,7 @@ material = SubResource("StandardMaterial3D_1q7yw")
 size = Vector3(0.25, 0.25, 0.25)
 
 [node name="FireComponent" instance=ExtResource("1_2dtju")]
+script = ExtResource("2_1q7yw")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." index="0"]
 amount = 125

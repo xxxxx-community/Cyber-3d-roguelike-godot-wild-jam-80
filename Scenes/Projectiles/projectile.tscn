@@ -13,9 +13,9 @@ script = ExtResource("1_2re41")
 
 [node name="Components" type="Node3D" parent="."]
 
-[node name="ComponentDublicate" parent="Components" instance=ExtResource("2_aihi3")]
-
 [node name="BlackHoleComponent" parent="Components" instance=ExtResource("3_c3q3r")]
+
+[node name="ComponentDublicate" parent="Components" instance=ExtResource("2_aihi3")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

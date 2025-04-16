@@ -7,11 +7,14 @@ const BULLET_SCENE : PackedScene = preload("res://Scenes/Projectiles/projectile.
 @onready var camera : Camera3D = get_node(^"%Camera3D")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-
+func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
 func _input(event) -> void:
-	# Прыжок
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = jump_velocity * 2
+	if is_on_floor():
+		# Прыжок
+		if Input.is_action_just_pressed("ui_accept"):
+			velocity.y = jump_velocity * 2
 		
 	var input_dir : Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
@@ -29,7 +32,9 @@ func _input(event) -> void:
 		
 	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 	
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	gravity(delta)
+	move()
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not animation_player.is_playing():
 		animation_player.play(&"recoil")
 		shoot()
