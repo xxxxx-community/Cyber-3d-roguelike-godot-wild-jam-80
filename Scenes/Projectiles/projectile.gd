@@ -6,9 +6,11 @@ class_name Projectile extends Area3D
 
 var move_direction : Vector3
 var projectile_speed : int
+var attacker_entity : Node3D
 var deading : bool = true
 
-func launch(pos : Vector3, dir : Vector3 = Vector3.ZERO, speed : int = 10, spread_angle : float = 0.0):
+func launch(attacker : Node3D, pos : Vector3, dir : Vector3 = Vector3.ZERO, speed : int = 10, spread_angle : float = 0.0):
+	attacker_entity = attacker
 	position = pos
 	move_direction = dir
 	projectile_speed = speed 

@@ -3,7 +3,6 @@ extends Component
 
 func _ready() -> void:
 	parent_projectile.deading = false
-	#$GPUParticles3D.emitting = false
 
 func stop() -> void:
 	$GPUParticles3D.emitting = true

@@ -1,5 +1,6 @@
 extends Character
 
+
 const BULLET_SCENE : PackedScene = preload("res://Scenes/Projectiles/projectile.tscn")
 
 @onready var body   : MeshInstance3D = get_node(^"Body")
@@ -39,6 +40,6 @@ func shoot() -> void:
 	get_tree().current_scene.add_child(new_bullet)
 	# Получаем направление взгляда игрока (вперед от камеры)
 	var shoot_direction : Vector3 = -camera.global_transform.basis.z.normalized()
-	new_bullet.launch(%Marker3D.global_position, shoot_direction, 5, 0.1) 
+	new_bullet.launch(self, %Marker3D.global_position, shoot_direction, 5, 0.1) 
 	
 	
