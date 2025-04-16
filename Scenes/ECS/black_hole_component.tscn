@@ -29,7 +29,6 @@ scale_min = 0.1
 scale_max = 0.5
 scale_curve = SubResource("CurveTexture_jv3wo")
 color_ramp = SubResource("GradientTexture1D_ot0tg")
-turbulence_enabled = true
 turbulence_influence_min = 0.0
 turbulence_initial_displacement_min = -0.999999
 turbulence_initial_displacement_max = 1.0

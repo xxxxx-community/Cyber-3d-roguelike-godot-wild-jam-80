@@ -24,10 +24,8 @@ ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
-fog_enabled = true
 fog_light_color = Color(1, 0, 0, 1)
 fog_sky_affect = 0.0
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.04
 volumetric_fog_albedo = Color(0, 0, 1, 1)
 
@@ -52,4 +50,4 @@ script = ExtResource("3_wowpa")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, 0)
 
 [node name="Sonya" parent="." instance=ExtResource("2_qxrlw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.94677, 12.7706, 9.18002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05323, 12.7706, -2.874)

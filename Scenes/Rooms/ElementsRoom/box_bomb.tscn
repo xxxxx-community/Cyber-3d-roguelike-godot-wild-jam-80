@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://mnle1lhfb486"]
+
+[ext_resource type="PackedScene" uid="uid://dubjw300lscvf" path="res://Scenes/Rooms/ElementsRoom/box_bomb.glb" id="1_5e3tw"]
+
+[node name="box_bomb" instance=ExtResource("1_5e3tw")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]

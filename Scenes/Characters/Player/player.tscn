@@ -4,8 +4,10 @@
 [ext_resource type="Script" uid="uid://b6aunna0itrhq" path="res://Scenes/Characters/Player/player.gd" id="2_lyjr2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lyjr2"]
+radius = 0.4
+height = 1.8
 
-[sub_resource type="Animation" id="Animation_lyjr2"]
+[sub_resource type="Animation" id="Animation_qqvsf"]
 resource_name = "recoil"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -14,14 +16,14 @@ tracks/0/path = NodePath("Body/Camera3D/Rifle:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0667667, 0.166667),
+"times": PackedFloat32Array(0, 0.0666667, 0.166667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.501085, -0.29339, -0.491592), Vector3(0.501085, -0.29339, -0.370024), Vector3(0.501085, -0.29339, -0.491592)]
+"values": [Vector3(0.693002, -0.357069, -0.0828495), Vector3(0.693, -0.357, -0.37), Vector3(0.693002, -0.357069, -0.0828495)]
 }
 
-[sub_resource type="Animation" id="Animation_siygm"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_apx8m"]
+resource_name = "RESET"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -32,13 +34,13 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.605453, -0.271009, -0.498361)]
+"values": [Vector3(0.693002, -0.357069, -0.0828495)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qqvsf"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_apx8m"]
 _data = {
-&"RESET": SubResource("Animation_siygm"),
-&"recoil": SubResource("Animation_lyjr2")
+&"RESET": SubResource("Animation_apx8m"),
+&"recoil": SubResource("Animation_qqvsf")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fbgn"]
@@ -88,9 +90,9 @@ script = ExtResource("2_lyjr2")
 shape = SubResource("CapsuleShape3D_lyjr2")
 metadata/_edit_lock_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+[node name="AnimationPlayer" parent="." index="1"]
 libraries = {
-&"": SubResource("AnimationLibrary_qqvsf")
+&"": SubResource("AnimationLibrary_apx8m")
 }
 
 [node name="Body" type="MeshInstance3D" parent="." index="2"]
@@ -99,11 +101,11 @@ metadata/_edit_lock_ = true
 [node name="Camera3D" type="Camera3D" parent="Body" index="0"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000350118, -0.00477588, 0.00289416)
+fov = 100.0
 metadata/_edit_lock_ = true
 
 [node name="Rifle" type="MeshInstance3D" parent="Body/Camera3D" index="0"]
-transform = Transform3D(-0.988725, 0, -0.149742, 0, 1, 0, 0.149742, 0, -0.988725, 0.605453, -0.271009, -0.498361)
-layers = 2
+transform = Transform3D(-0.998243, 0, -0.0592541, 0, 1, 0, 0.0592541, 0, -0.998243, 0.693002, -0.357069, -0.0828495)
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_lyjr2")
 skeleton = NodePath("")

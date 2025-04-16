@@ -4,8 +4,8 @@ extends Node3D
 @onready var directional_light: DirectionalLight3D = $DirectionalLight
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	ultra()
+#func _ready() -> void:
+	#ultra()
 
 func ultra() -> void:
 	get_viewport().use_taa = true

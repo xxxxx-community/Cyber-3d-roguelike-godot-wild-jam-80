@@ -11,7 +11,7 @@ const BULLET_SCENE : PackedScene = preload("res://Scenes/Projectiles/projectile.
 func _input(event) -> void:
 	# Прыжок
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = jump_velocity * 2
 		
 	var input_dir : Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
