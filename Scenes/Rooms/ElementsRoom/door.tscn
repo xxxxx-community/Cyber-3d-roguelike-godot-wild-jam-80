@@ -271,6 +271,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7qsfd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lj1g4"]
+resource_local_to_scene = true
 resource_name = "door_status"
 cull_mode = 2
 albedo_color = Color(1, 0, 0.0784316, 1)
@@ -294,6 +295,7 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_g3tnc"]
+resource_local_to_scene = true
 resource_name = "door_Cylinder_015"
 _surfaces = [{
 "aabb": AABB(-0.2, 1.8, -0.396, 0.4, 0.4, 0.792),
@@ -332,6 +334,7 @@ mesh = SubResource("ArrayMesh_5q238")
 skeleton = NodePath("")
 
 [node name="door_status_mesh" type="MeshInstance3D" parent="door_mesh"]
+unique_name_in_owner = true
 mesh = SubResource("ArrayMesh_g3tnc")
 skeleton = NodePath("")
 
