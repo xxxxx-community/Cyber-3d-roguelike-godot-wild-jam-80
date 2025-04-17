@@ -6,7 +6,8 @@ const BULLET_SCENE : PackedScene = preload("res://Scenes/Projectiles/projectile.
 @onready var body   : MeshInstance3D = get_node(^"Body")
 @onready var camera : Camera3D = get_node(^"%Camera3D")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-var health = 100
+var max_hp = 100
+var hp = 75
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
@@ -35,6 +36,7 @@ func _input(event) -> void:
 func _process(delta: float) -> void:
 	gravity(delta)
 	move()
+	update_health_bar()
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not animation_player.is_playing():
 		animation_player.play(&"recoil")
 		shoot()
@@ -47,4 +49,7 @@ func shoot() -> void:
 	var shoot_direction : Vector3 = -camera.global_transform.basis.z.normalized()
 	new_bullet.launch(self, %Marker3D.global_position, shoot_direction, 5, 0.1) 
 	
-	
+func update_health_bar():
+	var health_bar = $Body/Camera3D/Health_bar/Sprite3D/SubViewport/ProgressBar
+	if health_bar:
+		health_bar.value = (hp/float(max_hp))*100

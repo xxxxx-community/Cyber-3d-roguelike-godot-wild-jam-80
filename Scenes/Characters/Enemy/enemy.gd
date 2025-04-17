@@ -2,7 +2,7 @@ class_name Enemy extends Character
 
 
 @onready var player : CharacterBody3D = get_tree().current_scene.get_node("Player")
-
+var hp = 1000
 func chase() -> void:
 	look_at(player.global_position, Vector3.UP, true)
 	rotation.x = 0  

@@ -1,12 +1,16 @@
-[gd_scene load_steps=10 format=4 uid="uid://brbi5wnpy31dc"]
+[gd_scene load_steps=12 format=4 uid="uid://brbi5wnpy31dc"]
 
 [ext_resource type="PackedScene" uid="uid://p04yow0dawa1" path="res://Scenes/Characters/Enemy/enemy.tscn" id="1_klikv"]
 [ext_resource type="AnimationLibrary" uid="uid://pinq0h0rfck2" path="res://Assets/3D_models/Mobs/robot_animation.res" id="2_6h25x"]
+[ext_resource type="Script" uid="uid://chqxnehjqiis3" path="res://Scenes/UI/Health_Bar.gd" id="2_cpr3n"]
 [ext_resource type="Script" uid="uid://dmxp7n0c3soes" path="res://Scenes/Characters/Enemy/Robot/RobotFSM.gd" id="2_veau6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6h25x"]
 radius = 0.315679
 height = 0.647761
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lv8m1"]
+viewport_path = NodePath("rig/Skeleton3D/Health_bar/Sprite3D/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fqgtd"]
 resource_name = "Material"
@@ -2261,6 +2265,28 @@ bones/215/position = Vector3(0, 2.55597e-08, 2.95849e-08)
 bones/215/rotation = Quaternion(0.00482863, 0, 0, 0.999988)
 bones/215/scale = Vector3(1, 1, 1)
 
-[node name="Cube_004" type="MeshInstance3D" parent="rig/Skeleton3D" index="0"]
+[node name="Health_bar" type="Node3D" parent="rig/Skeleton3D" index="0"]
+unique_name_in_owner = true
+transform = Transform3D(0.327, 0, 0, 0, 0.46, 0, 0, 0, 0.807, 0, 0, 0)
+script = ExtResource("2_cpr3n")
+
+[node name="Sprite3D" type="Sprite3D" parent="rig/Skeleton3D/Health_bar" index="0"]
+texture = SubResource("ViewportTexture_lv8m1")
+
+[node name="SubViewport" type="SubViewport" parent="rig/Skeleton3D/Health_bar/Sprite3D" index="0"]
+transparent_bg = true
+size = Vector2i(1152, 648)
+
+[node name="ProgressBar" type="ProgressBar" parent="rig/Skeleton3D/Health_bar/Sprite3D/SubViewport" index="0"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 27.0
+grow_horizontal = 2
+value = 50.0
+
+[node name="Cube_004" type="MeshInstance3D" parent="rig/Skeleton3D" index="1"]
 mesh = SubResource("ArrayMesh_veau6")
 skin = SubResource("Skin_cpr3n")
