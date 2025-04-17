@@ -13,7 +13,7 @@ func _physics_process(_delta: float) -> void:
 			entity.accel /= 5
 			entity.velocity += (global_position - entity.global_position).normalized() * curve_gravity.sample(length)
 			if length < 3 and entity.name != "Player":
-				entity.health_ponts -= 0.1
+				entity.health_points -= 0.1
 
 func stop() -> void:
 	$GPUParticles3D.emitting = true

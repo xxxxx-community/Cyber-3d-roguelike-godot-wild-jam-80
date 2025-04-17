@@ -1,8 +1,10 @@
 class_name Component extends Node3D
 
 
-@onready var parent_projectile : Area3D = owner
+@onready var parent_projectile : Node3D = get_parent().get_parent()
 @export var damage : int = -1
+
+var point_life : int = 10
 
 func active_effect(_body) -> void:
 	pass

@@ -16,7 +16,6 @@ signal hp_changed(new_hp)
 var move_direction : Vector3
 
 func move() -> void:
-	accel = acceleration
 	if move_direction:
 		velocity.x = move_direction.x * accel
 		velocity.z = move_direction.z * accel
@@ -39,7 +38,7 @@ func set_hp(new_hp: float) -> void:
 	health_points = clamp(new_hp, 0, max_health_points)
 	emit_signal("hp_changed", health_points)
 	
-func take_damage(damage : float, _dir : Vector3, _force : float) -> void:
+func take_damage(damage : float, _dir : Vector3 = Vector3.ZERO, _force : float = 0) -> void:
 	health_points += damage
 	
 	if health_points > 0:
