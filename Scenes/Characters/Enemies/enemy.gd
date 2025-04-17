@@ -13,6 +13,6 @@ func chase() -> void:
 		move_direction = Vector3.ZERO
 
 func _on_hp_changed(new_hp : Variant) -> void:
-	%ProgressBar.value = (new_hp / max_health_ponts) * 100
+	%ProgressBar.value = (new_hp / max_health_points) * 100
 
 	

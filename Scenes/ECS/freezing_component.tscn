@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://lt1hkjpkn4e0"]
+[gd_scene load_steps=9 format=3 uid="uid://lt1hkjpkn4e0"]
 
-[ext_resource type="PackedScene" uid="uid://bpfv7iyb2l0t4" path="res://Scenes/ECS/component.tscn" id="1_jv3wo"]
+[ext_resource type="Script" uid="uid://v66ll3vrm8ax" path="res://Scenes/ECS/freezing_component.gd" id="2_0edk5"]
+[ext_resource type="Script" uid="uid://bwtjnfjobr107" path="res://Scenes/ECS/HitboxProjectiles.gd" id="2_bc7x3"]
 
 [sub_resource type="Curve" id="Curve_jv3wo"]
 _data = [Vector2(0, 1), 0.0, 1.4, 0, 0, Vector2(0.994318, 0), 0.0, 0.0, 0, 0]
@@ -27,9 +28,20 @@ albedo_color = Color(0.521569, 1, 0.776471, 1)
 material = SubResource("StandardMaterial3D_bc7x3")
 size = Vector3(0.1, 0.1, 0.1)
 
-[node name="FreezingComponent" instance=ExtResource("1_jv3wo")]
+[sub_resource type="SphereShape3D" id="SphereShape3D_0edk5"]
+radius = 0.332713
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="0"]
+[node name="FreezingComponent" type="Node3D"]
+script = ExtResource("2_0edk5")
+damage = -20
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 amount = 20
 process_material = SubResource("ParticleProcessMaterial_jv3wo")
 draw_pass_1 = SubResource("BoxMesh_jv3wo")
+
+[node name="AreaDamage" type="Area3D" parent="."]
+script = ExtResource("2_bc7x3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaDamage"]
+shape = SubResource("SphereShape3D_0edk5")

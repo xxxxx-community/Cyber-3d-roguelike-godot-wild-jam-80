@@ -6,9 +6,7 @@
 [node name="Character" type="CharacterBody3D" groups=["ENTITY_GROUP"]]
 script = ExtResource("1_vu0vm")
 
-[node name="FiniteStateMachin" type="Node" parent="."]
+[node name="FiniteStateMachine" type="Node" parent="."]
 script = ExtResource("2_eu1pv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

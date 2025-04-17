@@ -1,12 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce5hqcfmounur"]
+[gd_scene load_steps=2 format=3 uid="uid://ce5hqcfmounur"]
 
-[ext_resource type="PackedScene" uid="uid://bpfv7iyb2l0t4" path="res://Scenes/ECS/component.tscn" id="1_1xcmq"]
 [ext_resource type="Script" uid="uid://b8xwjlpptm6n2" path="res://Scenes/ECS/component_dublicate.gd" id="2_2febx"]
 
-[node name="ComponentDublicate" instance=ExtResource("1_1xcmq")]
+[node name="ComponentDublicate" type="Node3D"]
 script = ExtResource("2_2febx")
 
-[node name="Timer" type="Timer" parent="." index="0"]
+[node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
 autostart = true

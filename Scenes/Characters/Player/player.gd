@@ -45,9 +45,4 @@ func shoot() -> void:
 	get_tree().current_scene.add_child(new_bullet)
 	# Получаем направление взгляда игрока (вперед от камеры)
 	var shoot_direction : Vector3 = -camera.global_transform.basis.z.normalized()
-	new_bullet.launch(self, %Marker3D.global_position, shoot_direction, 5, 0.1) 
-	
-func update_health_bar():
-	var health_bar = $Body/Camera3D/Health_bar/Sprite3D/SubViewport/ProgressBar
-	if health_bar:
-		health_bar.value = (hp/float(max_hp))*100
+	new_bullet.launch(self, %Marker3D.global_position, shoot_direction, 20, 0.1) 

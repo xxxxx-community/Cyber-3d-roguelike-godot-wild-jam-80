@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://chmc3a45b6xl4"]
+[gd_scene load_steps=10 format=3 uid="uid://chmc3a45b6xl4"]
 
-[ext_resource type="PackedScene" uid="uid://bpfv7iyb2l0t4" path="res://Scenes/ECS/component.tscn" id="1_jq2md"]
 [ext_resource type="Script" uid="uid://4ucvqr8260lh" path="res://Scenes/ECS/black_hole_component.gd" id="2_nl14n"]
 
 [sub_resource type="Curve" id="Curve_nl14n"]
@@ -47,11 +46,11 @@ albedo_color = Color(0.2, 0.2, 0.2, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_ot0tg"]
 material = SubResource("StandardMaterial3D_nl14n")
 
-[node name="BlackHoleComponent" instance=ExtResource("1_jq2md")]
+[node name="BlackHoleComponent" type="Node3D"]
 script = ExtResource("2_nl14n")
 curve_gravity = SubResource("Curve_nl14n")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="0"]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 amount = 200
 lifetime = 1.5
 fixed_fps = 0

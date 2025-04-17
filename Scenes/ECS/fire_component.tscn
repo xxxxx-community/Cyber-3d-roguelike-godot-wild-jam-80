@@ -1,21 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://br3klqiaductd"]
+[gd_scene load_steps=11 format=3 uid="uid://br3klqiaductd"]
 
-[ext_resource type="PackedScene" uid="uid://bpfv7iyb2l0t4" path="res://Scenes/ECS/component.tscn" id="1_2dtju"]
 [ext_resource type="Script" uid="uid://de3pbckv4202e" path="res://Scenes/ECS/fire_component.gd" id="2_1q7yw"]
+[ext_resource type="Script" uid="uid://bwtjnfjobr107" path="res://Scenes/ECS/HitboxProjectiles.gd" id="2_xu1d6"]
 
 [sub_resource type="Gradient" id="Gradient_2dtju"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0.01875, 0.0722892, 0.433735, 0.716867, 1)
 colors = PackedColorArray(0.26, 0.0693333, 0, 1, 0.686275, 0.188235, 0, 1, 0.780392, 0.658824, 0, 1, 1, 0.0784314, 0, 0.447059, 0.25098, 0.25098, 0.25098, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_1q7yw"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2dtju"]
 gradient = SubResource("Gradient_2dtju")
 
 [sub_resource type="Curve" id="Curve_xu1d6"]
 _data = [Vector2(0, 1), 0.0, 1.4, 0, 0, Vector2(0.994318, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_2vcc7"]
+[sub_resource type="CurveTexture" id="CurveTexture_1q7yw"]
 curve = SubResource("Curve_xu1d6")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wlrn1"]
@@ -31,26 +31,36 @@ damping_min = 2.0
 damping_max = 2.0
 scale_min = 0.1
 scale_max = 0.8
-scale_curve = SubResource("CurveTexture_2vcc7")
+scale_curve = SubResource("CurveTexture_1q7yw")
 color = Color(4, 4, 4, 1)
-color_ramp = SubResource("GradientTexture1D_1q7yw")
+color_ramp = SubResource("GradientTexture1D_2dtju")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1q7yw"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xu1d6"]
 transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.27, 0.27, 0.27, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xu1d6"]
-material = SubResource("StandardMaterial3D_1q7yw")
+material = SubResource("StandardMaterial3D_xu1d6")
 size = Vector3(0.25, 0.25, 0.25)
 
-[node name="FireComponent" instance=ExtResource("1_2dtju")]
-script = ExtResource("2_1q7yw")
+[sub_resource type="SphereShape3D" id="SphereShape3D_1q7yw"]
+radius = 0.332713
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="0"]
+[node name="FireComponent" type="Node3D"]
+script = ExtResource("2_1q7yw")
+damage = -20
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 amount = 125
 fixed_fps = 0
 interpolate = false
 process_material = SubResource("ParticleProcessMaterial_wlrn1")
 draw_pass_1 = SubResource("BoxMesh_xu1d6")
+
+[node name="AreaDamage" type="Area3D" parent="."]
+script = ExtResource("2_xu1d6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaDamage"]
+shape = SubResource("SphereShape3D_1q7yw")

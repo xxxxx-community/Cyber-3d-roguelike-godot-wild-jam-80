@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpfv7iyb2l0t4"]
-
-[ext_resource type="Script" uid="uid://bo30dubkson1b" path="res://Scenes/ECS/component.gd" id="1_pg4st"]
-
-[node name="Component" type="Node3D"]
-script = ExtResource("1_pg4st")

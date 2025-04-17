@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c46tf4einmdmj"]
 
 [ext_resource type="PackedScene" uid="uid://d3ax88154obaq" path="res://Scenes/Rooms/room.tscn" id="1_0jpob"]
-[ext_resource type="PackedScene" uid="uid://brbi5wnpy31dc" path="res://Scenes/Characters/Enemy/Robot/robot.tscn" id="2_pcg38"]
+[ext_resource type="PackedScene" uid="uid://brbi5wnpy31dc" path="res://Scenes/Characters/Enemies/Robot/robot.tscn" id="2_pcg38"]
 
 [node name="SpawnRoom1" instance=ExtResource("1_0jpob")]
 
