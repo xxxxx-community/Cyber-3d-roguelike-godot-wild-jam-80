@@ -16,10 +16,9 @@ ground_horizon_color = Color(0.96, 0.975333, 1, 1)
 sky_material = SubResource("ProceduralSkyMaterial_3dryh")
 
 [sub_resource type="Environment" id="Environment_3dryh"]
-background_mode = 2
+background_mode = 1
 sky = SubResource("Sky_wowpa")
-tonemap_mode = 3
-ssr_enabled = true
+tonemap_mode = 2
 ssr_max_steps = 56
 ssao_enabled = true
 ssil_enabled = true
@@ -29,6 +28,7 @@ fog_light_color = Color(1, 0, 0, 1)
 fog_sky_affect = 0.0
 volumetric_fog_density = 0.04
 volumetric_fog_albedo = Color(0, 0, 1, 1)
+adjustment_enabled = true
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_wrm1d")
@@ -38,6 +38,7 @@ environment = SubResource("Environment_3dryh")
 
 [node name="DirectionalLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 100, 0)
+visible = false
 shadow_enabled = true
 shadow_bias = 0.01
 directional_shadow_fade_start = 1.0
@@ -52,6 +53,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, 0)
 
 [node name="Sonya" parent="." instance=ExtResource("2_qxrlw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05323, 12.7706, -2.874)
+visible = false
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("5_wowpa")
@@ -66,5 +68,21 @@ offset_right = 187.5
 offset_bottom = 68.5
 grow_horizontal = 2
 value = 100.0
+
+[node name="crosshair" type="Label" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "+"
+horizontal_alignment = 1
 
 [connection signal="hp_changed" from="Player" to="UI" method="_on_player_hp_changed"]

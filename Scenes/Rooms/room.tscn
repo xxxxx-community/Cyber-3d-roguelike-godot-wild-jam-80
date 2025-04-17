@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://duhnlml3jxbl6" path="res://Scenes/Rooms/ElementsRoom/door.tscn" id="2_x7265"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3m34"]
-albedo_color = Color(0, 1, 1, 1)
+albedo_color = Color(0.129621, 0.485442, 0.580789, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_c2haw"]
 material = SubResource("StandardMaterial3D_g3m34")
@@ -21,7 +21,7 @@ size = Vector3(0.5, 1, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_dyxu8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dyxu8"]
-albedo_color = Color(0, 1, 1, 1)
+albedo_color = Color(0.129412, 0.486275, 0.580392, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_g3m34"]
 material = SubResource("StandardMaterial3D_dyxu8")
