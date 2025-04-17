@@ -6,7 +6,7 @@ const BULLET_SCENE : PackedScene = preload("res://Scenes/Projectiles/projectile.
 @onready var body   : MeshInstance3D = get_node(^"Body")
 @onready var camera : Camera3D = get_node(^"%Camera3D")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
+var health = 100
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
