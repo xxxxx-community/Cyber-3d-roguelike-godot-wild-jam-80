@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://brbi5wnpy31dc"]
+[gd_scene load_steps=18 format=4 uid="uid://brbi5wnpy31dc"]
 
 [ext_resource type="PackedScene" uid="uid://p04yow0dawa1" path="res://Scenes/Characters/Enemies/enemy.tscn" id="1_klikv"]
 [ext_resource type="Script" uid="uid://dmxp7n0c3soes" path="res://Scenes/Characters/Enemies/Robot/RobotFSM.gd" id="2_veau6"]
@@ -7594,11 +7594,29 @@ tracks/179/interp = 0
 tracks/179/loop_wrap = true
 tracks/179/keys = PackedFloat32Array(0, 1, 0, 1.18233e-08, 2.94522e-08)
 
+[sub_resource type="Animation" id="Animation_devry"]
+resource_name = "dead"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4en0h"]
 _data = {
 &"RESET": SubResource("Animation_3kiui"),
 &"attack_hit": SubResource("Animation_x68fy"),
 &"attack_switch": SubResource("Animation_fjuif"),
+&"dead": SubResource("Animation_devry"),
 &"idle": SubResource("Animation_h1h6v"),
 &"run": SubResource("Animation_u76xv"),
 &"walk": SubResource("Animation_gcx4q")
