@@ -7,8 +7,8 @@ const FRICTION          : float = 0.1
 @export var acceleration   : float = 10.0
 var accel : float = acceleration
 @export var jump_velocity  : float = 5.5
-@export var max_health_ponts: int = 5
-@export var health_ponts: int = 5: set = set_hp
+@export var max_health_ponts : int = 5
+@export var health_ponts : int = 5: set = set_hp
 signal hp_changed(new_hp)
 
 var move_direction : Vector3
@@ -22,7 +22,7 @@ func move() -> void:
 	velocity.x = lerp(velocity.x, 0.0, FRICTION) 
 	velocity.z = lerp(velocity.z, 0.0, FRICTION) 
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func gravity(delta : float) -> void:

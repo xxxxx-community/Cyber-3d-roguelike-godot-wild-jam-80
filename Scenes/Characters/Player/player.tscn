@@ -1,15 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://dmmofrthbtcrg"]
+[gd_scene load_steps=10 format=4 uid="uid://dmmofrthbtcrg"]
 
 [ext_resource type="PackedScene" uid="uid://dhgcyjovuvqhx" path="res://Scenes/Characters/character.tscn" id="1_27cb7"]
 [ext_resource type="Script" uid="uid://b6aunna0itrhq" path="res://Scenes/Characters/Player/player.gd" id="2_lyjr2"]
-[ext_resource type="Script" uid="uid://chqxnehjqiis3" path="res://Scenes/UI/Health_Bar.gd" id="3_siygm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lyjr2"]
 radius = 0.4
 height = 1.8
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_qqvsf"]
-viewport_path = NodePath("Body/Camera3D/Health_bar/Sprite3D/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fbgn"]
 resource_name = "Material"
@@ -103,29 +99,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000350118, -0.00477588, 0.0
 fov = 100.0
 metadata/_edit_lock_ = true
 
-[node name="Health_bar" type="Node3D" parent="Body/Camera3D" index="0"]
-unique_name_in_owner = true
-transform = Transform3D(0.105, 0, 0, 0, 0.135, 0, 0, 0, 1, -0.0337915, -0.300517, -0.132874)
-script = ExtResource("3_siygm")
-
-[node name="Sprite3D" type="Sprite3D" parent="Body/Camera3D/Health_bar" index="0"]
-texture = SubResource("ViewportTexture_qqvsf")
-
-[node name="SubViewport" type="SubViewport" parent="Body/Camera3D/Health_bar/Sprite3D" index="0"]
-transparent_bg = true
-size = Vector2i(1152, 648)
-
-[node name="ProgressBar" type="ProgressBar" parent="Body/Camera3D/Health_bar/Sprite3D/SubViewport" index="0"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -200.0
-offset_right = 50.0
-offset_bottom = 27.0
-grow_horizontal = 2
-value = 50.0
-
-[node name="Rifle" type="MeshInstance3D" parent="Body/Camera3D" index="1"]
+[node name="Rifle" type="MeshInstance3D" parent="Body/Camera3D" index="0"]
 transform = Transform3D(-0.998243, 0, -0.0592541, 0, 1, 0, 0.0592541, 0, -0.998243, 0.693002, -0.357069, -0.0828495)
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_lyjr2")

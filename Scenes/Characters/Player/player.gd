@@ -36,12 +36,10 @@ func _input(event) -> void:
 func _process(delta: float) -> void:
 	gravity(delta)
 	move()
-	update_health_bar()
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not animation_player.is_playing():
 		animation_player.play(&"recoil")
 		shoot()
 		
-
 func shoot() -> void:
 	var new_bullet : Area3D = BULLET_SCENE.instantiate()
 	get_tree().current_scene.add_child(new_bullet)
