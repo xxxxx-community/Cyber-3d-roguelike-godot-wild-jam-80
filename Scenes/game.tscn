@@ -51,12 +51,9 @@ script = ExtResource("3_wowpa")
 
 [node name="Player" parent="." instance=ExtResource("1_ebmjs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, 0)
-max_health_points = 10000.0
-health_points = 10000.0
 
 [node name="Sonya" parent="." instance=ExtResource("2_qxrlw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05323, 12.7706, -2.874)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3193, 2.26082, 1.70618)
 max_health_points = 1e+09
 health_points = 1e+10
 
@@ -93,5 +90,7 @@ horizontal_alignment = 1
 [node name="Options_Menu" parent="UI" instance=ExtResource("6_i6g32")]
 unique_name_in_owner = true
 visible = false
+
+[connection signal="hp_changed" from="Player" to="UI" method="_on_player_hp_changed"]
 
 [editable path="UI/Options_Menu"]

@@ -46,12 +46,11 @@ func _physics_process(delta):
 		queue_free()
 	
 
-func _collide(body: Node3D) -> void:
-	if body.name != "Player":
-		projectile_speed = 0
+func _collide(_body: Node3D) -> void:
+	projectile_speed = 0
+	
+	for comp in components.get_children():
+		comp.stop()
 		
-		for comp in components.get_children():
-			comp.stop()
-			
-		$AnimationPlayer.play(&"dead")
+	$AnimationPlayer.play(&"dead")
 		

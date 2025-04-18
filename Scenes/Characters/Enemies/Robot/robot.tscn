@@ -1,7 +1,9 @@
-[gd_scene load_steps=18 format=4 uid="uid://brbi5wnpy31dc"]
+[gd_scene load_steps=21 format=4 uid="uid://brbi5wnpy31dc"]
 
 [ext_resource type="PackedScene" uid="uid://p04yow0dawa1" path="res://Scenes/Characters/Enemies/enemy.tscn" id="1_klikv"]
 [ext_resource type="Script" uid="uid://dmxp7n0c3soes" path="res://Scenes/Characters/Enemies/Robot/RobotFSM.gd" id="2_veau6"]
+[ext_resource type="Script" uid="uid://bmhcwl07s45ri" path="res://Scenes/ECS/Hitbox.gd" id="3_ixs7f"]
+[ext_resource type="PackedScene" uid="uid://dliukhfuh7pn5" path="res://Scenes/ECS/Effects/fire_explosion.tscn" id="4_1p1cc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6h25x"]
 radius = 0.315679
@@ -1270,11 +1272,34 @@ tracks/179/path = NodePath("rig/Skeleton3D:thigh_ik_target.R")
 tracks/179/interp = 0
 tracks/179/loop_wrap = true
 tracks/179/keys = PackedFloat32Array(0, 1, 0, 2.55597e-08, 2.95849e-08)
+tracks/180/type = "value"
+tracks/180/imported = false
+tracks/180/enabled = true
+tracks/180/path = NodePath("FireExplosion/CollisionShape3D:disabled")
+tracks/180/interp = 1
+tracks/180/loop_wrap = true
+tracks/180/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/181/type = "value"
+tracks/181/imported = false
+tracks/181/enabled = true
+tracks/181/path = NodePath("FireExplosion/GPUParticles3D:emitting")
+tracks/181/interp = 1
+tracks/181/loop_wrap = true
+tracks/181/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_x68fy"]
 resource_name = "attack_hit"
 length = 0.833333
-loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -3816,6 +3841,30 @@ tracks/0/keys = {
 "args": [],
 "method": &"queue_free"
 }]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FireExplosion/CollisionShape3D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FireExplosion/GPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_h1h6v"]
@@ -8348,6 +8397,8 @@ bind/215/name = &"thigh_ik_target.R"
 bind/215/bone = -1
 bind/215/pose = Transform3D(1, 0, 0, 0, 0.00965715, -0.999953, 0, 0.999953, 0.00965715, 0.126658, 0.528004, -0.341654)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_ixs7f"]
+
 [node name="Robot" instance=ExtResource("1_klikv")]
 
 [node name="FiniteStateMachine" parent="." index="0"]
@@ -9884,3 +9935,24 @@ bones/215/scale = Vector3(1, 1, 1)
 [node name="Cube_004" type="MeshInstance3D" parent="rig/Skeleton3D" index="0"]
 mesh = SubResource("ArrayMesh_veau6")
 skin = SubResource("Skin_cpr3n")
+
+[node name="Hitbox" type="Area3D" parent="rig" index="1"]
+unique_name_in_owner = true
+script = ExtResource("3_ixs7f")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="rig/Hitbox" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.784743, 0.614881)
+shape = SubResource("SphereShape3D_ixs7f")
+
+[node name="FireExplosion" parent="." index="6" instance=ExtResource("4_1p1cc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.655, 0)
+
+[node name="CollisionShape3D" parent="FireExplosion" index="0"]
+disabled = true
+
+[node name="GPUParticles3D" parent="FireExplosion" index="1"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+emitting = false
+amount = 200
+
+[editable path="FireExplosion"]

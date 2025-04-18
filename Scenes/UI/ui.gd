@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var player : CharacterBody3D = get_tree().current_scene.get_node("Player")
 
 func _on_player_hp_changed(new_hp: Variant) -> void:
-	$ProgressBar.value = (new_hp / $"..".max_health_points) * 100
+	$ProgressBar.value = (new_hp / $"../Player".max_health_points) * 100
 
 func _unhandled_input(event) -> void:
 	if event.is_action_pressed(&"ui_cancel"):

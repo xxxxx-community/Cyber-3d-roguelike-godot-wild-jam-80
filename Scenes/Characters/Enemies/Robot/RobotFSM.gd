@@ -38,6 +38,9 @@ func _get_transition() -> int:
 					return states.walk
 				else:
 					return states.idle
+		states.attack_hit:
+			if not animation_player.is_playing():
+				return states.idle
 	return -1
 
 	
@@ -51,3 +54,5 @@ func _enter_state(_previous_state: int, new_state: int) -> void:
 			animation_player.play("run")
 		states.dead:
 			animation_player.play("dead")
+		states.attack_hit:
+			animation_player.play("attack_hit")

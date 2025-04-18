@@ -113,3 +113,6 @@ func shoot() -> void:
 	# Получаем направление взгляда игрока (вперед от камеры)
 	var shoot_direction : Vector3 = -camera.global_transform.basis.z.normalized()
 	new_bullet.launch(self, %Marker3D.global_position, shoot_direction, 20, 0.1) 
+
+func dead() -> void:
+	can_move = false
