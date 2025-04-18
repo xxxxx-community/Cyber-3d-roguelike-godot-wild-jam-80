@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://big7njces5bax"
-path="res://.godot/imported/Colossus.glb-7db553884b31fdf7fc0cd758d302ee7a.scn"
+uid="uid://civbxiq24373y"
+path="res://.godot/imported/Player_rifle.glb-bb83df262a3a0f32fb46d41714971cfd.scn"
 
 [deps]
 
-source_file="res://Assets/3D_models/Mobs/Colossus.glb"
-dest_files=["res://.godot/imported/Colossus.glb-7db553884b31fdf7fc0cd758d302ee7a.scn"]
+source_file="res://Assets/3D_models/Mobs/Player_rifle.glb"
+dest_files=["res://.godot/imported/Player_rifle.glb-bb83df262a3a0f32fb46d41714971cfd.scn"]
 
 [params]
 

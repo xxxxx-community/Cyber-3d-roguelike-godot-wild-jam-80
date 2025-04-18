@@ -8,8 +8,7 @@ const SPAWN_ROOMS        : Array[PackedScene] = [
 	
 # обычные комнаты
 const INTERMEDIATE_ROOMS : Array[PackedScene] = [
-	preload("res://Scenes/Rooms/IntermediateRooms/intermediate_room_1.tscn"),
-	preload("res://Scenes/Rooms/IntermediateRooms/intermediate_room_2.tscn")
+	preload("res://Scenes/Rooms/IntermediateRooms/intermediate_room_Generators.tscn")
 	]
 	
 # обычные комнаты

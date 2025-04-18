@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://big7njces5bax"
-path="res://.godot/imported/Colossus.glb-7db553884b31fdf7fc0cd758d302ee7a.scn"
+uid="uid://cohtib2c25y7q"
+path="res://.godot/imported/Strait_mesh.glb-76a4b5d6ed4cc2c96085d6638d60f83d.scn"
 
 [deps]
 
-source_file="res://Assets/3D_models/Mobs/Colossus.glb"
-dest_files=["res://.godot/imported/Colossus.glb-7db553884b31fdf7fc0cd758d302ee7a.scn"]
+source_file="res://Assets/3D_models/Enviroment/Strait_mesh.glb"
+dest_files=["res://.godot/imported/Strait_mesh.glb-76a4b5d6ed4cc2c96085d6638d60f83d.scn"]
 
 [params]
 

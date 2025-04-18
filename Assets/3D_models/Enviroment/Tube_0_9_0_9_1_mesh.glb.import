@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://big7njces5bax"
-path="res://.godot/imported/Colossus.glb-7db553884b31fdf7fc0cd758d302ee7a.scn"
+uid="uid://3lmp8u5tcc8i"
+path="res://.godot/imported/Tube_0_9_0_9_1_mesh.glb-4d906b1d5f4b1481a0f0463cfb03fef3.scn"
 
 [deps]
 
-source_file="res://Assets/3D_models/Mobs/Colossus.glb"
-dest_files=["res://.godot/imported/Colossus.glb-7db553884b31fdf7fc0cd758d302ee7a.scn"]
+source_file="res://Assets/3D_models/Enviroment/Tube_0_9_0_9_1_mesh.glb"
+dest_files=["res://.godot/imported/Tube_0_9_0_9_1_mesh.glb-4d906b1d5f4b1481a0f0463cfb03fef3.scn"]
 
 [params]
 
