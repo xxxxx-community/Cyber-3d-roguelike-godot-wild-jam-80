@@ -12,6 +12,9 @@ material = SubResource("StandardMaterial3D_g3m34")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x7265"]
 albedo_color = Color(0, 0, 0, 1)
+roughness = 0.75
+normal_enabled = true
+texture_filter = 5
 
 [sub_resource type="BoxMesh" id="BoxMesh_x7265"]
 material = SubResource("StandardMaterial3D_x7265")

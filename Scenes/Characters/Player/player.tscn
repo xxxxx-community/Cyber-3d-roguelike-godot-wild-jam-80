@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://dmmofrthbtcrg"]
+[gd_scene load_steps=21 format=4 uid="uid://dmmofrthbtcrg"]
 
 [ext_resource type="PackedScene" uid="uid://dhgcyjovuvqhx" path="res://Scenes/Characters/character.tscn" id="1_27cb7"]
 [ext_resource type="Script" uid="uid://b6aunna0itrhq" path="res://Scenes/Characters/Player/player.gd" id="2_lyjr2"]
@@ -9,8 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://drkg3yx32cjs7" path="res://Assets/Sound/sfx/footsteps/footstep on concrete 2.mp3" id="5_1mdwi"]
 [ext_resource type="AudioStream" uid="uid://b4rilx6v1jpxu" path="res://Assets/Sound/sfx/footsteps/footstep on concrete 3.mp3" id="6_8gg06"]
 [ext_resource type="AudioStream" uid="uid://b25qyurhu7yhq" path="res://Assets/Sound/sfx/footsteps/footstep on concrete 4.mp3" id="7_cscr0"]
-[ext_resource type="PackedScene" uid="uid://b38ahvb18k30c" path="res://Scenes/GUI/Menu/ingame_options_menu.tscn" id="10_cscr0"]
-[ext_resource type="Script" uid="uid://daoa82btfbtx8" path="res://Scenes/UI/ui.gd" id="11_plevq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lyjr2"]
 radius = 0.4
@@ -149,7 +147,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_siygm")
 }
 
-[node name="Body" type="MeshInstance3D" parent="." index="3"]
+[node name="Body" type="MeshInstance3D" parent="." index="4"]
 metadata/_edit_lock_ = true
 
 [node name="Head" type="Node3D" parent="Body" index="0"]
@@ -184,47 +182,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 visible = false
 mesh = SubResource("QuadMesh_cscr0")
 
-[node name="footstepsSounds" type="Node3D" parent="." index="4"]
+[node name="footstepsSounds" type="Node3D" parent="." index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="ConcreteSoundSteps" type="AudioStreamPlayer3D" parent="footstepsSounds" index="0"]
 stream = SubResource("AudioStreamRandomizer_sdxbo")
 volume_db = -15.0
-
-[node name="Options_Menu" parent="." index="5" instance=ExtResource("10_cscr0")]
-unique_name_in_owner = true
-visible = false
-
-[node name="UI" type="CanvasLayer" parent="." index="6"]
-script = ExtResource("11_plevq")
-
-[node name="ProgressBar" type="ProgressBar" parent="UI" index="0"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -187.5
-offset_top = 28.0
-offset_right = 187.5
-offset_bottom = 68.5
-grow_horizontal = 2
-value = 100.0
-
-[node name="crosshair" type="Label" parent="UI" index="1"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-text = "+"
-horizontal_alignment = 1
-
-[connection signal="hp_changed" from="." to="UI" method="_on_player_hp_changed"]
-
-[editable path="Options_Menu"]

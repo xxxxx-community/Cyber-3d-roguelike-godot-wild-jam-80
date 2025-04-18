@@ -28,23 +28,11 @@ const FOV_CHANGE = 1.5
 
 func _ready():
 	camera.set_current
-	$Body/Head/Camera3D/shader_mesh.show()
+	%shader_mesh.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 func _unhandled_input(event):
-	if Input.is_action_just_pressed("ui_cancel"):
-		if %Options_Menu.visible == true:
-			$UI.show()
-			%Options_Menu.hide()
-			can_move = true
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		else:
-			$UI.hide()
-			can_move = false
-			Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
-			%Options_Menu.show()
-		
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and event is InputEventMouseMotion and can_move:
 		body.rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
 		camera.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
@@ -65,7 +53,6 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir : Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	move_direction = (body.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-
 
 
 #region Звук

@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://grfxol1kvspk"]
+[gd_scene load_steps=10 format=3 uid="uid://grfxol1kvspk"]
 
 [ext_resource type="PackedScene" uid="uid://dmmofrthbtcrg" path="res://Scenes/Characters/Player/player.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://cyh262q7udmp7" path="res://Scenes/game.gd" id="1_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://cprqf3gwbqfgo" path="res://Scenes/Characters/Sonya/sonya.tscn" id="2_qxrlw"]
 [ext_resource type="Script" uid="uid://b7gbofxirpvhn" path="res://Scenes/Rooms/spawn_rooms.gd" id="3_wowpa"]
+[ext_resource type="Script" uid="uid://daoa82btfbtx8" path="res://Scenes/UI/ui.gd" id="5_wowpa"]
+[ext_resource type="PackedScene" uid="uid://b38ahvb18k30c" path="res://Scenes/GUI/Menu/ingame_options_menu.tscn" id="6_i6g32"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3dryh"]
 sky_top_color = Color(0, 0, 1, 1)
@@ -53,3 +55,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, 0)
 [node name="Sonya" parent="." instance=ExtResource("2_qxrlw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05323, 12.7706, -2.874)
 visible = false
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("5_wowpa")
+
+[node name="ProgressBar" type="ProgressBar" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -187.5
+offset_top = 28.0
+offset_right = 187.5
+offset_bottom = 68.5
+grow_horizontal = 2
+value = 100.0
+
+[node name="crosshair" type="Label" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "+"
+horizontal_alignment = 1
+
+[node name="Options_Menu" parent="UI" instance=ExtResource("6_i6g32")]
+unique_name_in_owner = true
+visible = false
+
+[editable path="UI/Options_Menu"]
