@@ -1,7 +1,7 @@
 extends EffectComponent
 
 
-var duration_damage : int = 5
+var duration_damage : int = 25
 
 func _collide(body : Node3D) -> void:
 	if not body.has_method("take_damage"):
@@ -21,4 +21,4 @@ func _collide(body : Node3D) -> void:
 func apply_effect(body : Node3D) -> void:
 	var new_effect : Node3D = self.duplicate()
 	body.get_node("Components").add_child(new_effect)
-	new_effect.damage = damage / 3
+	new_effect.damage = damage / 4

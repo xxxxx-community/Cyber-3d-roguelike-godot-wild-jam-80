@@ -223,4 +223,6 @@ size_flags_horizontal = 4
 text = "+"
 horizontal_alignment = 1
 
+[connection signal="hp_changed" from="." to="UI" method="_on_player_hp_changed"]
+
 [editable path="Options_Menu"]
