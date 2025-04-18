@@ -42,6 +42,7 @@ func _physics_process(delta):
 
 func _collide(body: Node3D) -> void:
 	if body.name != "Player":
+		$MeshInstance3D.hide()
 		collision_shape_3d.set_deferred("disabled", true)
 		projectile_speed = 0
 		

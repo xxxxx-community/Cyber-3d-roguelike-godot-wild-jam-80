@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0mmlivrbu315"]
+[gd_scene load_steps=7 format=3 uid="uid://c0mmlivrbu315"]
 
 [ext_resource type="Script" uid="uid://dwyefov2uektv" path="res://Scenes/Projectiles/projectile.gd" id="1_2re41"]
 [ext_resource type="PackedScene" uid="uid://dliukhfuh7pn5" path="res://Scenes/ECS/Effects/fire_explosion.tscn" id="2_aihi3"]
+[ext_resource type="PackedScene" uid="uid://dn76j0naqx453" path="res://Scenes/ECS/Effects/heal.tscn" id="3_c3q3r"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1bece"]
 
@@ -23,6 +24,8 @@ shape = SubResource("SphereShape3D_1bece")
 [node name="Components" type="Node3D" parent="."]
 
 [node name="FireExplosion" parent="Components" instance=ExtResource("2_aihi3")]
+
+[node name="Heal" parent="Components" instance=ExtResource("3_c3q3r")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_aihi3")

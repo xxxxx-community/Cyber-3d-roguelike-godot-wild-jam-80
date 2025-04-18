@@ -26,6 +26,8 @@ func _on_body_entered(body):
 	timer.start(delay_attack)
 	# Пока зона урона внутри тела, будет наноситься урон с частотой в timer
 	while body_inside:
+		if not is_instance_valid(body):
+			return
 		_collide(body)
 		await timer.timeout
 
