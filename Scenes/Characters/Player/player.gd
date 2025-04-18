@@ -11,9 +11,6 @@ const BULLET_SCENE : PackedScene = preload("res://Scenes/Projectiles/projectile.
 @onready var concrete_sound_steps: AudioStreamPlayer3D = $footstepsSounds/ConcreteSoundSteps
 @onready var shoot_sound: AudioStreamPlayer = $Body/Head/Camera3D/Rifle/shootSound
 
-var max_hp = 100
-var hp = 75
-
 var speed
 const WALK_SPEED = 5
 const SPRINT_SPEED = 8

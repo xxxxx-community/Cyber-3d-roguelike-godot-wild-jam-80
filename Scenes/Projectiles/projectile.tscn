@@ -1,11 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://c0mmlivrbu315"]
 
 [ext_resource type="Script" uid="uid://dwyefov2uektv" path="res://Scenes/Projectiles/projectile.gd" id="1_2re41"]
-[ext_resource type="PackedScene" uid="uid://lt1hkjpkn4e0" path="res://Scenes/ECS/freezing_component.tscn" id="2_aihi3"]
+[ext_resource type="PackedScene" uid="uid://cn1ticve6hr8i" path="res://Scenes/ECS/Effects/dublicate.tscn" id="2_aihi3"]
+[ext_resource type="PackedScene" uid="uid://0b5gernd2bd1" path="res://Scenes/ECS/Effects/freeze.tscn" id="3_c3q3r"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1bece"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_1bece"]
 
 [node name="Projectile" type="Area3D"]
 script = ExtResource("1_2re41")
@@ -16,8 +15,6 @@ shape = SubResource("SphereShape3D_1bece")
 
 [node name="Components" type="Node3D" parent="."]
 
-[node name="FreezingComponent" parent="Components" instance=ExtResource("2_aihi3")]
+[node name="Dublicate" parent="Components" instance=ExtResource("2_aihi3")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-mesh = SubResource("SphereMesh_1bece")
+[node name="Freeze" parent="Components" instance=ExtResource("3_c3q3r")]

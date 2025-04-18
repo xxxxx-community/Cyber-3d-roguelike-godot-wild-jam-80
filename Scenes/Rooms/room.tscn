@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3ax88154obaq"]
+[gd_scene load_steps=12 format=3 uid="uid://d3ax88154obaq"]
 
-[ext_resource type="Script" uid="uid://d0rof3228xrod" path="res://Scenes/Rooms/room.gd" id="1_7fk0y"]
 [ext_resource type="PackedScene" uid="uid://duhnlml3jxbl6" path="res://Scenes/Rooms/ElementsRoom/door.tscn" id="2_x7265"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3m34"]
@@ -53,7 +52,6 @@ item/2/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 
 item/2/navigation_layers = 1
 
 [node name="Room" type="Node3D"]
-script = ExtResource("1_7fk0y")
 metadata/_edit_lock_ = true
 
 [node name="GridMap" type="GridMap" parent="."]

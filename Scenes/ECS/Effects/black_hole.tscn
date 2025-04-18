@@ -1,26 +1,29 @@
-[gd_scene load_steps=10 format=3 uid="uid://chmc3a45b6xl4"]
+[gd_scene load_steps=11 format=3 uid="uid://ckcdyanudoo3j"]
 
-[ext_resource type="Script" uid="uid://4ucvqr8260lh" path="res://Scenes/ECS/black_hole_component.gd" id="2_nl14n"]
+[ext_resource type="Script" uid="uid://dx45eh0cxe0fb" path="res://Scenes/ECS/Effects/black_hole.gd" id="1_u0yll"]
 
-[sub_resource type="Curve" id="Curve_nl14n"]
+[sub_resource type="Curve" id="Curve_u0yll"]
 _limits = [0.0, 5.0, 0.0, 20.0]
 _data = [Vector2(0, 5), 0.0, 0.0, 0, 0, Vector2(5, 2.5), 0.0, 0.0, 0, 0, Vector2(20, 0.337079), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="Gradient" id="Gradient_nl14n"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_u0yll"]
+radius = 1.77062
+
+[sub_resource type="Gradient" id="Gradient_u0yll"]
 colors = PackedColorArray(0, 0, 0, 1, 0.5, 0, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ot0tg"]
-gradient = SubResource("Gradient_nl14n")
+gradient = SubResource("Gradient_u0yll")
 
-[sub_resource type="Curve" id="Curve_jv3wo"]
+[sub_resource type="Curve" id="Curve_uwdo3"]
 _data = [Vector2(0, 1), 0.0, 1.4, 0, 0, Vector2(0.994318, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_jv3wo"]
-curve = SubResource("Curve_jv3wo")
+curve = SubResource("Curve_uwdo3")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nl14n"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_blilb"]
 spread = 180.0
 initial_velocity_min = 2.5
 initial_velocity_max = 7.5
@@ -38,23 +41,29 @@ turbulence_initial_displacement_min = -0.999999
 turbulence_initial_displacement_max = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nl14n"]
-transparency = 1
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
 shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.2, 0.2, 0.2, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_ot0tg"]
+[sub_resource type="BoxMesh" id="BoxMesh_5clqh"]
 material = SubResource("StandardMaterial3D_nl14n")
 
-[node name="BlackHoleComponent" type="Node3D"]
-script = ExtResource("2_nl14n")
-curve_gravity = SubResource("Curve_nl14n")
+[node name="BlackHole" type="Area3D"]
+script = ExtResource("1_u0yll")
+curve_gravity = SubResource("Curve_u0yll")
+damage = -0.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_u0yll")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-amount = 200
+amount = 1000
 lifetime = 1.5
 fixed_fps = 0
 interpolate = false
 draw_order = 1
-process_material = SubResource("ParticleProcessMaterial_nl14n")
-draw_pass_1 = SubResource("BoxMesh_ot0tg")
+process_material = SubResource("ParticleProcessMaterial_blilb")
+draw_pass_1 = SubResource("BoxMesh_5clqh")

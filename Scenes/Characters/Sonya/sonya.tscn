@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cprqf3gwbqfgo"]
 
 [ext_resource type="PackedScene" uid="uid://dhgcyjovuvqhx" path="res://Scenes/Characters/character.tscn" id="1_e247r"]
-[ext_resource type="Texture2D" uid="uid://rmuk5deymbn7" path="res://Assets/photo.png" id="2_bn7rq"]
+[ext_resource type="Texture2D" uid="uid://rmuk5deymbn7" path="res://Scenes/Characters/Sonya/photo.png" id="2_bn7rq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_e247r"]
 

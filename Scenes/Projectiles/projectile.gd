@@ -1,7 +1,6 @@
 class_name Projectile extends Hitbox
 
 
-@onready var mesh_instance_3d : MeshInstance3D = $MeshInstance3D
 @onready var collision_shape_3d : CollisionShape3D = $CollisionShape3D
 
 var projectile_speed : int
@@ -42,12 +41,8 @@ func _physics_process(delta):
 
 func _collide(body: Node3D) -> void:
 	if body.name != "Player":
-		mesh_instance_3d.hide()
 		collision_shape_3d.set_deferred("disabled", true)
 		projectile_speed = 0
-		
-		#if body.has_method("take_damage"):
-			#body.take_damage(damage, knockback_direction, knockback_force)
 		
 		for comp in $Components.get_children():
 			comp.stop()

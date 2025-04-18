@@ -3801,6 +3801,23 @@ tracks/179/interp = 1
 tracks/179/loop_wrap = true
 tracks/179/keys = PackedFloat32Array(0, 1, 0, 7.09947e-09, 3.63918e-08, 0.0333333, 1, -0.00138121, 0.00215757, 7.43844e-09, 0.0666667, 1, -0.00231155, 0.00361759, 4.83196e-09, 0.1, 1, -0.00287691, 0.00451298, 1.18489e-08, 0.266667, 1, -0.00355677, 0.00566871, 7.94388e-09, 0.3, 1, -0.00401479, 0.0063981, -3.97995e-09, 0.333333, 1, -0.00479485, 0.00762567, -1.04556e-08, 0.366667, 1, -0.00617606, 0.00978316, -1.00714e-08, 0.4, 1, -0.0103073, 0.0127771, -4.34811e-09, 0.433333, 1, -0.0182372, 0.016539, 4.904e-09, 0.466667, 1, -0.0301699, 0.0209802, 1.04192e-08, 0.5, 1, -0.0454648, 0.0259922, -5.23869e-10, 0.533333, 1, -0.063962, 0.0315477, -2.44472e-10, 0.566667, 1, -0.0839001, 0.0373476, -5.41331e-09, 0.633333, 1, -0.125537, 0.0492466, 2.73227e-08, 0.666667, 1, -0.145956, 0.0551281, 2.68337e-08, 0.7, 1, -0.164453, 0.0606835, 3.55067e-09, 0.733333, 1, -0.180549, 0.0658313, -2.37487e-09, 0.766667, 1, -0.193602, 0.0704628, -2.04891e-09, 0.8, 1, -0.202973, 0.0744693, -1.22236e-09, 0.833333, 1, -0.208021, 0.0777421, -2.91038e-10)
 
+[sub_resource type="Animation" id="Animation_devry"]
+resource_name = "dead"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_h1h6v"]
 resource_name = "idle"
 loop_mode = 1
@@ -7593,23 +7610,6 @@ tracks/179/path = NodePath("rig/Skeleton3D:thigh_ik_target.R")
 tracks/179/interp = 0
 tracks/179/loop_wrap = true
 tracks/179/keys = PackedFloat32Array(0, 1, 0, 1.18233e-08, 2.94522e-08)
-
-[sub_resource type="Animation" id="Animation_devry"]
-resource_name = "dead"
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"queue_free"
-}]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4en0h"]
 _data = {

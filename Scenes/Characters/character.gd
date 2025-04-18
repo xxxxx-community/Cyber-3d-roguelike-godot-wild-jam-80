@@ -5,13 +5,13 @@ const MOUSE_SENSITIVITY : float = 0.01
 const FRICTION          : float = 0.1
 
 @export var acceleration   : float = 10.0
-var accel : float = acceleration
+@onready var accel : float = acceleration
 @export var jump_velocity  : float = 5.5
 @export var max_health_points : float = 100.0
 @export var health_points : float = 100.0: set = set_hp
 signal hp_changed(new_hp)
 
-@onready var state_machine: Node = get_node("FiniteStateMachine")
+@onready var state_machine : Node = get_node("FiniteStateMachine")
 
 var move_direction : Vector3
 

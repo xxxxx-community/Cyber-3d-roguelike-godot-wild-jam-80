@@ -10,3 +10,5 @@ script = ExtResource("1_vu0vm")
 script = ExtResource("2_eu1pv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[node name="Components" type="Node3D" parent="."]

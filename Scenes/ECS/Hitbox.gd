@@ -1,9 +1,9 @@
 class_name Hitbox extends Area3D 
 
 
-@export var damage : int = -1
+@export var damage : float = -1
 @export var delay_attack : float = 0.5
-@export var knockback_force : int = 10
+@export var knockback_force : float = 10
 var knockback_direction : Vector3 = Vector3.ZERO
 
 @onready var collision : CollisionShape3D = get_child(0)
