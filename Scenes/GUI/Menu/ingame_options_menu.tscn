@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b38ahvb18k30c"]
+[gd_scene load_steps=7 format=3 uid="uid://b38ahvb18k30c"]
 
 [ext_resource type="Script" uid="uid://sok6fl3pevtu" path="res://Scenes/GUI/Menu/ingame_options_menu.gd" id="1_hasj5"]
 [ext_resource type="Shader" uid="uid://bgg3px0xb2bvc" path="res://Scenes/GUI/Menu/ingame_options_menu.gdshader" id="2_3c0rl"]
+[ext_resource type="AudioStream" uid="uid://cx3rjjma41kn5" path="res://Assets/Sound/sfx/ui/UI_button01.wav" id="3_ckufd"]
+[ext_resource type="AudioStream" uid="uid://diugtsah5si0u" path="res://Assets/Sound/sfx/ui/UI_button02.wav" id="4_q8iih"]
+[ext_resource type="AudioStream" uid="uid://c56sf4qkj6b6d" path="res://Assets/Sound/sfx/ui/UI_button03.wav" id="5_12joe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_783ax"]
 shader = ExtResource("2_3c0rl")
@@ -65,6 +68,15 @@ text = "Fullscreen"
 [node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Exit Game"
+
+[node name="button1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ckufd")
+
+[node name="button2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_q8iih")
+
+[node name="button3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_12joe")
 
 [connection signal="drag_ended" from="Panel/MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_drag_ended"]
 [connection signal="value_changed" from="Panel/MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
