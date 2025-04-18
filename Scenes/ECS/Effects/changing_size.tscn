@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://bp0371am57tv6"]
+
+[ext_resource type="Script" uid="uid://davxw3aechuhk" path="res://Scenes/ECS/Effects/changing_size.gd" id="1_vwdls"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vwdls"]
+radius = 0.396804
+
+[sub_resource type="Curve" id="Curve_vwdls"]
+_data = [Vector2(0, 1), 0.0, 1.4, 0, 0, Vector2(0.994318, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_vwdls"]
+curve = SubResource("Curve_vwdls")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ffinn"]
+spread = 180.0
+initial_velocity_min = 2.5
+initial_velocity_max = 2.5
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -5.0
+radial_accel_max = -5.0
+scale_min = 0.5
+scale_max = 2.5
+scale_curve = SubResource("CurveTexture_vwdls")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ffinn"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3a8ky"]
+material = SubResource("StandardMaterial3D_ffinn")
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="ChangingSize" type="Area3D"]
+script = ExtResource("1_vwdls")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_vwdls")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_ffinn")
+draw_pass_1 = SubResource("BoxMesh_3a8ky")

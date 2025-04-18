@@ -1,7 +1,6 @@
 class_name Character extends CharacterBody3D
 
 
-const MOUSE_SENSITIVITY : float = 0.01
 const FRICTION          : float = 0.1
 
 @export var acceleration   : float = 10.0
@@ -14,9 +13,10 @@ signal hp_changed(new_hp)
 @onready var state_machine : Node = get_node("FiniteStateMachine")
 
 var move_direction : Vector3
+var can_move : bool = true
 
 func move() -> void:
-	if move_direction:
+	if move_direction and can_move:
 		velocity.x = move_direction.x * accel
 		velocity.z = move_direction.z * accel
 		

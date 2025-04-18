@@ -10,14 +10,14 @@ interpolation_mode = 2
 offsets = PackedFloat32Array(0.01875, 0.0722892, 0.433735, 0.716867, 1)
 colors = PackedColorArray(0.26, 0.0693333, 0, 1, 0.686275, 0.188235, 0, 1, 0.780392, 0.658824, 0, 1, 1, 0.0784314, 0, 0.447059, 0.25098, 0.25098, 0.25098, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_2dtju"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nl4ci"]
 gradient = SubResource("Gradient_nl4ci")
 
 [sub_resource type="Curve" id="Curve_cqyqj"]
 _data = [Vector2(0, 1), 0.0, 1.4, 0, 0, Vector2(0.994318, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_1q7yw"]
+[sub_resource type="CurveTexture" id="CurveTexture_cqyqj"]
 curve = SubResource("Curve_cqyqj")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ouiss"]
@@ -33,11 +33,11 @@ damping_min = 2.0
 damping_max = 2.0
 scale_min = 0.1
 scale_max = 0.8
-scale_curve = SubResource("CurveTexture_1q7yw")
+scale_curve = SubResource("CurveTexture_cqyqj")
 color = Color(4, 4, 4, 1)
-color_ramp = SubResource("GradientTexture1D_2dtju")
+color_ramp = SubResource("GradientTexture1D_nl4ci")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xu1d6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ouiss"]
 transparency = 3
 alpha_hash_scale = 1.0
 alpha_antialiasing_mode = 0
@@ -46,11 +46,12 @@ vertex_color_use_as_albedo = true
 albedo_color = Color(0.27, 0.27, 0.27, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dnxti"]
-material = SubResource("StandardMaterial3D_xu1d6")
+material = SubResource("StandardMaterial3D_ouiss")
 size = Vector3(0.25, 0.25, 0.25)
 
 [node name="Blaze" type="Area3D"]
 script = ExtResource("1_nl4ci")
+damage = -20.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_nl4ci")

@@ -16,7 +16,6 @@ func _collide(body : Node3D) -> void:
 	elif carrier_effect is Character:
 		duration_damage -= 1
 		if duration_damage <= 0:
-			carrier_effect.accel *= 2
 			queue_free()
 
 func apply_effect(body : Node3D) -> void:
@@ -24,5 +23,4 @@ func apply_effect(body : Node3D) -> void:
 	body.get_node("Components").add_child(new_effect)
 	new_effect.damage = damage / 5
 	new_effect.position.y += 0.8
-	body.accel /= 2
 	
