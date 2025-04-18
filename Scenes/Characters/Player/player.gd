@@ -5,7 +5,7 @@ const BULLET_SCENE : PackedScene = preload("res://Scenes/Projectiles/projectile.
 const MOUSE_SENSITIVITY : float = 0.01
 
 @onready var head = $Body/Head
-@onready var body   : MeshInstance3D = get_node(^"Body")
+@onready var model  : MeshInstance3D = get_node(^"Body")
 @onready var camera : Camera3D = get_node(^"%Camera3D")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var concrete_sound_steps: AudioStreamPlayer3D = $footstepsSounds/ConcreteSoundSteps
@@ -27,14 +27,13 @@ const FOV_CHANGE = 1.5
 
 
 func _ready():
-	camera.set_current
 	%shader_mesh.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 func _unhandled_input(event):
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and event is InputEventMouseMotion and can_move:
-		body.rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
+		model.rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
 		camera.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
 		
 	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
@@ -52,7 +51,7 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir : Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	move_direction = (body.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	move_direction = (model.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 
 #region Звук
@@ -114,3 +113,8 @@ func shoot() -> void:
 	# Получаем направление взгляда игрока (вперед от камеры)
 	var shoot_direction : Vector3 = -camera.global_transform.basis.z.normalized()
 	new_bullet.launch(self, %Marker3D.global_position, shoot_direction, 20, 0.1) 
+
+
+func _on_area_dead_projectiles_body_exited(body : Node3D) -> void:
+	if body is Projectile or body is EffectComponent:
+		body.queue_free()

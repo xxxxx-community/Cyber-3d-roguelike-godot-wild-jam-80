@@ -38,7 +38,9 @@ func _spawn_rooms():
 			# обычная комната
 			room = INTERMEDIATE_ROOMS.pick_random().instantiate() 
 			
+			@warning_ignore("unassigned_variable")
 			var grid_map_prev_room : GridMap = previous_room.get_node("GridMap") 
+			@warning_ignore("unassigned_variable")
 			var door_prev_room : StaticBody3D = previous_room.get_node("Door")
 			var exit_pos  : Vector3i = grid_map_prev_room.local_to_map(door_prev_room.global_position) - Vector3i.UP
 			

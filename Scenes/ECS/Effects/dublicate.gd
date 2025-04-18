@@ -2,13 +2,13 @@ extends Node3D
 
 
 @onready var carrier_effect : Node3D = get_parent().get_parent()
-
+var stopping : bool = false
 
 func _ready() -> void:
 	$Timer.start()
 	
 func _on_timer_timeout() -> void:
-	if not get_parent().has_node("BlackHole"):
+	if not stopping:
 		_spawn_projectile()
 
 func _spawn_projectile() -> void:
@@ -19,9 +19,5 @@ func _spawn_projectile() -> void:
 		) 
 	
 func stop() -> void:
-	if has_node("GPUParticles3D"):
-		$GPUParticles3D.emitting = false
-		
-	if has_node("Timer"):
-		$Timer.one_shot = true
+	stopping = true
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://dmmofrthbtcrg"]
+[gd_scene load_steps=22 format=4 uid="uid://dmmofrthbtcrg"]
 
 [ext_resource type="PackedScene" uid="uid://dhgcyjovuvqhx" path="res://Scenes/Characters/character.tscn" id="1_27cb7"]
 [ext_resource type="Script" uid="uid://b6aunna0itrhq" path="res://Scenes/Characters/Player/player.gd" id="2_lyjr2"]
@@ -133,6 +133,9 @@ stream_1/stream = ExtResource("5_1mdwi")
 stream_2/stream = ExtResource("6_8gg06")
 stream_3/stream = ExtResource("7_cscr0")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_8gg06"]
+radius = 50.0
+
 [node name="Player" instance=ExtResource("1_27cb7")]
 script = ExtResource("2_lyjr2")
 acceleration = 5.0
@@ -188,3 +191,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 [node name="ConcreteSoundSteps" type="AudioStreamPlayer3D" parent="footstepsSounds" index="0"]
 stream = SubResource("AudioStreamRandomizer_sdxbo")
 volume_db = -15.0
+
+[node name="AreaDeadProjectiles" type="Area3D" parent="." index="6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaDeadProjectiles" index="0"]
+shape = SubResource("SphereShape3D_8gg06")
+
+[connection signal="body_exited" from="AreaDeadProjectiles" to="." method="_on_area_dead_projectiles_body_exited"]

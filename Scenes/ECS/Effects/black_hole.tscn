@@ -54,7 +54,6 @@ material = SubResource("StandardMaterial3D_nl14n")
 [node name="BlackHole" type="Area3D"]
 script = ExtResource("1_u0yll")
 curve_gravity = SubResource("Curve_u0yll")
-delay_attack = 0.3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_u0yll")

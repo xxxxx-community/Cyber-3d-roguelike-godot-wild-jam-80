@@ -16,7 +16,7 @@ warnings/check_invalid_track_paths=false
 
 config/name="Cyber roguelike 3d"
 run/main_scene="uid://grfxol1kvspk"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="uid://b6a2uqcbqkk54"
 config/icon="res://icon.svg"
@@ -35,6 +35,7 @@ window/stretch/mode="viewport"
 [global_group]
 
 ENTITY_GROUP=""
+PROJECTILE_GROUP=""
 
 [gui]
 

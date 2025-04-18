@@ -6,7 +6,6 @@ class_name Projectile extends Hitbox
 
 var projectile_speed : int
 var attacker_entity : Node3D
-var deading : bool = true
 
 func launch(attacker : Node3D, pos : Vector3, dir : Vector3 = Vector3.ZERO, speed : int = 10, spread_angle : float = 0.0):
 	attacker_entity = attacker
@@ -28,6 +27,7 @@ func _apply_spread(base_dir: Vector3, angle: float) -> Vector3:
 	var random_angle_y : float = randf_range(-angle, angle)
 	
 	# Создаем базовую ориентацию
+	@warning_ignore("shadowed_variable_base_class")
 	var basis : Basis = Basis()
 	
 	# Поворачиваем вокруг осей
@@ -42,13 +42,10 @@ func _physics_process(delta):
 
 func _collide(body: Node3D) -> void:
 	if body.name != "Player":
-		$MeshInstance3D.hide()
-		collision_shape_3d.set_deferred("disabled", true)
 		projectile_speed = 0
 		
 		for comp in components.get_children():
 			comp.stop()
+			
+		$AnimationPlayer.play(&"dead")
 		
-		if deading:
-			#await get_tree().create_timer(1).timeout
-			queue_free()

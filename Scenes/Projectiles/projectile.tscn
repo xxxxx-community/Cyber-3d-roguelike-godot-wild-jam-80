@@ -1,10 +1,85 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0mmlivrbu315"]
+[gd_scene load_steps=10 format=3 uid="uid://c0mmlivrbu315"]
 
 [ext_resource type="Script" uid="uid://dwyefov2uektv" path="res://Scenes/Projectiles/projectile.gd" id="1_2re41"]
 [ext_resource type="PackedScene" uid="uid://dliukhfuh7pn5" path="res://Scenes/ECS/Effects/fire_explosion.tscn" id="2_aihi3"]
 [ext_resource type="PackedScene" uid="uid://cn1ticve6hr8i" path="res://Scenes/ECS/Effects/dublicate.tscn" id="3_c3q3r"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1bece"]
+
+[sub_resource type="Animation" id="Animation_c3q3r"]
+resource_name = "dead"
+step = 0.0333333
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape3D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_o6i24"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o6i24"]
+_data = {
+&"RESET": SubResource("Animation_o6i24"),
+&"dead": SubResource("Animation_c3q3r")
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aihi3"]
 shading_mode = 0
@@ -14,12 +89,17 @@ material = SubResource("StandardMaterial3D_aihi3")
 radius = 0.1
 height = 0.2
 
-[node name="Projectile" type="Area3D"]
+[node name="Projectile" type="Area3D" groups=["PROJECTILE_GROUP"]]
 script = ExtResource("1_2re41")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 shape = SubResource("SphereShape3D_1bece")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o6i24")
+}
 
 [node name="Components" type="Node3D" parent="."]
 

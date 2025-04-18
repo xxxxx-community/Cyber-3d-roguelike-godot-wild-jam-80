@@ -51,10 +51,14 @@ script = ExtResource("3_wowpa")
 
 [node name="Player" parent="." instance=ExtResource("1_ebmjs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, 0)
+max_health_points = 10000.0
+health_points = 10000.0
 
 [node name="Sonya" parent="." instance=ExtResource("2_qxrlw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05323, 12.7706, -2.874)
 visible = false
+max_health_points = 1e+09
+health_points = 1e+10
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("5_wowpa")
