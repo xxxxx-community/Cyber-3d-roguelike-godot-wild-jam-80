@@ -1,11 +1,14 @@
-[gd_scene load_steps=62 format=4 uid="uid://be8qruf8r3n3t"]
+[gd_scene load_steps=65 format=4 uid="uid://be8qruf8r3n3t"]
 
 [ext_resource type="Script" uid="uid://nwnnlc7wa031" path="res://Scenes/GUI/Menu/menu_room.gd" id="1_72ecf"]
 [ext_resource type="Script" uid="uid://bnqgug85fmxvl" path="res://Scenes/GUI/Menu/menu.gd" id="2_q31fd"]
+[ext_resource type="AudioStream" uid="uid://cx3rjjma41kn5" path="res://Assets/Sound/sfx/ui/UI_button01.wav" id="3_im1pw"]
 [ext_resource type="PackedScene" uid="uid://c1dwd8kk657yf" path="res://Scenes/Rooms/ElementsRoom/box.glb" id="3_pexsg"]
 [ext_resource type="Script" uid="uid://cxo743nob5ygw" path="res://Scenes/GUI/Menu/camera_3d.gd" id="4_5hu2p"]
 [ext_resource type="PackedScene" uid="uid://dubjw300lscvf" path="res://Scenes/Rooms/ElementsRoom/box_bomb.glb" id="4_femsx"]
+[ext_resource type="AudioStream" uid="uid://diugtsah5si0u" path="res://Assets/Sound/sfx/ui/UI_button02.wav" id="4_m4jva"]
 [ext_resource type="PackedScene" uid="uid://bphoiuv7wxcpg" path="res://Scenes/Rooms/ElementsRoom/box_container.glb" id="5_1nhgr"]
+[ext_resource type="AudioStream" uid="uid://c56sf4qkj6b6d" path="res://Assets/Sound/sfx/ui/UI_button03.wav" id="5_qfgtc"]
 [ext_resource type="Shader" uid="uid://c5hkitl8ymajs" path="res://Scenes/Characters/Player/shader.gdshader" id="5_rf6ab"]
 [ext_resource type="PackedScene" uid="uid://nov4lcpld0eh" path="res://Scenes/Rooms/ElementsRoom/lamp2.glb" id="6_bqawo"]
 [ext_resource type="PackedScene" uid="uid://mgnx8k5y8qhx" path="res://Scenes/Rooms/ElementsRoom/lamp.glb" id="7_xm5o6"]
@@ -293,33 +296,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_p5dcr")
 
-[sub_resource type="Animation" id="Animation_twvkw"]
-resource_name = "door"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("%door_status_mesh:mesh:surface_0/material:albedo_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0333334),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0.898039, 0.0196078, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("%door_status_mesh:mesh:surface_0/material:emission")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.0333334),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0.898039, 0.0196078, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_0gvwy"]
 length = 0.001
 tracks/0/type = "value"
@@ -347,37 +323,37 @@ tracks/1/keys = {
 "values": [Color(1, 0, 0.0784314, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xrijl"]
-_data = {
-&"RESET": SubResource("Animation_0gvwy"),
-&"door": SubResource("Animation_twvkw")
-}
-
-[sub_resource type="Animation" id="Animation_pqgja"]
-resource_name = "cam_options"
+[sub_resource type="Animation" id="Animation_twvkw"]
+resource_name = "door"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Camera3D:position")
+tracks/0/path = NodePath("%door_status_mesh:mesh:surface_0/material:albedo_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.26, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.0333334),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(3.30978, 2.92314, -6.0509), Vector3(2.053, 2.63, -5.794), Vector3(-1.525, 2.603, -4.526)]
+"values": [Color(0, 0.898039, 0.0196078, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Camera3D:rotation")
+tracks/1/path = NodePath("%door_status_mesh:mesh:surface_0/material:emission")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.0333334),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 2.17294, 0), Vector3(0, 0.610865, 0)]
+"values": [Color(0, 0.898039, 0.0196078, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xrijl"]
+_data = {
+&"RESET": SubResource("Animation_0gvwy"),
+&"door": SubResource("Animation_twvkw")
 }
 
 [sub_resource type="Animation" id="Animation_im1pw"]
@@ -405,6 +381,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 2.17294, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pqgja"]
+resource_name = "cam_options"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(3.30978, 2.92314, -6.0509), Vector3(2.053, 2.63, -5.794), Vector3(-1.525, 2.603, -4.526)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 2.17294, 0), Vector3(0, 0.610865, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m4jva"]
@@ -8779,10 +8782,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -380.0
-offset_top = 60.0
-offset_right = -310.0
-offset_bottom = 161.0
+offset_left = -340.0
+offset_top = 45.0
+offset_right = -248.0
+offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -8800,6 +8803,15 @@ text = "Options"
 [node name="Quit_Button" type="Button" parent="GUI/Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="button1" type="AudioStreamPlayer" parent="GUI/Menu"]
+stream = ExtResource("3_im1pw")
+
+[node name="button2" type="AudioStreamPlayer" parent="GUI/Menu"]
+stream = ExtResource("4_m4jva")
+
+[node name="button3" type="AudioStreamPlayer" parent="GUI/Menu"]
+stream = ExtResource("5_qfgtc")
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = SubResource("MeshLibrary_x7265")
@@ -8837,7 +8849,7 @@ libraries = {
 }
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.566406, 0, 0.824126, 0, 1, 0, -0.824126, 0, -0.566406, 3.30978, 2.92314, -6.0509)
+transform = Transform3D(-0.56641, 0, 0.824123, 0, 1, 0, -0.824123, 0, -0.56641, 3.30978, 2.92314, -6.0509)
 current = true
 fov = 90.0
 script = ExtResource("4_5hu2p")

@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://eivjai00gq0i" path="res://Scenes/GUI/Menu/menu_music.gd" id="1_grqdh"]
 
 [node name="MenuMusic" type="AudioStreamPlayer"]
+autoplay = true
 script = ExtResource("1_grqdh")

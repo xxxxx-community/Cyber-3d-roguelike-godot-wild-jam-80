@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2ix06ro5hsm"]
+[gd_scene load_steps=5 format=3 uid="uid://d2ix06ro5hsm"]
 
 [ext_resource type="Script" uid="uid://xay6fanuoiff" path="res://Scenes/GUI/Menu/options_menu.gd" id="1_y7vqq"]
+[ext_resource type="AudioStream" uid="uid://cx3rjjma41kn5" path="res://Assets/Sound/sfx/ui/UI_button01.wav" id="2_tpx3c"]
+[ext_resource type="AudioStream" uid="uid://diugtsah5si0u" path="res://Assets/Sound/sfx/ui/UI_button02.wav" id="3_6ccju"]
+[ext_resource type="AudioStream" uid="uid://c56sf4qkj6b6d" path="res://Assets/Sound/sfx/ui/UI_button03.wav" id="4_41xuc"]
 
 [node name="Options_Menu" type="Control"]
 layout_mode = 3
@@ -26,19 +29,22 @@ size_flags_vertical = 4
 
 [node name="Vol_label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "MuteVolume
-"
+text = "Volume"
+horizontal_alignment = 1
 
 [node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 min_value = -25.0
 max_value = 25.0
 
 [node name="Mute" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Mute"
 
-[node name="Fullscreen_Button" type="CheckButton" parent="MarginContainer/VBoxContainer"]
+[node name="FullscreenButton" type="CheckButton" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Fullscreen"
 
@@ -46,7 +52,17 @@ text = "Fullscreen"
 layout_mode = 2
 text = "Back"
 
+[node name="button1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tpx3c")
+
+[node name="button2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6ccju")
+
+[node name="button3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_41xuc")
+
+[connection signal="drag_ended" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_drag_ended"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/Fullscreen_Button" to="." method="_on_fullscreen_button_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back_Button" to="." method="_on_back_button_pressed"]

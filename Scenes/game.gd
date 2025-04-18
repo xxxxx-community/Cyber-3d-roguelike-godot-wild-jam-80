@@ -8,6 +8,7 @@ func _ready() -> void:
 	MenuMusic.stop()
 	#ultra()
 
+#от Сани: А это ваще нужно? 
 func ultra() -> void:
 	get_viewport().use_taa = true
 	get_viewport().msaa_3d = Viewport.MSAA_2X

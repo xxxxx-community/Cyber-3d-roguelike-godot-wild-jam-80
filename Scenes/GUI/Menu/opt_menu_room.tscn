@@ -380,9 +380,6 @@ tracks/1/keys = {
 "values": [Vector3(0, 0.610865, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_pqgja"]
-resource_name = "cam_options"
-
 [sub_resource type="Animation" id="Animation_mdy5u"]
 resource_name = "cam_main"
 tracks/0/type = "value"
@@ -409,6 +406,9 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0.610865, 0), Vector3(0, 2.17294, 0)]
 }
+
+[sub_resource type="Animation" id="Animation_pqgja"]
+resource_name = "cam_options"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m4jva"]
 _data = {
@@ -8767,6 +8767,10 @@ environment = SubResource("Environment_4fgm6")
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="Options_Menu" parent="GUI" instance=ExtResource("2_58rb6")]
+
+[node name="Vol_label" parent="GUI/Options_Menu/MarginContainer/VBoxContainer" index="0"]
+text = "Volume
+"
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = SubResource("MeshLibrary_x7265")
