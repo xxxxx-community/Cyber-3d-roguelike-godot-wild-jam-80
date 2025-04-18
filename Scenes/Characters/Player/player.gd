@@ -37,6 +37,7 @@ const FOV_CHANGE = 1.5
 var can_move := true
 
 func _ready():
+	camera.set_current
 	$Body/Head/Camera3D/shader.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
