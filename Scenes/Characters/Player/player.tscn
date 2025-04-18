@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dmmofrthbtcrg"]
+[gd_scene load_steps=21 format=4 uid="uid://dmmofrthbtcrg"]
 
 [ext_resource type="PackedScene" uid="uid://dhgcyjovuvqhx" path="res://Scenes/Characters/character.tscn" id="1_27cb7"]
 [ext_resource type="Script" uid="uid://b6aunna0itrhq" path="res://Scenes/Characters/Player/player.gd" id="2_lyjr2"]
@@ -26,7 +26,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.693002, -0.357069, -0.0828495)]
+"values": [Vector3(0.480725, -0.357069, -0.0828495)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -53,7 +53,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.200008, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0.693002, -0.357069, -0.0828495), Vector3(0.693002, -0.357069, 0.242032), Vector3(0.693002, -0.357069, -0.0828495)]
+"values": [Vector3(0.480725, -0.357069, -0.0828495), Vector3(0.481, -0.357, 0.242), Vector3(0.480725, -0.357069, -0.0828495)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_siygm"]
@@ -133,9 +133,6 @@ stream_1/stream = ExtResource("5_1mdwi")
 stream_2/stream = ExtResource("6_8gg06")
 stream_3/stream = ExtResource("7_cscr0")
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_8gg06"]
-radius = 50.0
-
 [node name="Player" instance=ExtResource("1_27cb7")]
 script = ExtResource("2_lyjr2")
 acceleration = 5.0
@@ -165,7 +162,7 @@ noise = SubResource("FastNoiseLite_qqvsf")
 metadata/_edit_lock_ = true
 
 [node name="Rifle" type="MeshInstance3D" parent="Body/Head/Camera3D" index="0"]
-transform = Transform3D(-0.988354, 0, -0.152175, 0, 1, 0, 0.152175, 0, -0.988354, 0.693002, -0.357069, -0.0828495)
+transform = Transform3D(-0.997235, 0, -0.0743172, 0, 1, 0, 0.0743172, 0, -0.997235, 0.480725, -0.357069, -0.0828495)
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_lyjr2")
 skeleton = NodePath("")
@@ -176,6 +173,7 @@ transform = Transform3D(1, 7.27596e-10, 2.98023e-08, -6.40284e-10, 1, 1.39698e-0
 metadata/_edit_lock_ = true
 
 [node name="shootSound" type="AudioStreamPlayer" parent="Body/Head/Camera3D/Rifle" index="1"]
+unique_name_in_owner = true
 stream = ExtResource("4_8gg06")
 volume_db = -15.0
 
@@ -191,10 +189,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 [node name="ConcreteSoundSteps" type="AudioStreamPlayer3D" parent="footstepsSounds" index="0"]
 stream = SubResource("AudioStreamRandomizer_sdxbo")
 volume_db = -15.0
-
-[node name="AreaDeadProjectiles" type="Area3D" parent="." index="6"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaDeadProjectiles" index="0"]
-shape = SubResource("SphereShape3D_8gg06")
-
-[connection signal="body_exited" from="AreaDeadProjectiles" to="." method="_on_area_dead_projectiles_body_exited"]

@@ -35,7 +35,6 @@ window/stretch/mode="viewport"
 [global_group]
 
 ENTITY_GROUP=""
-PROJECTILE_GROUP=""
 
 [gui]
 
