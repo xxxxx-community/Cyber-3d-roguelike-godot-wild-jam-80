@@ -39,6 +39,12 @@ func _apply_spread(base_dir: Vector3, angle: float) -> Vector3:
 	
 func _physics_process(delta):
 	position += knockback_direction * projectile_speed * delta 
+	
+	var player_pos : Vector3 = get_tree().current_scene.get_node("Player").global_position
+	var distance = global_position.distance_to(player_pos)
+	if distance > 50:
+		queue_free()
+	
 
 func _collide(body: Node3D) -> void:
 	if body.name != "Player":

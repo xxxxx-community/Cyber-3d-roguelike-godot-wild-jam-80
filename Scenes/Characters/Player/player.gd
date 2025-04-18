@@ -9,7 +9,7 @@ const MOUSE_SENSITIVITY : float = 0.01
 @onready var camera : Camera3D = get_node(^"%Camera3D")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var concrete_sound_steps: AudioStreamPlayer3D = $footstepsSounds/ConcreteSoundSteps
-@onready var shoot_sound: AudioStreamPlayer = $Body/Head/Camera3D/Rifle/shootSound
+@onready var shoot_sound: AudioStreamPlayer = %shootSound
 
 var is_moving : bool = false
 var footstep_timer : float = 0.0
@@ -113,8 +113,3 @@ func shoot() -> void:
 	# Получаем направление взгляда игрока (вперед от камеры)
 	var shoot_direction : Vector3 = -camera.global_transform.basis.z.normalized()
 	new_bullet.launch(self, %Marker3D.global_position, shoot_direction, 20, 0.1) 
-
-
-func _on_area_dead_projectiles_body_exited(body : Node3D) -> void:
-	if body is Projectile or body is EffectComponent:
-		body.queue_free()
