@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://be8qruf8r3n3t"]
+[gd_scene load_steps=67 format=4 uid="uid://be8qruf8r3n3t"]
 
 [ext_resource type="Script" uid="uid://nwnnlc7wa031" path="res://Scenes/GUI/Menu/menu_room.gd" id="1_72ecf"]
 [ext_resource type="Script" uid="uid://bnqgug85fmxvl" path="res://Scenes/GUI/Menu/menu.gd" id="2_q31fd"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://c56sf4qkj6b6d" path="res://Assets/Sound/sfx/ui/UI_button03.wav" id="5_qfgtc"]
 [ext_resource type="Shader" uid="uid://c5hkitl8ymajs" path="res://Scenes/Characters/Player/shader.gdshader" id="5_rf6ab"]
 [ext_resource type="PackedScene" uid="uid://nov4lcpld0eh" path="res://Scenes/Rooms/ElementsRoom/lamp2.glb" id="6_bqawo"]
+[ext_resource type="FontFile" uid="uid://bi01qc2j6yxfr" path="res://Assets/Fonts/New_Zelek.ttf" id="6_m4jva"]
 [ext_resource type="PackedScene" uid="uid://mgnx8k5y8qhx" path="res://Scenes/Rooms/ElementsRoom/lamp.glb" id="7_xm5o6"]
 [ext_resource type="PackedScene" uid="uid://v2f3gqej4alg" path="res://Scenes/Rooms/ElementsRoom/light_box.glb" id="9_fss6e"]
 [ext_resource type="VoxelGIData" uid="uid://bxv0dqu248ude" path="res://Scenes/GUI/Menu/menu_room.VoxelGI_data.res" id="9_q31fd"]
@@ -44,6 +45,10 @@ fog_sky_affect = 0.0
 volumetric_fog_density = 0.04
 volumetric_fog_albedo = Color(0, 0, 1, 1)
 adjustment_enabled = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfgtc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+shadow_color = Color(0.372549, 0.847059, 0.372549, 0.529412)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3m34"]
 albedo_color = Color(0.129621, 0.485442, 0.580789, 1)
@@ -8812,6 +8817,22 @@ stream = ExtResource("4_m4jva")
 
 [node name="button3" type="AudioStreamPlayer" parent="GUI/Menu"]
 stream = ExtResource("5_qfgtc")
+
+[node name="Label" type="Label" parent="GUI/Menu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -324.0
+offset_top = 179.0
+offset_right = -166.0
+offset_bottom = 200.0
+grow_horizontal = 2
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("6_m4jva")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qfgtc")
+text = "Project Cyberog"
+vertical_alignment = 3
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = SubResource("MeshLibrary_x7265")
