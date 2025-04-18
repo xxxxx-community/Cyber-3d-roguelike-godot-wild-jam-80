@@ -38,11 +38,23 @@ var can_move := true
 
 func _ready():
 	camera.set_current
-	$Body/Head/Camera3D/shader.show()
+	$Body/Head/Camera3D/shader_mesh.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 func _unhandled_input(event):
+	if Input.is_action_just_pressed("esc"):
+		if %Options_Menu.visible == true:
+			$UI.show()
+			%Options_Menu.hide()
+			can_move = true
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		else:
+			$UI.hide()
+			can_move = false
+			Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+			%Options_Menu.show()
+		
 	if event is InputEventMouseMotion and can_move:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
@@ -53,49 +65,56 @@ func _physics_process(delta):
 		velocity.y -= 9.8 * delta
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and can_move:
 		velocity.y = JUMP_VELOCITY
 	
 	# Handle Sprint.
-	if Input.is_action_pressed("sprint"):
+	if Input.is_action_pressed("sprint") and can_move:
 		speed = SPRINT_SPEED
 	else:
 		speed = WALK_SPEED
 
 	# Get the input direction and handle the movement/deceleration.
-	var input_dir = Input.get_vector("left", "right", "up", "down")
-	var direction = (head.transform.basis * transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if is_on_floor():
-		if direction:
-			velocity.x = direction.x * speed
-			velocity.z = direction.z * speed
+	if can_move == true:
+		var input_dir = Input.get_vector("left", "right", "up", "down")
+		var direction = (head.transform.basis * transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		if is_on_floor() and can_move:
+			if direction:
+				velocity.x = direction.x * speed
+				velocity.z = direction.z * speed
+			else:
+				velocity.x = lerp(velocity.x, direction.x * speed, delta * 7.0)
+				velocity.z = lerp(velocity.z, direction.z * speed, delta * 7.0)
 		else:
-			velocity.x = lerp(velocity.x, direction.x * speed, delta * 7.0)
-			velocity.z = lerp(velocity.z, direction.z * speed, delta * 7.0)
-	else:
-		velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
-		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
+			velocity.x = lerp(velocity.x, direction.x * speed, delta * 3.0)
+			velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
 
-	# Определяем текущий интервал в зависимости от скорости
-	current_interval = (
-		SPRINT_FOOTSTEP_INTERVAL if Input.is_action_pressed("sprint") 
-		else BASE_FOOTSTEP_INTERVAL
-	)
-# Воспроизведение звука шагов
-	var was_moving = is_moving
-	is_moving = is_on_floor() && direction.length() > 0.1 && velocity.length() > 0.1
 
-	if is_moving:
-		footstep_timer += delta
-		if footstep_timer >= current_interval:
-			play_footstep_sound()
+#region Звук
+
+		#Определяем текущий интервал в зависимости от скорости
+		current_interval = (
+			SPRINT_FOOTSTEP_INTERVAL if Input.is_action_pressed("sprint") 
+			else BASE_FOOTSTEP_INTERVAL
+		)
+	# Воспроизведение звука шагов
+		var was_moving = is_moving
+		is_moving = is_on_floor() && direction.length() > 0.1 && velocity.length() > 0.1
+
+		if is_moving:
+			footstep_timer += delta
+			if footstep_timer >= current_interval:
+				play_footstep_sound()
+				footstep_timer = 0.0
+		else:
 			footstep_timer = 0.0
-	else:
-		footstep_timer = 0.0
-		if was_moving:
-			concrete_sound_steps.stop()
-			
-
+			if was_moving:
+				concrete_sound_steps.stop()
+				
+#endregion
+	else: 
+		velocity.z = 0
+		velocity.x = 0
 	# Head bob
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	camera.transform.origin = _headbob(t_bob)
@@ -121,7 +140,7 @@ func play_footstep_sound():
 func _process(delta: float) -> void:
 	#gravity(delta)
 	#move()
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not animation_player.is_playing():
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not animation_player.is_playing() and can_move:
 		animation_player.play(&"recoil")
 		shoot_sound.play()
 		shoot()
