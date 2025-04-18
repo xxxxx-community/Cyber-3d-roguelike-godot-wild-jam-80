@@ -28,7 +28,6 @@ SettingsData="*res://Scenes/GUI/Menu/SettingsData.gd"
 
 window/size/viewport_width=960
 window/size/viewport_height=540
-window/size/mode=3
 window/stretch/mode="viewport"
 
 [global_group]
@@ -112,7 +111,3 @@ esc={
 [layer_names]
 
 3d_render/layer_2="Weapon"
-
-[physics]
-
-3d/physics_engine="Jolt Physics"

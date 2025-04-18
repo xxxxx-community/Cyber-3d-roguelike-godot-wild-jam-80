@@ -134,7 +134,7 @@ func play_footstep_sound():
 		concrete_sound_steps.pitch_scale = randf_range(0.9, 1.1)  # Случайная высота тона для разнообразия
 		concrete_sound_steps.play()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#gravity(delta)
 	#move()
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not animation_player.is_playing() and can_move:

@@ -7,7 +7,7 @@ class_name Hitbox extends Area3D
 var knockback_direction : Vector3 = Vector3.ZERO
 
 @onready var collision : CollisionShape3D = get_child(0)
-@onready var timer     : Timer = Timer.new()
+var timer     : Timer = Timer.new()
 
 var body_inside : bool = false
 

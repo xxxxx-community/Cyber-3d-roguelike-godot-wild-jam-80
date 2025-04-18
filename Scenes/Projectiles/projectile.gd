@@ -2,6 +2,7 @@ class_name Projectile extends Hitbox
 
 
 @onready var collision_shape_3d : CollisionShape3D = $CollisionShape3D
+@onready var components : Node3D = $Components
 
 var projectile_speed : int
 var attacker_entity : Node3D
@@ -44,9 +45,9 @@ func _collide(body: Node3D) -> void:
 		collision_shape_3d.set_deferred("disabled", true)
 		projectile_speed = 0
 		
-		for comp in $Components.get_children():
+		for comp in components.get_children():
 			comp.stop()
 		
 		if deading:
-			await get_tree().create_timer(1).timeout
+			#await get_tree().create_timer(1).timeout
 			queue_free()
