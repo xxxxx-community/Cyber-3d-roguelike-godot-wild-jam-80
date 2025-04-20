@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://rsknl616vwyu"]
+[gd_scene load_steps=27 format=3 uid="uid://rsknl616vwyu"]
 
 [ext_resource type="PackedScene" uid="uid://d3ax88154obaq" path="res://Scenes/Rooms/room.tscn" id="1_cb52e"]
 [ext_resource type="PackedScene" uid="uid://sv0edxhh6g5" path="res://Assets/3D_models/Enviroment/Apteka_0_5_0_2_0_5_mesh.glb" id="2_yivrm"]
@@ -24,6 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://c5uiw0x6v7coe" path="res://Scenes/Rooms/ElementsRoom/window.glb" id="23_84sdm"]
 [ext_resource type="PackedScene" uid="uid://dkekwy5xl3x8b" path="res://Assets/3D_models/Mobs/Quadropod_body.glb" id="23_wx6ua"]
 [ext_resource type="PackedScene" uid="uid://cprqf3gwbqfgo" path="res://Scenes/Characters/Sonya/sonya.tscn" id="24_vs8qo"]
+[ext_resource type="PackedScene" uid="uid://cuymcmb0vw5wp" path="res://Scenes/Characters/Enemies/Drone/drone.tscn" id="25_2ijgq"]
+[ext_resource type="PackedScene" uid="uid://brbi5wnpy31dc" path="res://Scenes/Characters/Enemies/Robot/robot.tscn" id="26_ob6ln"]
 
 [node name="Room" instance=ExtResource("1_cb52e")]
 
@@ -2581,7 +2583,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 56, 1.
 transform = Transform3D(-0.327976, -0.944686, 0, 0.944686, -0.327976, 0, 0, 0, 1, -17.1689, 22.231, 56.8174)
 
 [node name="Drone" parent="." index="850" instance=ExtResource("14_ahpaq")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.2141, 3.48488, 41.9757)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="Robot" parent="." index="851" instance=ExtResource("16_iafnm")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.9687, 1, 47.676)
@@ -2638,3 +2640,50 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2726, 1.00034, 45.6397)
 transform = Transform3D(-0.0575639, 0, 0.998342, 0, 1, 0, -0.998342, 0, -0.0575639, 1.405, 5.27, 81.155)
 max_health_points = 1e+11
 health_points = 1e+11
+
+[node name="Drone2" parent="." index="869" instance=ExtResource("25_2ijgq")]
+
+[node name="Drone3" parent="." index="870" instance=ExtResource("25_2ijgq")]
+
+[node name="Drone4" parent="." index="871" instance=ExtResource("25_2ijgq")]
+
+[node name="Drone6" parent="." index="872" instance=ExtResource("25_2ijgq")]
+
+[node name="Drone7" parent="." index="873" instance=ExtResource("25_2ijgq")]
+
+[node name="Drone8" parent="." index="874" instance=ExtResource("25_2ijgq")]
+
+[node name="Drone5" parent="." index="875" instance=ExtResource("25_2ijgq")]
+
+[node name="Robot2" parent="." index="876" instance=ExtResource("26_ob6ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6852, 1.00964, 46.1808)
+
+[node name="Robot3" parent="." index="877" instance=ExtResource("26_ob6ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4698, 1.00964, 34.7773)
+
+[node name="Robot4" parent="." index="878" instance=ExtResource("26_ob6ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3846, 1.00964, 53.2784)
+
+[node name="Robot5" parent="." index="879" instance=ExtResource("26_ob6ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.917, 1.00964, 46.5879)
+
+[node name="Robot6" parent="." index="880" instance=ExtResource("26_ob6ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.033, 1.00964, 38.4404)
+
+[node name="Robot7" parent="." index="881" instance=ExtResource("26_ob6ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.80182, 1.00964, 54.0418)
+
+[node name="Robot8" parent="." index="882" instance=ExtResource("26_ob6ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5973, 1.00964, 41.6608)
+
+[node name="Robot9" parent="." index="883" instance=ExtResource("26_ob6ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.1672, 1.00964, 45.2964)
+
+[node name="Robot10" parent="." index="884" instance=ExtResource("26_ob6ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.5274, 1.00964, 53.0993)
+
+[node name="Robot11" parent="." index="885" instance=ExtResource("26_ob6ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.5274, 8.03897, 45.4461)
+
+[node name="Robot12" parent="." index="886" instance=ExtResource("26_ob6ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.0798, 8.03897, 61.278)

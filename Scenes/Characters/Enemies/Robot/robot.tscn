@@ -8405,6 +8405,7 @@ radius = 2.0
 
 [node name="Robot" instance=ExtResource("1_klikv")]
 script = ExtResource("2_c3hn5")
+acceleration = 8.0
 
 [node name="FiniteStateMachine" parent="." index="0"]
 script = ExtResource("2_veau6")
