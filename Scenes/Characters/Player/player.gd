@@ -25,10 +25,33 @@ var t_bob = 0.0
 const BASE_FOV = 100.0
 const FOV_CHANGE = 1.5
 
+const MAX_EFFECT : int = 7
+var current_effect : int
+var weapon = load("res://Scenes/Characters/Player/player_rifle.tres")
 
 func _ready():
 	%shader_mesh.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	current_effect = randi_range(0, MAX_EFFECT)
+
+func change_color(number : int) -> void:
+	match number:
+		0:
+			weapon.albedo_color = Color("#3A2B55FF")
+		1:
+			weapon.albedo_color = Color("#3B86E7FF")
+		2:
+			weapon.albedo_color = Color("#51E700FF")
+		3:
+			weapon.albedo_color = Color("#44CCE7FF")
+		4:
+			weapon.albedo_color = Color("#C90600FF")
+		5:
+			weapon.albedo_color = Color("#ad009f")
+		6:
+			weapon.albedo_color = Color("#fefe00")
+		7:
+			weapon.albedo_color = Color("#fea900")
 
 
 func _unhandled_input(event):
@@ -112,7 +135,10 @@ func shoot() -> void:
 	get_tree().current_scene.add_child(new_bullet)
 	# Получаем направление взгляда игрока (вперед от камеры)
 	var shoot_direction : Vector3 = -camera.global_transform.basis.z.normalized()
-	new_bullet.launch(self, %Marker3D.global_position, shoot_direction, 20, 0.1) 
+	new_bullet.launch(self, %Marker3D.global_position, shoot_direction, 30, 0.1, current_effect) 
+	
+	current_effect = randi_range(0, MAX_EFFECT)
+	change_color(current_effect)
 
 func dead() -> void:
 	can_move = false

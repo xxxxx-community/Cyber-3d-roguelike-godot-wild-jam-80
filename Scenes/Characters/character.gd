@@ -38,12 +38,13 @@ func set_hp(new_hp: float) -> void:
 	health_points = clamp(new_hp, 0, max_health_points)
 	emit_signal("hp_changed", health_points)
 	
-func take_damage(damage : float, _dir : Vector3 = Vector3.ZERO, _force : float = 0) -> void:
+func take_damage(damage : float, _dir : Vector3 = Vector3.ZERO, _force : float = 0, attacker : Node3D = null) -> void:
 	health_points += damage
 	
 	if health_points > 0:
 		pass
 		#parent.state_machine.set_state(parent.state_machine.states.hurt)
 	else:
+		#print(attacker)
 		state_machine.set_state(state_machine.states.dead)
 		

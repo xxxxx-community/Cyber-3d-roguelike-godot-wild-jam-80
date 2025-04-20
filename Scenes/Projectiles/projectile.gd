@@ -8,6 +8,7 @@ var projectile_speed : int
 var attacker_entity : Node3D
 
 const LIST_BULLET : Array[PackedScene] = [
+	preload("res://Scenes/ECS/Effects/Bullets/black_hole.tscn"),
 	preload("res://Scenes/ECS/Effects/Bullets/teleport.tscn"),
 	preload("res://Scenes/ECS/Effects/Bullets/heal.tscn"),
 	preload("res://Scenes/ECS/Effects/Bullets/freeze.tscn"),
@@ -15,13 +16,12 @@ const LIST_BULLET : Array[PackedScene] = [
 	preload("res://Scenes/ECS/Effects/Bullets/clonning.tscn"),
 	preload("res://Scenes/ECS/Effects/Bullets/changing_size.tscn"),
 	preload("res://Scenes/ECS/Effects/Bullets/blaze.tscn"),
-	preload("res://Scenes/ECS/Effects/Bullets/black_hole.tscn"),
 	]
 const LIST_MODIFICATORS : Array[PackedScene] = [
 	preload("res://Scenes/ECS/Effects/Modificators/dublicate.tscn"),
 	]
-
-func launch(attacker : Node3D, pos : Vector3, dir : Vector3 = Vector3.ZERO, speed : int = 10, spread_angle : float = 0.0):
+	
+func launch(attacker : Node3D, pos : Vector3, dir : Vector3 = Vector3.ZERO, speed : int = 10, spread_angle : float = 0.0, cur_effect : int = 0):
 	attacker_entity = attacker
 	position = pos
 	knockback_direction = dir
@@ -34,8 +34,8 @@ func launch(attacker : Node3D, pos : Vector3, dir : Vector3 = Vector3.ZERO, spee
 		knockback_direction = dir.normalized()
 	rotation = dir
 	
-	if attacker is Character:
-		var bullet : Area3D = LIST_BULLET.pick_random().instantiate()
+	if attacker_entity.name == "Player":
+		var bullet : Area3D = LIST_BULLET[cur_effect].instantiate()
 		var mod : Node3D = LIST_MODIFICATORS.pick_random().instantiate()
 		
 		components.add_child(bullet)

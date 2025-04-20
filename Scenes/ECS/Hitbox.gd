@@ -36,5 +36,5 @@ func _on_body_exited(_body):
 	timer.stop()
 
 func _collide(body) -> void:
-	if body.has_method("take_damage"):
-		body.take_damage(damage, knockback_direction, knockback_force)
+	if body.has_method("take_damage") and body != owner:
+		body.take_damage(damage, knockback_direction, knockback_force, owner)

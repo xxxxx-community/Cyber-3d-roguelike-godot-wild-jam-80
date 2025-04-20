@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dti7nl0u320gh" path="res://Assets/Sound/sfx/shoot/blaster.mp3" id="4_8gg06"]
 [ext_resource type="AudioStream" uid="uid://1cgjao1vr8r7" path="res://Assets/Sound/sfx/footsteps/footstep on concrete 1.mp3" id="4_dxcao"]
 [ext_resource type="AudioStream" uid="uid://drkg3yx32cjs7" path="res://Assets/Sound/sfx/footsteps/footstep on concrete 2.mp3" id="5_1mdwi"]
+[ext_resource type="Material" uid="uid://sgvrrpxk4wcv" path="res://Scenes/Characters/Player/player_rifle.tres" id="5_sdxbo"]
 [ext_resource type="AudioStream" uid="uid://b4rilx6v1jpxu" path="res://Assets/Sound/sfx/footsteps/footstep on concrete 3.mp3" id="6_8gg06"]
 [ext_resource type="AudioStream" uid="uid://b25qyurhu7yhq" path="res://Assets/Sound/sfx/footsteps/footstep on concrete 4.mp3" id="7_cscr0"]
 [ext_resource type="PackedScene" uid="uid://colltvryq5j4t" path="res://Assets/3D_models/Player/Player_hand.glb" id="11_plevq"]
@@ -58,17 +59,19 @@ tracks/2/keys = {
 [sub_resource type="Animation" id="Animation_8gg06"]
 resource_name = "dead"
 length = 3.0
-tracks/0/type = "value"
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body/Head/Camera3D:rotation")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(3),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [{
+"args": [],
+"method": &"dead"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_lyjr2"]
@@ -114,12 +117,6 @@ fractal_octaves = 1
 resource_name = "Material"
 cull_mode = 2
 albedo_color = Color(0.403249, 0.403249, 0.403249, 1)
-roughness = 0.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqhtd"]
-resource_name = "Material.003"
-cull_mode = 2
-albedo_color = Color(0.267618, 0.801095, 0.906359, 1)
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_plevq"]
@@ -170,7 +167,7 @@ _surfaces = [{
 "index_count": 48,
 "index_data": PackedByteArray("BgAQAAsABgARABAAEQAKABAAEQASAAoAAAABAAIAEwAMABQAFQADABYAFQAXAAMAAwAEABYAAwAFAAQAGAAIABkAGAAHAAgACAAaABkACAAJABoAGwANAA4AGwAPAA0A"),
 "lods": [0.0202666, PackedByteArray("AAABAAIAAgABAAMAAgADAAQAAwAFAAQABgAHAAgACAAJAAYABgAJAAoABgAKAAsADAANAA4ADAAPAA0A")],
-"material": SubResource("StandardMaterial3D_pqhtd"),
+"material": ExtResource("5_sdxbo"),
 "name": "Material.003",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -238,6 +235,7 @@ noise = SubResource("FastNoiseLite_qqvsf")
 metadata/_edit_lock_ = true
 
 [node name="Rifle" type="MeshInstance3D" parent="Body/Head/Camera3D" index="0"]
+unique_name_in_owner = true
 transform = Transform3D(-0.997235, 0, -0.0743172, 0, 1, 0, 0.0743172, 0, -0.997235, 0.480725, -0.357069, -0.0828495)
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_sdxbo")
