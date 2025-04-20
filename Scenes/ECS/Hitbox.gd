@@ -28,7 +28,8 @@ func _on_body_entered(body):
 	while body_inside:
 		if not is_instance_valid(body):
 			return
-		_collide(body)
+		if body in get_overlapping_bodies():
+			_collide(body)
 		await timer.timeout
 
 func _on_body_exited(_body):
