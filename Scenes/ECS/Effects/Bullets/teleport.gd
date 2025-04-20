@@ -9,4 +9,4 @@ func _collide(body : Node3D) -> void:
 	queue_free()
 
 func apply_effect(body : Node3D) -> void:
-	body.global_position = Vector3(randf_range(-1, 1), randf_range(-1, 1), randf_range(-1, 1)) * 5
+	body.global_position = Vector3(randf_range(-1, 1), randf_range(0, 0.5), randf_range(-1, 1)) * 5
