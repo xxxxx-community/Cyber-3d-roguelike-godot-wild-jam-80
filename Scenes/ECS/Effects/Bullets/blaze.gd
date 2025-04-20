@@ -1,7 +1,7 @@
 extends EffectComponent
 
 
-var duration_damage : int = 25
+var duration_damage : int = 6
 
 func _collide(body : Node3D) -> void:
 	if not body.has_method("take_damage"):

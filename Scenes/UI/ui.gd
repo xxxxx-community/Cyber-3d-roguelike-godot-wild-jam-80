@@ -6,7 +6,10 @@ extends CanvasLayer
 func _on_player_hp_changed(new_hp: Variant) -> void:
 	$ProgressBar.value = (new_hp / $"../Player".max_health_points) * 100
 
-func _unhandled_input(event) -> void:
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		
 	if event.is_action_pressed(&"ui_cancel"):
 		if %Options_Menu.visible:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
