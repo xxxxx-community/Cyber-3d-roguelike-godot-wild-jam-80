@@ -2,9 +2,13 @@ extends Node3D
 
 @onready var world_environment: WorldEnvironment = $WorldEnvironment
 @onready var directional_light: DirectionalLight3D = $DirectionalLight
+const BATTLE_01 = preload("uid://d1o2cv5tdsik")
+const BATTLE_02 = preload("uid://b6alt0vo8mea6")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$AudioStreamPlayer.stream.stream_0 = [BATTLE_01, BATTLE_02].pick_random()
+	$AudioStreamPlayer.play()
 	MenuMusic.stop()
 	#get_viewport().use_taa = true
 	get_viewport().msaa_3d = Viewport.MSAA_2X

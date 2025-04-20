@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://grfxol1kvspk"]
+[gd_scene load_steps=10 format=3 uid="uid://grfxol1kvspk"]
 
 [ext_resource type="PackedScene" uid="uid://dmmofrthbtcrg" path="res://Scenes/Characters/Player/player.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://cyh262q7udmp7" path="res://Scenes/game.gd" id="1_wrm1d"]
 [ext_resource type="Script" uid="uid://b7gbofxirpvhn" path="res://Scenes/Rooms/spawn_rooms.gd" id="3_wowpa"]
 [ext_resource type="Script" uid="uid://daoa82btfbtx8" path="res://Scenes/UI/ui.gd" id="5_wowpa"]
 [ext_resource type="PackedScene" uid="uid://b38ahvb18k30c" path="res://Scenes/GUI/Menu/ingame_options_menu.tscn" id="6_i6g32"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_v158k"]
+stream_count = 1
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3dryh"]
 sky_top_color = Color(0, 0, 1, 1)
@@ -35,6 +38,10 @@ volumetric_fog_albedo = Color(0, 0, 1, 1)
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_wrm1d")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_v158k")
+autoplay = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3dryh")
