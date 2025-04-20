@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c46tf4einmdmj"]
+[gd_scene load_steps=17 format=3 uid="uid://c46tf4einmdmj"]
 
 [ext_resource type="PackedScene" uid="uid://d3ax88154obaq" path="res://Scenes/Rooms/room.tscn" id="1_0jpob"]
 [ext_resource type="PackedScene" uid="uid://c1dwd8kk657yf" path="res://Scenes/Rooms/ElementsRoom/box.glb" id="3_a2hsc"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c1ne80okhf80w" path="res://Scenes/Rooms/ElementsRoom/wire_3.glb" id="14_4u1pv"]
 [ext_resource type="PackedScene" uid="uid://bencvffk30sht" path="res://Scenes/Rooms/ElementsRoom/wire_4.glb" id="15_605an"]
 [ext_resource type="PackedScene" uid="uid://dn76j0naqx453" path="res://Scenes/ECS/Effects/Bullets/heal.tscn" id="16_k531c"]
+[ext_resource type="PackedScene" uid="uid://crl5qy75a44lb" path="res://Scenes/Characters/Enemies/Drone/drone.tscn" id="17_opirf"]
 
 [node name="dron" instance=ExtResource("1_0jpob")]
 
@@ -29,6 +30,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 3.5)
 
 [node name="PlayerSpawnPoint" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.33728, 0)
+
+[node name="Drone" parent="Mobs" index="0" instance=ExtResource("17_opirf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.705, 3.055, -15.35)
 
 [node name="box" parent="." index="5" instance=ExtResource("3_a2hsc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 2, -2)
@@ -71,3 +75,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63484, 5.29156, -8.83918)
 
 [node name="Heal" parent="." index="18" instance=ExtResource("16_k531c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92, -5.61)
+
+[node name="Heal2" parent="." index="19" instance=ExtResource("16_k531c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.92, -2.61)
+
+[node name="Heal3" parent="." index="20" instance=ExtResource("16_k531c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.44755, 1.92, -4.18824)
