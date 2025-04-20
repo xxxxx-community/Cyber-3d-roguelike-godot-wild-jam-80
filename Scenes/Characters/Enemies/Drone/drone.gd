@@ -1,6 +1,5 @@
 extends Enemy
 
-
 const BULLET_SCENE : PackedScene = preload("res://Scenes/Projectiles/projectile.tscn")
 const BLAZE : PackedScene = preload("uid://1jlq2hixdbyy")
 
@@ -22,4 +21,3 @@ func shoot() -> void:
 	new_bullet.launch(self, %Marker3D.global_position, shoot_direction, 30, 0.1) 
 	var new_effect = BLAZE.instantiate()
 	new_bullet.components.add_child(new_effect)
-	

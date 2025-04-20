@@ -12,12 +12,6 @@ func _init() -> void:
 func _ready() -> void:
 	set_state(states.Fly)
 	
-	
-func _state_logic(_delta: float) -> void:
-	if state == states.Fly:
-		parent.move()
-		#parent.gravity(delta)
-		
 func _get_transition() -> int:
 	match state:
 		states.Attack:

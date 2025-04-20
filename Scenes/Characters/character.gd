@@ -41,7 +41,7 @@ func set_hp(new_hp: float) -> void:
 func take_damage(damage : float, _dir : Vector3 = Vector3.ZERO, _force : float = 0, attacker : Node3D = null) -> void:
 	health_points += damage
 	
-	print(attacker)
+	#print(attacker)
 	if health_points > 0:
 		pass
 		#parent.state_machine.set_state(parent.state_machine.states.hurt)
