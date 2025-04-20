@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=4 uid="uid://brbi5wnpy31dc"]
+[gd_scene load_steps=22 format=4 uid="uid://brbi5wnpy31dc"]
 
 [ext_resource type="PackedScene" uid="uid://p04yow0dawa1" path="res://Scenes/Characters/Enemies/enemy.tscn" id="1_klikv"]
+[ext_resource type="Script" uid="uid://d2v4j21fbyrq7" path="res://Scenes/Characters/Enemies/Robot/robot.gd" id="2_c3hn5"]
 [ext_resource type="Script" uid="uid://dmxp7n0c3soes" path="res://Scenes/Characters/Enemies/Robot/RobotFSM.gd" id="2_veau6"]
 [ext_resource type="Script" uid="uid://bmhcwl07s45ri" path="res://Scenes/ECS/Hitbox.gd" id="3_ixs7f"]
 [ext_resource type="PackedScene" uid="uid://dliukhfuh7pn5" path="res://Scenes/ECS/Effects/Bullets/fire_explosion.tscn" id="4_1p1cc"]
@@ -8400,6 +8401,7 @@ bind/215/pose = Transform3D(1, 0, 0, 0, 0.00965715, -0.999953, 0, 0.999953, 0.00
 [sub_resource type="SphereShape3D" id="SphereShape3D_ixs7f"]
 
 [node name="Robot" instance=ExtResource("1_klikv")]
+script = ExtResource("2_c3hn5")
 
 [node name="FiniteStateMachine" parent="." index="0"]
 script = ExtResource("2_veau6")

@@ -19,6 +19,7 @@ const LIST_BULLET : Array[PackedScene] = [
 	]
 const LIST_MODIFICATORS : Array[PackedScene] = [
 	preload("res://Scenes/ECS/Effects/Modificators/dublicate.tscn"),
+	preload("res://Scenes/ECS/Effects/Modificators/single_shot.tscn"),
 	]
 	
 func launch(attacker : Node3D, pos : Vector3, dir : Vector3 = Vector3.ZERO, speed : int = 10, spread_angle : float = 0.0, cur_effect : int = 0):
@@ -72,7 +73,8 @@ func _collide(_body: Node3D) -> void:
 	projectile_speed = 0
 	
 	for comp in components.get_children():
-		comp.stop()
+		if comp.has_method("stop"):
+			comp.stop()
 		
 	$AnimationPlayer.play(&"dead")
 		

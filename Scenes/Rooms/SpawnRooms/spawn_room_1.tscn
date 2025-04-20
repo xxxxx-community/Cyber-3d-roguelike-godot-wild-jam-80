@@ -33,7 +33,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.33728, 0)
 
 [node name="Robot" parent="." index="4" instance=ExtResource("2_pcg38")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.165, 1.26, 0.695)
-acceleration = 0.0
 
 [node name="box" parent="." index="5" instance=ExtResource("3_a2hsc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 2, -2)
