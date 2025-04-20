@@ -24,3 +24,7 @@ func _input(event: InputEvent) -> void:
 			$ProgressBar.hide()
 			%Options_Menu.show()
 			
+
+func _on_button_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/GUI/Menu/menu_room.tscn")
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)

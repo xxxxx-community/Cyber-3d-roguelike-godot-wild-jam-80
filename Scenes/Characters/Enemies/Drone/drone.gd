@@ -2,7 +2,10 @@ extends Enemy
 
 
 const BULLET_SCENE : PackedScene = preload("res://Scenes/Projectiles/projectile.tscn")
-const BLAZE : PackedScene = preload("uid://1jlq2hixdbyy")
+const BLAZE : Array[PackedScene] = [
+	preload("uid://1jlq2hixdbyy"),
+	preload("uid://0b5gernd2bd1")
+	]
 
 func _process(_delta: float) -> void:
 	if is_instance_valid(player) and can_move:
@@ -19,6 +22,6 @@ func shoot() -> void:
 	get_tree().current_scene.add_child(new_bullet)
 	# Получаем направление взгляда игрока (вперед от камеры)
 	var shoot_direction : Vector3 = -$Armature.global_transform.basis.z.normalized()
-	new_bullet.launch(self, %Marker3D.global_position, shoot_direction, 30, 0.1) 
-	var new_effect = BLAZE.instantiate()
+	new_bullet.launch(self, %Marker3D.global_position, shoot_direction, 30, 0.17) 
+	var new_effect = BLAZE.pick_random().instantiate()
 	new_bullet.components.add_child(new_effect)

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d3ax88154obaq" path="res://Scenes/Rooms/room.tscn" id="1_cb52e"]
 [ext_resource type="PackedScene" uid="uid://sv0edxhh6g5" path="res://Assets/3D_models/Enviroment/Apteka_0_5_0_2_0_5_mesh.glb" id="2_yivrm"]
 [ext_resource type="PackedScene" uid="uid://cjfbcg7nujlky" path="res://Assets/3D_models/Enviroment/Generator_8_12_8_mesh.glb" id="3_14q20"]
-[ext_resource type="PackedScene" uid="uid://yf62e0ht7rcq" path="res://Assets/3D_models/Mobs/Drone.glb" id="3_vs8qo"]
+[ext_resource type="PackedScene" uid="uid://crl5qy75a44lb" path="res://Scenes/Characters/Enemies/Drone/drone.tscn" id="3_vs8qo"]
 [ext_resource type="PackedScene" uid="uid://cohtib2c25y7q" path="res://Assets/3D_models/Enviroment/Strait_mesh.glb" id="4_jx2m3"]
 [ext_resource type="PackedScene" uid="uid://6ymivcrkjg5s" path="res://Assets/3D_models/Enviroment/Connector_1_2_1_mesh.glb" id="5_3v1mk"]
 [ext_resource type="PackedScene" uid="uid://3lmp8u5tcc8i" path="res://Assets/3D_models/Enviroment/Tube_0_9_0_9_1_mesh.glb" id="6_l6kyy"]
@@ -48,13 +48,13 @@ max_health_points = 1e+11
 health_points = 1e+11
 
 [node name="Drone" parent="Mobs" index="1" instance=ExtResource("3_vs8qo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1599, 4.86057, 45.6553)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 46)
 
 [node name="Drone2" parent="Mobs" index="2" instance=ExtResource("3_vs8qo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14626, 4.86057, 40.5642)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 8, 44)
 
 [node name="Drone3" parent="Mobs" index="3" instance=ExtResource("3_vs8qo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.272167, 4.86057, 48.5275)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 8, 53)
 
 [node name="Apteka_0_5_0_2_0_5_mesh2" parent="." index="5" instance=ExtResource("2_yivrm")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12.8657, 2.22073, 28.9606)
