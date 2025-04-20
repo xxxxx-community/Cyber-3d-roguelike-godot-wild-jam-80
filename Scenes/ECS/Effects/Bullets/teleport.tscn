@@ -43,3 +43,9 @@ shape = SubResource("SphereShape3D_n221q")
 amount = 20
 process_material = SubResource("ParticleProcessMaterial_hfqpp")
 draw_pass_1 = SubResource("BoxMesh_ck5cr")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.568627, 0, 0.678431, 1)
+light_energy = 0.8
+omni_range = 2.0
+omni_shadow_mode = 0

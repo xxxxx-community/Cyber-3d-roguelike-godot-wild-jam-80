@@ -69,3 +69,15 @@ interpolate = false
 draw_order = 1
 process_material = SubResource("ParticleProcessMaterial_blilb")
 draw_pass_1 = SubResource("BoxMesh_5clqh")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.289155, 0.0010506, 0.574522, 1)
+light_energy = 0.8
+omni_range = 2.0
+omni_shadow_mode = 0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

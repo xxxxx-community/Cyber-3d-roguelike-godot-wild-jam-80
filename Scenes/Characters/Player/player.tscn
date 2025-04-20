@@ -251,6 +251,12 @@ unique_name_in_owner = true
 stream = ExtResource("4_8gg06")
 volume_db = -15.0
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Body/Head/Camera3D/Rifle" index="2"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+omni_range = 1.0
+omni_shadow_mode = 0
+
 [node name="shader_mesh" type="MeshInstance3D" parent="Body/Head/Camera3D" index="1"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)

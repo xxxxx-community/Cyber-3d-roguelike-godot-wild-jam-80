@@ -53,6 +53,7 @@ func change_color(number : int) -> void:
 			weapon.albedo_color = Color("#fefe00")
 		7:
 			weapon.albedo_color = Color("#fea900")
+	%OmniLight3D.light_color = weapon.albedo_color
 
 
 func _unhandled_input(event):

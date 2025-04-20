@@ -64,3 +64,8 @@ fixed_fps = 0
 interpolate = false
 process_material = SubResource("ParticleProcessMaterial_yyhpq")
 draw_pass_1 = SubResource("BoxMesh_tcck2")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_energy = 0.8
+omni_range = 6.0
+omni_shadow_mode = 0

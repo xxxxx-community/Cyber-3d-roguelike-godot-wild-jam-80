@@ -1,8 +1,11 @@
-[gd_scene load_steps=16 format=4 uid="uid://crl5qy75a44lb"]
+[gd_scene load_steps=17 format=4 uid="uid://crl5qy75a44lb"]
 
 [ext_resource type="PackedScene" uid="uid://p04yow0dawa1" path="res://Scenes/Characters/Enemies/enemy.tscn" id="1_rdhgw"]
 [ext_resource type="Script" uid="uid://c2j1ofsbs1yof" path="res://Scenes/Characters/Enemies/Drone/drone.gd" id="2_5b1uv"]
 [ext_resource type="Script" uid="uid://tunl5www4che" path="res://Scenes/Characters/Enemies/Drone/DroneFSM.gd" id="2_76f7i"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5b1uv"]
+radius = 0.830944
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_gxkpf"]
 viewport_path = NodePath("HealthBar/Sprite3D/SubViewport")
@@ -319,6 +322,9 @@ script = ExtResource("2_5b1uv")
 
 [node name="FiniteStateMachine" parent="." index="0"]
 script = ExtResource("2_76f7i")
+
+[node name="CollisionShape3D" parent="." index="1"]
+shape = SubResource("SphereShape3D_5b1uv")
 
 [node name="Sprite3D" parent="HealthBar" index="0"]
 texture = SubResource("ViewportTexture_gxkpf")

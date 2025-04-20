@@ -6,6 +6,7 @@ class_name Projectile extends Hitbox
 
 var projectile_speed : int
 var attacker_entity : Node3D
+var deading : bool = true
 
 const LIST_BULLET : Array[PackedScene] = [
 	preload("res://Scenes/ECS/Effects/Bullets/black_hole.tscn"),
@@ -76,5 +77,6 @@ func _collide(_body: Node3D) -> void:
 		if comp.has_method("stop"):
 			comp.stop()
 		
-	$AnimationPlayer.play(&"dead")
+	if deading:
+		$AnimationPlayer.play(&"dead")
 		

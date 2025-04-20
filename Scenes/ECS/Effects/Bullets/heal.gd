@@ -18,6 +18,9 @@ func _collide(body : Node3D) -> void:
 		if duration_damage <= 0:
 			queue_free()
 	else:
+		body.take_damage(
+			damage, knockback_direction, knockback_force
+		)
 		queue_free()
 
 func apply_effect(body : Node3D) -> void:
