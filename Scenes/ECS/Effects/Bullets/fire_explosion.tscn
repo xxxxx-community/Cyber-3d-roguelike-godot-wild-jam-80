@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dliukhfuh7pn5"]
 
-[ext_resource type="Script" uid="uid://cxx2hqcal0v2" path="res://Scenes/ECS/Effects/fire_explosion.gd" id="1_x6v6l"]
+[ext_resource type="Script" uid="uid://cxx2hqcal0v2" path="res://Scenes/ECS/Effects/Bullets/fire_explosion.gd" id="1_x6v6l"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_x6v6l"]
 radius = 6.0

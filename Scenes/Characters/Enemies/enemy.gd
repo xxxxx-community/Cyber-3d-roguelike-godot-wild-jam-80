@@ -5,9 +5,8 @@ class_name Enemy extends Character
 @onready var hitbox: Hitbox = %Hitbox
 
 func chase() -> void:
-	look_at(player.global_position, Vector3.UP, true)
-	rotation.x = 0  
-	rotation.z = 0 
+	look_at(player.global_position, Vector3.UP, true) 
+	rotation *= Vector3.UP
 	if is_instance_valid(player):
 		move_direction = global_position.direction_to(player.global_position)
 	else:

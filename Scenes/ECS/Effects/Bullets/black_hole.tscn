@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://ckcdyanudoo3j"]
 
-[ext_resource type="Script" uid="uid://dx45eh0cxe0fb" path="res://Scenes/ECS/Effects/black_hole.gd" id="1_u0yll"]
+[ext_resource type="Script" uid="uid://dx45eh0cxe0fb" path="res://Scenes/ECS/Effects/Bullets/black_hole.gd" id="1_u0yll"]
 
 [sub_resource type="Curve" id="Curve_u0yll"]
 _limits = [0.0, 5.0, 0.0, 20.0]

@@ -1,8 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0mmlivrbu315"]
+[gd_scene load_steps=8 format=3 uid="uid://c0mmlivrbu315"]
 
 [ext_resource type="Script" uid="uid://dwyefov2uektv" path="res://Scenes/Projectiles/projectile.gd" id="1_2re41"]
-[ext_resource type="PackedScene" uid="uid://dliukhfuh7pn5" path="res://Scenes/ECS/Effects/fire_explosion.tscn" id="2_aihi3"]
-[ext_resource type="PackedScene" uid="uid://ckcdyanudoo3j" path="res://Scenes/ECS/Effects/black_hole.tscn" id="3_o6i24"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1bece"]
 
@@ -102,10 +100,6 @@ libraries = {
 }
 
 [node name="Components" type="Node3D" parent="."]
-
-[node name="FireExplosion" parent="Components" instance=ExtResource("2_aihi3")]
-
-[node name="BlackHole" parent="Components" instance=ExtResource("3_o6i24")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_aihi3")

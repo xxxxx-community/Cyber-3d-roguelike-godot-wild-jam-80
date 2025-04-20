@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cdg0iuvt11r3s"]
 
-[ext_resource type="Script" uid="uid://4o8v73r6qiwg" path="res://Scenes/ECS/Effects/teleport.gd" id="1_n221q"]
+[ext_resource type="Script" uid="uid://4o8v73r6qiwg" path="res://Scenes/ECS/Effects/Bullets/teleport.gd" id="1_n221q"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_n221q"]
 radius = 0.396804

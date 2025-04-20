@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://p04yow0dawa1" path="res://Scenes/Characters/Enemies/enemy.tscn" id="1_klikv"]
 [ext_resource type="Script" uid="uid://dmxp7n0c3soes" path="res://Scenes/Characters/Enemies/Robot/RobotFSM.gd" id="2_veau6"]
 [ext_resource type="Script" uid="uid://bmhcwl07s45ri" path="res://Scenes/ECS/Hitbox.gd" id="3_ixs7f"]
-[ext_resource type="PackedScene" uid="uid://dliukhfuh7pn5" path="res://Scenes/ECS/Effects/fire_explosion.tscn" id="4_1p1cc"]
+[ext_resource type="PackedScene" uid="uid://dliukhfuh7pn5" path="res://Scenes/ECS/Effects/Bullets/fire_explosion.tscn" id="4_1p1cc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6h25x"]
 radius = 0.315679

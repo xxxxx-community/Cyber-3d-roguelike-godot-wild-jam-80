@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://34g1ltlw8d81"]
 
-[ext_resource type="Script" uid="uid://chn7do7n2yb2p" path="res://Scenes/ECS/Effects/clonning.gd" id="1_1buda"]
+[ext_resource type="Script" uid="uid://chn7do7n2yb2p" path="res://Scenes/ECS/Effects/Bullets/clonning.gd" id="1_1buda"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_yiqfi"]
 radius = 0.424785

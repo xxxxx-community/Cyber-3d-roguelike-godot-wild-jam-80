@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://1jlq2hixdbyy"]
 
-[ext_resource type="Script" uid="uid://cfrp53sf88aqf" path="res://Scenes/ECS/Effects/blaze.gd" id="1_nl4ci"]
+[ext_resource type="Script" uid="uid://cfrp53sf88aqf" path="res://Scenes/ECS/Effects/Bullets/blaze.gd" id="1_nl4ci"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nl4ci"]
 radius = 0.424785

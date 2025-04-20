@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://rsknl616vwyu"]
+[gd_scene load_steps=25 format=3 uid="uid://rsknl616vwyu"]
 
 [ext_resource type="PackedScene" uid="uid://d3ax88154obaq" path="res://Scenes/Rooms/room.tscn" id="1_cb52e"]
 [ext_resource type="PackedScene" uid="uid://sv0edxhh6g5" path="res://Assets/3D_models/Enviroment/Apteka_0_5_0_2_0_5_mesh.glb" id="2_yivrm"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://v2f3gqej4alg" path="res://Scenes/Rooms/ElementsRoom/light_box.glb" id="22_yjmc2"]
 [ext_resource type="PackedScene" uid="uid://c5uiw0x6v7coe" path="res://Scenes/Rooms/ElementsRoom/window.glb" id="23_84sdm"]
 [ext_resource type="PackedScene" uid="uid://dkekwy5xl3x8b" path="res://Assets/3D_models/Mobs/Quadropod_body.glb" id="23_wx6ua"]
+[ext_resource type="PackedScene" uid="uid://cprqf3gwbqfgo" path="res://Scenes/Characters/Sonya/sonya.tscn" id="24_vs8qo"]
 
 [node name="Room" instance=ExtResource("1_cb52e")]
 
@@ -2632,3 +2633,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.786, 1.0017, 41.2102)
 
 [node name="Quadropod_body3" parent="." index="867" instance=ExtResource("23_wx6ua")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2726, 1.00034, 45.6397)
+
+[node name="Sonya" parent="." index="868" instance=ExtResource("24_vs8qo")]
+transform = Transform3D(-0.0575639, 0, 0.998342, 0, 1, 0, -0.998342, 0, -0.0575639, 1.405, 5.27, 81.155)
+max_health_points = 1e+11
+health_points = 1e+11

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cn1ticve6hr8i"]
 
-[ext_resource type="Script" uid="uid://m0luyqyfmpbr" path="res://Scenes/ECS/Effects/modificators/dublicate.gd" id="1_m2e6y"]
+[ext_resource type="Script" uid="uid://m0luyqyfmpbr" path="res://Scenes/ECS/Effects/Modificators/dublicate.gd" id="1_m2e6y"]
 
 [node name="Dublicate" type="Node3D"]
 script = ExtResource("1_m2e6y")

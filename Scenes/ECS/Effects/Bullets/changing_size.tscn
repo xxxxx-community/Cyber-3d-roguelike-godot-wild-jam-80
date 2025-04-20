@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bp0371am57tv6"]
 
-[ext_resource type="Script" uid="uid://davxw3aechuhk" path="res://Scenes/ECS/Effects/changing_size.gd" id="1_vwdls"]
+[ext_resource type="Script" uid="uid://davxw3aechuhk" path="res://Scenes/ECS/Effects/Bullets/changing_size.gd" id="1_vwdls"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vwdls"]
 radius = 0.396804

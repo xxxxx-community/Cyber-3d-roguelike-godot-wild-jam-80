@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dn76j0naqx453"]
 
-[ext_resource type="Script" uid="uid://bjldruh5yicmm" path="res://Scenes/ECS/Effects/heal.gd" id="1_tt1p1"]
+[ext_resource type="Script" uid="uid://bjldruh5yicmm" path="res://Scenes/ECS/Effects/Bullets/heal.gd" id="1_tt1p1"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tt1p1"]
 radius = 0.424785
