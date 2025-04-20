@@ -33,6 +33,7 @@ func _ready():
 	%shader_mesh.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	current_effect = randi_range(0, MAX_EFFECT)
+	change_color(current_effect)
 
 func change_color(number : int) -> void:
 	match number:
