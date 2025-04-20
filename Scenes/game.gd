@@ -6,11 +6,7 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	MenuMusic.stop()
-	#ultra()
-
-#от Сани: А это ваще нужно? 
-func ultra() -> void:
-	get_viewport().use_taa = true
+	#get_viewport().use_taa = true
 	get_viewport().msaa_3d = Viewport.MSAA_2X
 	get_viewport().screen_space_aa = 0 as Viewport.ScreenSpaceAA
 	get_viewport().positional_shadow_atlas_size = 8192

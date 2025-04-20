@@ -181,9 +181,9 @@ shadow_mesh = SubResource("ArrayMesh_plevq")
 render_priority = 0
 shader = ExtResource("4_1mdwi")
 shader_parameter/enable_fog = true
-shader_parameter/fog_color = Color(0.32549, 0.32549, 0.32549, 1)
+shader_parameter/fog_color = Color(0.1495, 0.115, 0.23, 1)
 shader_parameter/noise_color = Color(0, 0, 0, 1)
-shader_parameter/fog_distance = 38.0
+shader_parameter/fog_distance = 48.0
 shader_parameter/fog_fade_range = 35.0
 shader_parameter/enable_noise = false
 shader_parameter/noise_time_fac = 4.0
@@ -254,7 +254,6 @@ volume_db = -15.0
 [node name="shader_mesh" type="MeshInstance3D" parent="Body/Head/Camera3D" index="1"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
-visible = false
 mesh = SubResource("QuadMesh_cscr0")
 
 [node name="Player_hand" parent="Body/Head/Camera3D" index="2" instance=ExtResource("11_plevq")]
