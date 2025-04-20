@@ -9939,6 +9939,7 @@ skin = SubResource("Skin_cpr3n")
 [node name="Hitbox" type="Area3D" parent="rig" index="1"]
 unique_name_in_owner = true
 script = ExtResource("3_ixs7f")
+damage = -10.0
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="rig/Hitbox" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.784743, 0.614881)

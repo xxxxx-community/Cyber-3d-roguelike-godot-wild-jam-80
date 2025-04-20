@@ -17,6 +17,8 @@ func _collide(body : Node3D) -> void:
 		duration_damage -= 1
 		if duration_damage <= 0:
 			queue_free()
+	else:
+		queue_free()
 
 func apply_effect(body : Node3D) -> void:
 	var new_effect : Node3D = self.duplicate()
