@@ -72,14 +72,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, 0)
 script = ExtResource("5_wowpa")
 
 [node name="ProgressBar" type="ProgressBar" parent="UI"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -187.5
-offset_top = 28.0
-offset_right = 187.5
-offset_bottom = 68.5
-grow_horizontal = 2
+modulate = Color(0.537255, 0, 1, 1)
+offset_left = 39.0
+offset_top = 15.0
+offset_right = 414.0
+offset_bottom = 55.5
 value = 100.0
 
 [node name="crosshair" type="Label" parent="UI"]

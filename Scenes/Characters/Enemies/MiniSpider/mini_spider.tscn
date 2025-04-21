@@ -1,9 +1,10 @@
-[gd_scene load_steps=41 format=4 uid="uid://ci32r465gn8rw"]
+[gd_scene load_steps=43 format=4 uid="uid://ci32r465gn8rw"]
 
 [ext_resource type="PackedScene" uid="uid://p04yow0dawa1" path="res://Scenes/Characters/Enemies/enemy.tscn" id="1_755e1"]
 [ext_resource type="Script" uid="uid://d203376wydo58" path="res://Scenes/Characters/Enemies/MiniSpider/mini_spider.gd" id="2_ltibr"]
 [ext_resource type="Script" uid="uid://87wjv7vswgvl" path="res://Scenes/Characters/Enemies/MiniSpider/MiniSpiderFSM.gd" id="2_shfa2"]
 [ext_resource type="PackedScene" uid="uid://dliukhfuh7pn5" path="res://Scenes/ECS/Effects/Bullets/fire_explosion.tscn" id="4_ex1x0"]
+[ext_resource type="Script" uid="uid://bmhcwl07s45ri" path="res://Scenes/ECS/Hitbox.gd" id="5_airgd"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ltibr"]
 
@@ -1303,10 +1304,15 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_airgd"]
 radius = 2.0
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_3q5r3"]
+radius = 1.0
+
 [node name="MiniSpider" instance=ExtResource("1_755e1")]
 script = ExtResource("2_ltibr")
 acceleration = 14.0
 jump_velocity = 8.0
+max_health_points = 40.0
+health_points = 40.0
 
 [node name="FiniteStateMachine" parent="." index="0"]
 script = ExtResource("2_shfa2")
@@ -1700,9 +1706,18 @@ disabled = true
 [node name="GPUParticles3D" parent="FireExplosion" index="1"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 emitting = false
-amount = 200
+amount = 100
 
 [node name="Timer" type="Timer" parent="." index="8"]
 one_shot = true
+
+[node name="Hitbox" type="Area3D" parent="." index="9"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0)
+script = ExtResource("5_airgd")
+delay_attack = 0.05
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Hitbox" index="0"]
+shape = SubResource("SphereShape3D_3q5r3")
 
 [editable path="FireExplosion"]
