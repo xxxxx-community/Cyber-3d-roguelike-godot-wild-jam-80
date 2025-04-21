@@ -7,7 +7,7 @@ func _on_player_hp_changed(new_hp: Variant) -> void:
 	$ProgressBar.value = (new_hp / $"../Player".max_health_points) * 100
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and not %Options_Menu.visible:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
 	if event.is_action_pressed(&"ui_cancel"):
