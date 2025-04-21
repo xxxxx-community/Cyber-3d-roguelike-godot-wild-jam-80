@@ -53,6 +53,7 @@ func _enter_state(_previous_state: int, new_state: int) -> void:
 		states.run:
 			animation_player.play("run")
 		states.dead:
+			$"../FireExplosion".stop()
 			animation_player.play("dead")
 		states.attack_hit:
 			animation_player.play("attack_hit")
