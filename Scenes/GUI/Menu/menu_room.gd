@@ -5,6 +5,6 @@ extends Node3D
 @onready var camera_3d: Camera3D = $Camera3D
 
 func _ready() -> void:
-	if MenuMusic.play_music_menu() == false:
+	if MenuMusic.playing == false:
 		MenuMusic.play_music_menu()
 	camera_3d.set_current(1)

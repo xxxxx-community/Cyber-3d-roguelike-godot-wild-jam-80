@@ -1,5 +1,7 @@
 extends Control
 
+var scene = preload("res://Scenes/GUI/Menu/opt_menu_room.tscn")
+
 func _on_play_button_pressed() -> void:
 	$button1.play()
 	get_tree().change_scene_to_file("res://Scenes/game.tscn")
@@ -17,4 +19,4 @@ func _on_quit_button_pressed() -> void:
 
 
 func _on_cam_player_animation_finished(anim_name: StringName) -> void:
-	get_tree().change_scene_to_file("res://Scenes/GUI/Menu/opt_menu_room.tscn")
+	get_tree().change_scene_to_packed(scene)
