@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://c46tf4einmdmj"]
+[gd_scene load_steps=17 format=3 uid="uid://c46tf4einmdmj"]
 
 [ext_resource type="PackedScene" uid="uid://d3ax88154obaq" path="res://Scenes/Rooms/room.tscn" id="1_0jpob"]
 [ext_resource type="PackedScene" uid="uid://c1dwd8kk657yf" path="res://Scenes/Rooms/ElementsRoom/box.glb" id="3_a2hsc"]
-[ext_resource type="PackedScene" uid="uid://ci32r465gn8rw" path="res://Scenes/Characters/Enemies/MiniSpider/mini_spider.tscn" id="3_opirf"]
 [ext_resource type="PackedScene" uid="uid://dubjw300lscvf" path="res://Scenes/Rooms/ElementsRoom/box_bomb.glb" id="4_k531c"]
 [ext_resource type="PackedScene" uid="uid://bphoiuv7wxcpg" path="res://Scenes/Rooms/ElementsRoom/box_container.glb" id="5_opirf"]
 [ext_resource type="PackedScene" uid="uid://nov4lcpld0eh" path="res://Scenes/Rooms/ElementsRoom/lamp2.glb" id="6_t7wrg"]
@@ -30,13 +29,10 @@ metadata/_editor_floor_ = Vector3(0, 1, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 3.15399)
 
 [node name="PlayerSpawnPoint" parent="." index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.33728, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.95635, 2.33728, -0.0586565)
 
 [node name="Drone" parent="Mobs" index="0" instance=ExtResource("17_opirf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.705, 3.055, -15.35)
-
-[node name="MiniSpider" parent="Mobs" index="1" instance=ExtResource("3_opirf")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 6.95244, 2.0073, -6.73125)
 
 [node name="box" parent="." index="5" instance=ExtResource("3_a2hsc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 2, -2)

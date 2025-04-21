@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://be8qruf8r3n3t"]
+[gd_scene load_steps=72 format=4 uid="uid://be8qruf8r3n3t"]
 
 [ext_resource type="Script" uid="uid://nwnnlc7wa031" path="res://Scenes/GUI/Menu/menu_room.gd" id="1_72ecf"]
 [ext_resource type="Script" uid="uid://bnqgug85fmxvl" path="res://Scenes/GUI/Menu/menu.gd" id="2_q31fd"]
@@ -12,6 +12,7 @@
 [ext_resource type="Shader" uid="uid://c5hkitl8ymajs" path="res://Scenes/Characters/Player/shader.gdshader" id="5_rf6ab"]
 [ext_resource type="PackedScene" uid="uid://nov4lcpld0eh" path="res://Scenes/Rooms/ElementsRoom/lamp2.glb" id="6_bqawo"]
 [ext_resource type="FontFile" uid="uid://bi01qc2j6yxfr" path="res://Assets/Fonts/New_Zelek.ttf" id="6_m4jva"]
+[ext_resource type="Shader" uid="uid://chigpux1ckndk" path="res://Scenes/GUI/Menu/CRT.gdshader" id="7_qfgtc"]
 [ext_resource type="PackedScene" uid="uid://mgnx8k5y8qhx" path="res://Scenes/Rooms/ElementsRoom/lamp.glb" id="7_xm5o6"]
 [ext_resource type="PackedScene" uid="uid://v2f3gqej4alg" path="res://Scenes/Rooms/ElementsRoom/light_box.glb" id="9_fss6e"]
 [ext_resource type="VoxelGIData" uid="uid://bxv0dqu248ude" path="res://Scenes/GUI/Menu/menu_room.VoxelGI_data.res" id="9_q31fd"]
@@ -46,9 +47,181 @@ volumetric_fog_density = 0.04
 volumetric_fog_albedo = Color(0, 0, 1, 1)
 adjustment_enabled = true
 
+[sub_resource type="Animation" id="Animation_qfgtc"]
+resource_name = "story"
+length = 25.0
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2/Label2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect2/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Menu/button3:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect2/Label3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(20),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Menu")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start_game"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_knsxm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2/Label2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect2/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Menu/button3:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect2/Label3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_knsxm"]
+_data = {
+&"RESET": SubResource("Animation_knsxm"),
+&"story": SubResource("Animation_qfgtc")
+}
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfgtc"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 shadow_color = Color(0.372549, 0.847059, 0.372549, 0.529412)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_knsxm"]
+shader = ExtResource("7_qfgtc")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 1.5
+shader_parameter/roll_size = 25.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 4.75e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.5
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3m34"]
 albedo_color = Color(0.129621, 0.485442, 0.580789, 1)
@@ -8771,6 +8944,11 @@ environment = SubResource("Environment_4fgm6")
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GUI"]
+libraries = {
+&"": SubResource("AnimationLibrary_knsxm")
+}
+
 [node name="Menu" type="Control" parent="GUI"]
 layout_mode = 3
 anchors_preset = 15
@@ -8833,6 +9011,106 @@ theme_override_fonts/font = ExtResource("6_m4jva")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qfgtc")
 text = "Project Cyberog"
 vertical_alignment = 3
+
+[node name="ColorRect2" type="ColorRect" parent="GUI"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="GUI/ColorRect2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_m4jva")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qfgtc")
+text = "> a secret document\" from Nexus-7 marked \"TOP SECRET\".
+
+> Red marks about the \"violator\" (player) and \"instability of the Ark-A sample\".rts + red marks about the \"violator\" (player) and \"instability of the Ark-A sample\"."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="GUI/ColorRect2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 112.0
+offset_top = 43.0
+offset_right = 194.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("6_m4jva")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qfgtc")
+text = "> The year is 2147. 
+Nexus-7 Corporation is on the verge of the greatest discovery in the history of mankind — weapons
+powered by dark matter., 
+capable of rewriting the laws of physics and redrawing the boundaries of reality. 
+The Ark project is a top—secret development that everyone is after:
+government intelligence agencies, criminal syndicates, mercenary armies
+, and even... unknown forces from the outside.
+
+But Nexus 7 didn't take into account one thing—you.
+You're a Ghost Spy, the best in the business. You're going where no mortal has ever gone. 
+You disappear before the alarm goes off. You've been hired this time., 
+to steal the blueprints of the Ark.
+ But when you got into the heart of the complex, you realized it wasn't just a weapon.
+This is the key to something much bigger.
+
+Now you have the prototype of the Ark in your hands, and all hell is behind you. 
+Security drones, killer cyborgs, elite corporate squads, and... something else. 
+Dark matter is alive. She whispers to you in the dark. She wants to get away.
+
+You have to run.
+You have to survive.
+But the most important thing is that you have to decide.…
+Was it worth stealing at all?
+Are you ready to take on the challenge? The shadow is waiting."
+vertical_alignment = 3
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="GUI/ColorRect2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 112.0
+offset_top = 43.0
+offset_right = 194.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("6_m4jva")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qfgtc")
+text = "Good luck"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="GUI/ColorRect2"]
+material = SubResource("ShaderMaterial_knsxm")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = SubResource("MeshLibrary_x7265")
