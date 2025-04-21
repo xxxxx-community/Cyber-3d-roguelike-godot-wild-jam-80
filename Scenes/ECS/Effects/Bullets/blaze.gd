@@ -14,6 +14,8 @@ func _collide(body : Node3D) -> void:
 	if carrier_effect is Projectile:
 		apply_effect(body)
 	elif carrier_effect is Character:
+		if carrier_effect.name == "Player":
+			$GPUParticles3D.amount = 25
 		duration_damage -= 1
 		if duration_damage <= 0:
 			queue_free()

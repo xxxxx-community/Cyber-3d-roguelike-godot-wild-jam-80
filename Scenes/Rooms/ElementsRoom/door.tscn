@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://duhnlml3jxbl6"]
+[gd_scene load_steps=21 format=4 uid="uid://duhnlml3jxbl6"]
 
 [ext_resource type="Script" uid="uid://cme2kt5sfbx37" path="res://Scenes/Rooms/ElementsRoom/door.gd" id="1_m2kyh"]
 [ext_resource type="AudioStream" uid="uid://d30r6ceyoocgh" path="res://Assets/Sound/sfx/door/door_sound.wav" id="2_j1f6i"]
@@ -412,6 +412,9 @@ data = PackedVector3Array(-2, 0, 0.36, -2, 4, -0.36, -2, 4, 0.36, -2, 0, 0.36, -
 [sub_resource type="BoxShape3D" id="BoxShape3D_m2kyh"]
 size = Vector3(2, 1, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_j1f6i"]
+size = Vector3(3.075, 3.335, 1)
+
 [node name="Door" type="StaticBody3D"]
 script = ExtResource("1_m2kyh")
 
@@ -446,8 +449,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 shape = SubResource("BoxShape3D_m2kyh")
 metadata/_edit_lock_ = true
 
+[node name="PlayerDetector2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.485, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetector2"]
+shape = SubResource("BoxShape3D_j1f6i")
+metadata/_edit_lock_ = true
+
 [node name="doorIndicator" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_354gt")
 volume_db = -10.0
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_entered" from="PlayerDetector2" to="." method="_on_player_detector_2_body_entered"]
