@@ -8,7 +8,7 @@ func chase() -> void:
 	var distance_to_player = (player.position - global_position).length()
 	aim_raycast.target_position = player.position - global_position
 	
-	if is_instance_valid(player) and aim_raycast.get_collider() == player and distance_to_player < 40:
+	if is_instance_valid(player) and aim_raycast.get_collider() == player and distance_to_player < 35:
 		move_direction = global_position.direction_to(player.global_position)
 	else:
 		move_direction = Vector3.ZERO

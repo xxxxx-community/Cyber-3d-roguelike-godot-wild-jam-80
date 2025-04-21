@@ -2,7 +2,6 @@ extends StaticBody3D
 
 
 var open : bool = false
-var delete_room : bool = false
 
 func _on_player_detector_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
@@ -13,8 +12,9 @@ func _on_player_detector_body_entered(body: Node3D) -> void:
 
 #после зачистки комнаты активировать этот звук $doorIndicator
 
-func _on_player_close_detector_body_entered(body: Node3D) -> void:
+
+func _on_player_detector_2_body_entered(body: Node3D) -> void:
 	if body.name == "Player" and open:
 		open = false
-		delete_room = true
+		get_tree().current_scene.get_node("SpawnRooms").delete_room(get_parent())
 		$AnimationPlayer.play(&"close")

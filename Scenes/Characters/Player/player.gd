@@ -30,7 +30,7 @@ var current_effect : int
 var weapon = load("res://Scenes/Characters/Player/player_rifle.tres")
 
 func _ready():
-	%shader_mesh.show()
+	#%shader_mesh.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	current_effect = randi_range(0, MAX_EFFECT)
 	change_color(current_effect)
@@ -125,6 +125,7 @@ func play_footstep_sound():
 		concrete_sound_steps.play()
 
 func _process(delta: float) -> void:
+	health_points += 0.05
 	gravity(delta)
 	move()
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not animation_player.is_playing() and can_move:
@@ -133,6 +134,7 @@ func _process(delta: float) -> void:
 		shoot()
 		
 func shoot() -> void:
+	if not randi_range(0, 4): health_points += 15
 	var new_bullet : Area3D = BULLET_SCENE.instantiate()
 	get_tree().current_scene.add_child(new_bullet)
 	# Получаем направление взгляда игрока (вперед от камеры)

@@ -7,6 +7,7 @@
 viewport_path = NodePath("HealthBar/Sprite3D/SubViewport")
 
 [node name="Enemy" instance=ExtResource("1_flmpx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 script = ExtResource("2_0pqjn")
 
 [node name="HealthBar" type="Node3D" parent="." index="3"]
