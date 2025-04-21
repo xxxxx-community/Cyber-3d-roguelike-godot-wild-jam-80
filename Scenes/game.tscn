@@ -20,6 +20,7 @@ sky_material = SubResource("ProceduralSkyMaterial_3dryh")
 
 [sub_resource type="Environment" id="Environment_3dryh"]
 background_mode = 1
+background_color = Color(0.223103, 0.223103, 0.223103, 1)
 sky = SubResource("Sky_wowpa")
 tonemap_mode = 3
 ssr_enabled = true
@@ -49,9 +50,11 @@ environment = SubResource("Environment_3dryh")
 [node name="DirectionalLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 100, 0)
 light_color = Color(0.0156863, 0, 0.529412, 1)
-light_energy = 1.8
+light_energy = 4.0
 shadow_enabled = true
 shadow_bias = 0.01
+shadow_normal_bias = 0.0
+shadow_reverse_cull_face = true
 metadata/_edit_lock_ = true
 
 [node name="SpawnRooms" type="Node3D" parent="."]
