@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 		aim_raycast.target_position = player.position - global_position
 		$Armature.look_at(player.global_position, Vector3.UP, false) 
 		
-		if aim_raycast.get_collider() == player and $Timer.is_stopped() and  distance_to_player < 30:
+		if aim_raycast.get_collider() == player and $Timer.is_stopped() and distance_to_player < 30:
 			$Timer.start()
 			shoot()
 			
