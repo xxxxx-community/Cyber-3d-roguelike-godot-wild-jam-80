@@ -2577,161 +2577,158 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55, 1.
 [node name="box_bomb88" parent="." index="849" instance=ExtResource("10_iyiwe")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 56, 1.63308, 140.4)
 
-[node name="Spawn Points" type="Node3D" parent="." index="850"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 87)
-
 [node name="Marker3D" type="Marker3D" parent="Spawn Points" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.7563, 1, -48)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.7563, 1, 39)
 
 [node name="Marker3D2" type="Marker3D" parent="Spawn Points" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.7563, 1, -36)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.7563, 1, 51)
 
 [node name="Marker3D3" type="Marker3D" parent="Spawn Points" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.7563, 1, -28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.7563, 1, 59)
 
 [node name="Marker3D4" type="Marker3D" parent="Spawn Points" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7563, 1, -21)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.7563, 1, 66)
 
 [node name="Marker3D5" type="Marker3D" parent="Spawn Points" index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.7563, 1, -37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.7563, 1, 50)
 
 [node name="Marker3D6" type="Marker3D" parent="Spawn Points" index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.7563, 1, -45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.7563, 1, 42)
 
 [node name="Marker3D7" type="Marker3D" parent="Spawn Points" index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7563, 1, -45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.7563, 1, 42)
 
 [node name="Marker3D8" type="Marker3D" parent="Spawn Points" index="7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24367, 1, -41)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7563, 1, 46)
 
 [node name="Marker3D9" type="Marker3D" parent="Spawn Points" index="8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75633, 1, -47)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.7563, 1, 40)
 
 [node name="Marker3D10" type="Marker3D" parent="Spawn Points" index="9"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7563, 1, -33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.7563, 1, 54)
 
 [node name="Marker3D11" type="Marker3D" parent="Spawn Points" index="10"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7563, 1, -22)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.7563, 1, 65)
 
 [node name="Marker3D12" type="Marker3D" parent="Spawn Points" index="11"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7563, 1, -18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.7563, 1, 69)
 
 [node name="Marker3D13" type="Marker3D" parent="Spawn Points" index="12"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75633, 1, -28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.7563, 1, 59)
 
 [node name="Marker3D14" type="Marker3D" parent="Spawn Points" index="13"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2437, 1, -30)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7563, 1, 57)
 
 [node name="Marker3D15" type="Marker3D" parent="Spawn Points" index="14"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2437, 1, -29)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2437, 1, 58)
 
 [node name="Marker3D16" type="Marker3D" parent="Spawn Points" index="15"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.2437, 1, -29)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2437, 1, 58)
 
 [node name="Marker3D17" type="Marker3D" parent="Spawn Points" index="16"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.2437, 1, -18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.2437, 1, 69)
 
 [node name="Marker3D18" type="Marker3D" parent="Spawn Points" index="17"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.2437, 1, -28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2437, 1, 59)
 
 [node name="Marker3D19" type="Marker3D" parent="Spawn Points" index="18"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.2437, 1, -36)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2437, 1, 51)
 
 [node name="Marker3D20" type="Marker3D" parent="Spawn Points" index="19"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.2437, 1, -47)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2437, 1, 40)
 
 [node name="Marker3D21" type="Marker3D" parent="Spawn Points" index="20"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.2437, 1, -46)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2437, 1, 41)
 
 [node name="Marker3D22" type="Marker3D" parent="Spawn Points" index="21"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.2437, 1, -50)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2437, 1, 37)
 
 [node name="Marker3D23" type="Marker3D" parent="Spawn Points" index="22"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.2437, 1, -40)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2437, 1, 47)
 
 [node name="Marker3D24" type="Marker3D" parent="Spawn Points" index="23"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2437, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7563, 1, 87)
 
 [node name="Marker3D25" type="Marker3D" parent="Spawn Points" index="24"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2437, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7563, 1, 87)
 
 [node name="Marker3D26" type="Marker3D" parent="Spawn Points" index="25"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75633, 1, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.7563, 1, 86)
 
 [node name="Marker3D27" type="Marker3D" parent="Spawn Points" index="26"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75633, 1, 27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.7563, 1, 114)
 
 [node name="Marker3D28" type="Marker3D" parent="Spawn Points" index="27"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2437, 1, 27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7563, 1, 114)
 
 [node name="Marker3D29" type="Marker3D" parent="Spawn Points" index="28"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.2437, 1, 27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7563, 1, 114)
 
 [node name="Marker3D30" type="Marker3D" parent="Spawn Points" index="29"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7563, 1, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.7563, 1, 77)
 
 [node name="Marker3D31" type="Marker3D" parent="Spawn Points" index="30"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7563, 1, -11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.7563, 1, 76)
 
 [node name="Marker3D32" type="Marker3D" parent="Spawn Points" index="31"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7563, 1, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.7563, 1, 77)
 
 [node name="Marker3D33" type="Marker3D" parent="Spawn Points" index="32"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7563, 1, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.7563, 1, 90)
 
 [node name="Marker3D34" type="Marker3D" parent="Spawn Points" index="33"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7563, 1, 13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.7563, 1, 100)
 
 [node name="Marker3D35" type="Marker3D" parent="Spawn Points" index="34"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7563, 1, 27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.7563, 1, 114)
 
 [node name="Marker3D36" type="Marker3D" parent="Spawn Points" index="35"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7563, 1, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.7563, 1, 90)
 
 [node name="Marker3D37" type="Marker3D" parent="Spawn Points" index="36"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7563, 1, 14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.7563, 1, 101)
 
 [node name="Marker3D38" type="Marker3D" parent="Spawn Points" index="37"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7563, 1, 27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.7563, 1, 114)
 
 [node name="Marker3D39" type="Marker3D" parent="Spawn Points" index="38"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7563, 1, 27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.7563, 1, 114)
 
 [node name="Marker3D40" type="Marker3D" parent="Spawn Points" index="39"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.7563, 1, 35)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.7563, 1, 122)
 
 [node name="Marker3D41" type="Marker3D" parent="Spawn Points" index="40"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.7563, 1, 44)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.7563, 1, 131)
 
 [node name="Marker3D42" type="Marker3D" parent="Spawn Points" index="41"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.7563, 1, 49)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.7563, 1, 136)
 
 [node name="Marker3D43" type="Marker3D" parent="Spawn Points" index="42"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.7563, 1, 43)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.7563, 1, 130)
 
 [node name="Marker3D44" type="Marker3D" parent="Spawn Points" index="43"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7563, 1, 37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7563, 1, 124)
 
 [node name="Marker3D45" type="Marker3D" parent="Spawn Points" index="44"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7563, 1, 49)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.7563, 1, 136)
 
 [node name="Marker3D46" type="Marker3D" parent="Spawn Points" index="45"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.75633, 1, 40)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.7563, 1, 127)
 
 [node name="Marker3D47" type="Marker3D" parent="Spawn Points" index="46"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75633, 1, 53)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.7563, 1, 140)
 
 [node name="Marker3D48" type="Marker3D" parent="Spawn Points" index="47"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.24367, 1, 59)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7563, 1, 146)
 
 [node name="Marker3D49" type="Marker3D" parent="Spawn Points" index="48"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2437, 1, 55)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7563, 1, 142)
 
 [node name="Marker3D50" type="Marker3D" parent="Spawn Points" index="49"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.2437, 1, 61)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2437, 1, 148)
 
 [node name="Marker3D51" type="Marker3D" parent="Spawn Points" index="50"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.2437, 1, 61)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7563, 1, 148)
 
 [node name="Marker3D52" type="Marker3D" parent="Spawn Points" index="51"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7563, 1, 21)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7563, 1, 108)

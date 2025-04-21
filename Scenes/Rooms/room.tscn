@@ -74,3 +74,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1.5)
 [node name="PlayerSpawnPoint" type="Marker3D" parent="."]
 
 [node name="Mobs" type="Node3D" parent="."]
+
+[node name="Spawn Points" type="Node3D" parent="."]
