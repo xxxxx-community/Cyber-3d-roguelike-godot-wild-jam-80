@@ -1,6 +1,7 @@
 extends Node
 
 const CONFIG_PATH = "user://settings.ini"
+var custscene : bool = true
 
 var volume: float = 0.0:
 	set(value):
