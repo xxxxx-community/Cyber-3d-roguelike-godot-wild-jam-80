@@ -23,7 +23,7 @@ func _physics_process(_delta: float) -> void:
 	if not $Timer.is_stopped():
 		for entity in get_tree().get_nodes_in_group("ENTITY_GROUP"):
 			var length : float = (global_position - entity.global_position).length()
-			if length < 20:
+			if length < 60:
 				entity.velocity += (global_position - entity.global_position).normalized() * curve_gravity.sample(length)
 				
 

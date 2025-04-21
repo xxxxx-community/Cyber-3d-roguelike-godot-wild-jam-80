@@ -205,8 +205,10 @@ stream_3/stream = ExtResource("7_cscr0")
 
 [node name="Player" instance=ExtResource("1_27cb7")]
 script = ExtResource("2_lyjr2")
-acceleration = 6.0
-jump_velocity = 4.8
+acceleration = 8.0
+jump_velocity = 7.0
+max_health_points = 1000.0
+health_points = 1000.0
 
 [node name="FiniteStateMachine" parent="." index="0"]
 script = ExtResource("3_cscr0")

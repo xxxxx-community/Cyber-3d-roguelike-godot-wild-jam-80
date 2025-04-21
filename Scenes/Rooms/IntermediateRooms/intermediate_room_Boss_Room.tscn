@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bans2gi8vfxra"]
+[gd_scene load_steps=17 format=3 uid="uid://bans2gi8vfxra"]
 
 [ext_resource type="PackedScene" uid="uid://d3ax88154obaq" path="res://Scenes/Rooms/room.tscn" id="1_k1e8o"]
 [ext_resource type="PackedScene" uid="uid://cohtib2c25y7q" path="res://Assets/3D_models/Enviroment/Strait_mesh.glb" id="3_ct4jp"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://6fufpsr6s7ld" path="res://Scenes/Rooms/ElementsRoom/lamp_long.glb" id="14_khpnb"]
 [ext_resource type="PackedScene" uid="uid://c5uiw0x6v7coe" path="res://Scenes/Rooms/ElementsRoom/window.glb" id="15_jx0sn"]
 [ext_resource type="PackedScene" uid="uid://dn76j0naqx453" path="res://Scenes/ECS/Effects/Bullets/heal.tscn" id="15_khpnb"]
+[ext_resource type="PackedScene" uid="uid://bssr4ktqf3q36" path="res://Scenes/Rooms/static_cube.tscn" id="16_jx0sn"]
 
 [node name="Room" instance=ExtResource("1_k1e8o")]
 
@@ -4881,6 +4882,210 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.7563, 1, 50)
 [node name="Marker3D22" type="Marker3D" parent="Spawn Points" index="43"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.75634, 1, 52)
 
+[node name="Marker3D45" type="Marker3D" parent="Spawn Points" index="44"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6973, 15.0877, 29.9053)
+
+[node name="Marker3D46" type="Marker3D" parent="Spawn Points" index="45"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6973, 15.0877, 23.9053)
+
+[node name="Marker3D47" type="Marker3D" parent="Spawn Points" index="46"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6973, 21.1992, 13.9053)
+
+[node name="Marker3D48" type="Marker3D" parent="Spawn Points" index="47"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6973, 21.1992, 10.9053)
+
+[node name="Marker3D49" type="Marker3D" parent="Spawn Points" index="48"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.196, 26.2605, 5.67625)
+
+[node name="Marker3D50" type="Marker3D" parent="Spawn Points" index="49"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.93879, 29.2663, 2.14978)
+
+[node name="Marker3D51" type="Marker3D" parent="Spawn Points" index="50"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.32147, 29.2663, -3.91088)
+
+[node name="Marker3D52" type="Marker3D" parent="Spawn Points" index="51"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.919423, 29.2663, -0.10918)
+
+[node name="Marker3D53" type="Marker3D" parent="Spawn Points" index="52"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.30177, 29.2663, 4.14976)
+
+[node name="Marker3D54" type="Marker3D" parent="Spawn Points" index="53"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.69823, 29.2663, 2.14976)
+
+[node name="Marker3D55" type="Marker3D" parent="Spawn Points" index="54"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.08674, 29.2663, -5.81857)
+
+[node name="Marker3D56" type="Marker3D" parent="Spawn Points" index="55"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.34538, 29.2663, 7.44569)
+
+[node name="Marker3D57" type="Marker3D" parent="Spawn Points" index="56"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.569595, 29.2663, 7.01907)
+
+[node name="Marker3D58" type="Marker3D" parent="Spawn Points" index="57"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.61557, 29.2663, 7.33183)
+
+[node name="Marker3D68" type="Marker3D" parent="Spawn Points" index="58"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.6662, 43.4923, 28.642)
+
+[node name="Marker3D69" type="Marker3D" parent="Spawn Points" index="59"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.2071, 43.4923, 32.1398)
+
+[node name="Marker3D70" type="Marker3D" parent="Spawn Points" index="60"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.3019, 43.4923, 34.8647)
+
+[node name="Marker3D71" type="Marker3D" parent="Spawn Points" index="61"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9216, 43.4923, 31.9234)
+
+[node name="Marker3D72" type="Marker3D" parent="Spawn Points" index="62"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9216, 43.4923, 38.9234)
+
+[node name="Marker3D73" type="Marker3D" parent="Spawn Points" index="63"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5946, 43.4923, -32.446)
+
+[node name="Marker3D74" type="Marker3D" parent="Spawn Points" index="64"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5946, 39.9606, -40.446)
+
+[node name="Marker3D75" type="Marker3D" parent="Spawn Points" index="65"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5946, 39.9606, -40.446)
+
+[node name="Marker3D86" type="Marker3D" parent="Spawn Points" index="66"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.60558, 28.826, -39.0718)
+
+[node name="Marker3D87" type="Marker3D" parent="Spawn Points" index="67"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.51307, 32.2379, -22.1229)
+
+[node name="Marker3D88" type="Marker3D" parent="Spawn Points" index="68"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0915, 32.2379, -14.2281)
+
+[node name="Marker3D89" type="Marker3D" parent="Spawn Points" index="69"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0915, 32.2379, -7.22813)
+
+[node name="Marker3D90" type="Marker3D" parent="Spawn Points" index="70"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0915, 32.2379, 11.7719)
+
+[node name="Marker3D92" type="Marker3D" parent="Spawn Points" index="71"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9191, 32.2379, 3.23118)
+
+[node name="Marker3D93" type="Marker3D" parent="Spawn Points" index="72"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8596, 32.2379, 18.809)
+
+[node name="Marker3D94" type="Marker3D" parent="Spawn Points" index="73"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84181, 32.2379, 27.3636)
+
+[node name="Marker3D95" type="Marker3D" parent="Spawn Points" index="74"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.530207, 34.9985, 44.5579)
+
+[node name="Marker3D96" type="Marker3D" parent="Spawn Points" index="75"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9255, 12.089, 15.7427)
+
+[node name="Marker3D97" type="Marker3D" parent="Spawn Points" index="76"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8106, 12.089, 22.4956)
+
+[node name="Marker3D91" type="Marker3D" parent="Spawn Points" index="77"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.09149, 24.2379, 11.7719)
+
+[node name="Marker3D76" type="Marker3D" parent="Spawn Points" index="78"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5946, 39.9606, -35.446)
+
+[node name="Marker3D77" type="Marker3D" parent="Spawn Points" index="79"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5946, 39.9606, -40.446)
+
+[node name="Marker3D78" type="Marker3D" parent="Spawn Points" index="80"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5946, 39.9606, -39.446)
+
+[node name="Marker3D79" type="Marker3D" parent="Spawn Points" index="81"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5946, 39.9606, -36.446)
+
+[node name="Marker3D80" type="Marker3D" parent="Spawn Points" index="82"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5946, 39.9606, -38.446)
+
+[node name="Marker3D81" type="Marker3D" parent="Spawn Points" index="83"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5946, 39.9606, -40.446)
+
+[node name="Marker3D82" type="Marker3D" parent="Spawn Points" index="84"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1619, 24.6265, -53.7385)
+
+[node name="Marker3D83" type="Marker3D" parent="Spawn Points" index="85"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.5011, 24.6265, -46.2897)
+
+[node name="Marker3D84" type="Marker3D" parent="Spawn Points" index="86"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.3249, 24.6265, -53.3624)
+
+[node name="Marker3D85" type="Marker3D" parent="Spawn Points" index="87"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.3249, 24.6265, -53.3624)
+
+[node name="Marker3D59" type="Marker3D" parent="Spawn Points" index="88"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.45254, 29.2663, 7.56385)
+
+[node name="Marker3D60" type="Marker3D" parent="Spawn Points" index="89"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.68275, 29.2663, 7.67017)
+
+[node name="Marker3D61" type="Marker3D" parent="Spawn Points" index="90"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6827, 29.2663, 4.67017)
+
+[node name="Marker3D62" type="Marker3D" parent="Spawn Points" index="91"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1463, 29.2663, 2.29526)
+
+[node name="Marker3D63" type="Marker3D" parent="Spawn Points" index="92"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80293, 29.2663, -6.98382)
+
+[node name="Marker3D64" type="Marker3D" parent="Spawn Points" index="93"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.78396, 29.2663, -7.04686)
+
+[node name="Marker3D65" type="Marker3D" parent="Spawn Points" index="94"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21604, 29.2663, -8.04686)
+
+[node name="Marker3D66" type="Marker3D" parent="Spawn Points" index="95"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.44125, 29.2663, -7.81078)
+
+[node name="Marker3D67" type="Marker3D" parent="Spawn Points" index="96"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.44125, 29.2663, -7.81078)
+
+[node name="Marker3D98" type="Marker3D" parent="Spawn Points" index="97"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4591, 23.1691, 10.4779)
+
+[node name="Marker3D99" type="Marker3D" parent="Spawn Points" index="98"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1353, 23.1691, 11.0804)
+
+[node name="Marker3D100" type="Marker3D" parent="Spawn Points" index="99"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6734, 23.1691, 20.1016)
+
+[node name="Marker3D101" type="Marker3D" parent="Spawn Points" index="100"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9084, 23.1691, 25.1088)
+
+[node name="Marker3D102" type="Marker3D" parent="Spawn Points" index="101"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9084, 19.0772, 34.1087)
+
+[node name="Marker3D103" type="Marker3D" parent="Spawn Points" index="102"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9084, 19.0772, 37.1087)
+
+[node name="Marker3D104" type="Marker3D" parent="Spawn Points" index="103"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.9084, 19.0772, 28.1087)
+
+[node name="Marker3D105" type="Marker3D" parent="Spawn Points" index="104"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3159, 23.6557, 35.3039)
+
+[node name="Marker3D106" type="Marker3D" parent="Spawn Points" index="105"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.3813, 23.6557, 35.8009)
+
+[node name="Marker3D107" type="Marker3D" parent="Spawn Points" index="106"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0818, 23.6557, 28.6324)
+
+[node name="Marker3D108" type="Marker3D" parent="Spawn Points" index="107"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0818, 23.6557, 42.6324)
+
+[node name="Marker3D109" type="Marker3D" parent="Spawn Points" index="108"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.9114, 23.6557, 50.1949)
+
+[node name="Marker3D110" type="Marker3D" parent="Spawn Points" index="109"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7266, 23.6557, 51.5315)
+
+[node name="Marker3D111" type="Marker3D" parent="Spawn Points" index="110"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2734, 23.6557, 51.5315)
+
+[node name="Marker3D112" type="Marker3D" parent="Spawn Points" index="111"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2734, 23.6557, 51.5315)
+
 [node name="Heal" parent="." index="1578" instance=ExtResource("15_khpnb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.06467, 1.43483, -62.6204)
 
@@ -5054,3 +5259,237 @@ transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 3.20337,
 
 [node name="box429" parent="." index="1635" instance=ExtResource("11_i34la")]
 transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -12.8229, 4, -28.6324)
+
+[node name="StaticCube" parent="." index="1636" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 16.112, 0)
+
+[node name="StaticCube2" parent="." index="1637" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -35.6404, 30.9683, 25.3125)
+
+[node name="StaticCube12" parent="." index="1638" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(-41.3677, 1.2834, -12.8558, 24.61, 3.67624, 0, 34.7116, -1.0769, -15.3209, -27.953, 24.253, -44.878)
+
+[node name="StaticCube13" parent="." index="1639" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(-4.49027, 2.04633, 0.80621, 2.07347, 4.54981, -1.44079e-08, -0.73362, 0.33433, -4.93457, 33.6694, 24.253, -46.6343)
+
+[node name="StaticCube14" parent="." index="1640" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(-4.49027, 2.04633, 0.80621, 2.07347, 4.54981, -1.44079e-08, -0.73362, 0.33433, -4.93457, 42.8982, 24.253, -29.9272)
+
+[node name="StaticCube15" parent="." index="1641" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(-4.49027, 2.04633, 0.80621, 2.07347, 4.54981, -1.44079e-08, -0.73362, 0.33433, -4.93457, 44.6223, 24.253, -49.6427)
+
+[node name="StaticCube16" parent="." index="1642" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(-4.49027, 2.04633, 0.80621, 2.07347, 4.54981, -1.44079e-08, -0.73362, 0.33433, -4.93457, 52.4081, 24.253, -17.6571)
+
+[node name="StaticCube17" parent="." index="1643" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(-4.49027, 2.04633, 0.80621, 2.07347, 4.54981, -1.44079e-08, -0.73362, 0.33433, -4.93457, 52.7642, 24.253, -33.9291)
+
+[node name="StaticCube18" parent="." index="1644" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(-4.49027, 2.04633, 0.80621, 2.07347, 4.54981, -1.44079e-08, -0.73362, 0.33433, -4.93457, 44.8968, 24.253, -39.8228)
+
+[node name="StaticCube19" parent="." index="1645" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(-4.49027, 2.04633, 0.80621, 2.07347, 4.54981, -1.44079e-08, -0.73362, 0.33433, -4.93457, 37.4326, 24.253, -16.6535)
+
+[node name="StaticCube20" parent="." index="1646" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(-4.49027, 2.04633, 0.80621, 2.07347, 4.54981, -1.44079e-08, -0.73362, 0.33433, -4.93457, 36.4326, 24.253, -0.653519)
+
+[node name="StaticCube21" parent="." index="1647" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(-4.49027, 2.04633, 0.80621, 2.07347, 4.54981, -1.44079e-08, -0.73362, 0.33433, -4.93457, 41.5672, 24.253, -10.7185)
+
+[node name="StaticCube22" parent="." index="1648" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(-4.49027, 2.04633, 0.80621, 2.07347, 4.54981, -1.44079e-08, -0.73362, 0.33433, -4.93457, 41.5672, 24.253, -20.7185)
+
+[node name="StaticCube23" parent="." index="1649" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(-4.49027, 2.04633, 0.80621, 2.07347, 4.54981, -1.44079e-08, -0.73362, 0.33433, -4.93457, 39.5672, 24.253, -2.71849)
+
+[node name="StaticCube24" parent="." index="1650" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(-4.49027, 2.04633, 0.80621, 2.07347, 4.54981, -1.44079e-08, -0.73362, 0.33433, -4.93457, 33.7161, 24.253, 6.55084)
+
+[node name="StaticCube25" parent="." index="1651" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(-4.49027, 2.04633, 0.80621, 2.07347, 4.54981, -1.44079e-08, -0.73362, 0.33433, -4.93457, 33.2706, 24.253, 12.1004)
+
+[node name="StaticCube26" parent="." index="1652" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(-4.49027, 2.04633, 0.80621, 2.07347, 4.54981, -1.44079e-08, -0.73362, 0.33433, -4.93457, 26.6787, 17.1387, 10.007)
+
+[node name="StaticCube27" parent="." index="1653" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(-4.49027, 2.04633, 0.80621, 2.07347, 4.54981, -1.44079e-08, -0.73362, 0.33433, -4.93457, 28.4829, 19.3876, 4.82801)
+
+[node name="StaticCube28" parent="." index="1654" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(-4.49027, 2.04633, 0.80621, 2.07347, 4.54981, -1.44079e-08, -0.73362, 0.33433, -4.93457, 30.945, 22.1015, -0.0740509)
+
+[node name="StaticCube29" parent="." index="1655" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(-1.17028, 36.2928, 0.501581, 4.80544, 9.2216, -0.631183, -0.73362, 2.50948, -4.93457, 24.5756, 20.3126, -10.776)
+
+[node name="StaticCube30" parent="." index="1656" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(3.49581, 23.7345, 1.66752, -1.18595, -8.81503, 4.71321, 3.37236, -27.7033, -0.0710862, -19.456, 27.0131, 18.9295)
+
+[node name="StaticCube31" parent="." index="1657" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(4.81813, -6.75126, 0.988231, -1.22229, -11.0499, 4.61939, -0.540017, -35.2253, -1.63847, -23.7705, 32.6495, 28.0559)
+
+[node name="StaticCube32" parent="." index="1658" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 1.89217, 32.6495, 41.5273)
+
+[node name="StaticCube33" parent="." index="1659" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 2.84415, 29.3169, 27.8179)
+
+[node name="StaticCube65" parent="." index="1660" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, 7.92742, 0.672006, 0, -1.07521, 4.95463, -23.6928, 3.18902, 46.3594)
+
+[node name="StaticCube66" parent="." index="1661" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, 7.92742, 0.672006, 0, -1.07521, 4.95463, -13.5784, 3.18902, 54.2937)
+
+[node name="StaticCube67" parent="." index="1662" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, 7.92742, 0.672006, 0, -1.07521, 4.95463, 8.42165, 3.18902, 30.2937)
+
+[node name="StaticCube68" parent="." index="1663" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, 7.92742, 0.672006, 0, -1.07521, 4.95463, 19.4216, 3.18902, 51.2937)
+
+[node name="StaticCube69" parent="." index="1664" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, 7.92742, 0.672006, 0, -1.07521, 4.95463, -0.578352, 3.18902, 54.2937)
+
+[node name="StaticCube70" parent="." index="1665" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, 7.92742, 0.672006, 0, -1.07521, 4.95463, 33.613, 3.18902, 31.3759)
+
+[node name="StaticCube71" parent="." index="1666" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, 7.92742, 0.672006, 0, -1.07521, 4.95463, 40.613, 3.18902, 42.3759)
+
+[node name="StaticCube72" parent="." index="1667" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, 7.92742, 0.672006, 0, -1.07521, 4.95463, 45.613, 3.18902, 31.3759)
+
+[node name="StaticCube73" parent="." index="1668" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, 7.92742, 0.672006, 0, -1.07521, 4.95463, 52.613, 3.18902, 22.3759)
+
+[node name="StaticCube74" parent="." index="1669" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, 7.92742, 0.672006, 0, -1.07521, 4.95463, 39.7638, 3.18902, 51.1716)
+
+[node name="StaticCube75" parent="." index="1670" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, 7.92742, 0.672006, 0, -1.07521, 4.95463, 48.7638, 3.18902, 45.1716)
+
+[node name="StaticCube76" parent="." index="1671" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, 7.92742, 0.672006, 0, -1.07521, 4.95463, -36.9477, 3.18902, -46.9781)
+
+[node name="StaticCube77" parent="." index="1672" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, 7.92742, 0.672006, 0, -1.07521, 4.95463, -43.0841, 3.18902, -4.22922)
+
+[node name="StaticCube78" parent="." index="1673" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, 7.92742, 0.672006, 0, -1.07521, 4.95463, -25.617, 3.18902, -11.1117)
+
+[node name="StaticCube34" parent="." index="1674" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, -8.22285, 29.3169, 29.5084)
+
+[node name="StaticCube35" parent="." index="1675" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, -8.11371, 29.3169, 20.1381)
+
+[node name="StaticCube36" parent="." index="1676" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, -2.11371, 29.3169, 18.1381)
+
+[node name="StaticCube37" parent="." index="1677" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 2.88629, 29.3169, 17.1381)
+
+[node name="StaticCube38" parent="." index="1678" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 6.88629, 29.3169, 15.1381)
+
+[node name="StaticCube39" parent="." index="1679" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 9.88629, 29.3169, 13.1381)
+
+[node name="StaticCube40" parent="." index="1680" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 11.8863, 29.3169, 12.1381)
+
+[node name="StaticCube41" parent="." index="1681" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 13.8863, 29.3169, 10.1381)
+
+[node name="StaticCube42" parent="." index="1682" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 15.8863, 29.3169, 8.13807)
+
+[node name="StaticCube43" parent="." index="1683" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 17.8863, 29.3169, 5.13807)
+
+[node name="StaticCube44" parent="." index="1684" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 18.7238, 29.3169, 2.28288)
+
+[node name="StaticCube45" parent="." index="1685" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 19.7238, 29.3169, -0.717118)
+
+[node name="StaticCube47" parent="." index="1686" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 19.7238, 29.3169, -6.71712)
+
+[node name="StaticCube48" parent="." index="1687" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 16.7238, 29.3169, -12.7171)
+
+[node name="StaticCube49" parent="." index="1688" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 12.7238, 29.3169, -17.7171)
+
+[node name="StaticCube50" parent="." index="1689" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 8.72384, 29.3169, -21.7171)
+
+[node name="StaticCube51" parent="." index="1690" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 4.72384, 29.3169, -25.7171)
+
+[node name="StaticCube52" parent="." index="1691" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 4.72384, 29.3169, -25.7171)
+
+[node name="StaticCube53" parent="." index="1692" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 1.03203, 29.3169, -28.72)
+
+[node name="StaticCube54" parent="." index="1693" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, -1.96797, 29.3169, -30.72)
+
+[node name="StaticCube55" parent="." index="1694" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, -3.5809, 27.9423, -33.2119)
+
+[node name="StaticCube56" parent="." index="1695" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, -5.68467, 25.7154, -36.535)
+
+[node name="StaticCube57" parent="." index="1696" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, -8.34715, 23.443, -40.0814)
+
+[node name="StaticCube58" parent="." index="1697" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, -9.21104, 20.8784, -43.6873)
+
+[node name="StaticCube59" parent="." index="1698" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -0.161117, 4.99899, 0, -7.99838, -0.100698, 1.19862, 13.2146, -52.5709)
+
+[node name="StaticCube60" parent="." index="1699" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(4.7976, -0.0453768, 1.40791, -1.40819, -0.154596, 4.79663, 0, -7.99838, -0.100698, 3.76972, 8.17886, -52.5709)
+
+[node name="StaticCube61" parent="." index="1700" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(4.67301, -0.0573086, 1.77811, -1.77847, -0.150581, 4.67206, 0, -7.99838, -0.100698, 3.12045, 11.2522, -48.7774)
+
+[node name="StaticCube64" parent="." index="1701" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(4.67301, -0.0573086, 1.77811, -1.77847, -0.150581, 4.67206, 0, -7.99838, -0.100698, 2.66745, 10.3072, -58.1727)
+
+[node name="StaticCube62" parent="." index="1702" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(4.19178, -0.0878287, 2.72506, -2.72554, -0.190491, 4.19013, 0.0188855, -7.99725, -0.129735, 4.40571, 5.29372, -52.3184)
+
+[node name="StaticCube63" parent="." index="1703" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(4.34047, -0.0799785, 2.48149, -2.48199, -0.139865, 4.33959, 0, -7.99838, -0.100698, 4.90567, 3.16123, -47.8265)
+
+[node name="StaticCube46" parent="." index="1704" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
+
+[node name="StaticCube3" parent="." index="1705" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -4.76743, 1.50719, 0, -1.50719, -4.76743, 22.9606, 6.2572, 34.2373)
+
+[node name="StaticCube4" parent="." index="1706" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -4.76743, 1.50719, 0, -1.50719, -4.76743, 22.9606, 8.59121, 28.403)
+
+[node name="StaticCube5" parent="." index="1707" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -4.76743, 1.50719, 0, -1.50719, -4.76743, 22.9606, 10.4701, 22.8339)
+
+[node name="StaticCube6" parent="." index="1708" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -4.76743, 1.50719, 0, -1.50719, -4.76743, 22.9606, 12.8122, 17.1726)
+
+[node name="StaticCube7" parent="." index="1709" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -4.76743, 1.50719, 0, -1.50719, -4.76743, 22.9606, 15.3674, 11.3196)
+
+[node name="StaticCube8" parent="." index="1710" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -4.76743, 1.50719, 0, -1.50719, -4.76743, 17.2482, 16.1165, 11.3196)
+
+[node name="StaticCube9" parent="." index="1711" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -4.76743, 1.50719, 0, -1.50719, -4.76743, 13.9756, 17.442, 7.83101)
+
+[node name="StaticCube10" parent="." index="1712" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -4.76743, 1.50719, 0, -1.50719, -4.76743, 10.9742, 20.3698, 4.98529)
+
+[node name="StaticCube11" parent="." index="1713" instance=ExtResource("16_jx0sn")]
+transform = Transform3D(5, 0, 0, 0, -4.76743, 1.50719, 0, -1.50719, -4.76743, 9.94544, 22.4623, 0.475419)

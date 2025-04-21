@@ -42,7 +42,7 @@ func launch(attacker : Node3D, pos : Vector3, dir : Vector3 = Vector3.ZERO, spee
 		
 		components.add_child(bullet)
 		components.add_child(mod)
-		print(bullet, mod)
+		#print(bullet, mod)
 
 # Применяем случайное отклонение к направлению
 func _apply_spread(base_dir: Vector3, angle: float) -> Vector3:
