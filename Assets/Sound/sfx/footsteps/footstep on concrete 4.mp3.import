@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b25qyurhu7yhq"
+path="res://.godot/imported/footstep on concrete 4.mp3-3bd1979c23125dac3756fe3b75cd50f4.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/sfx/footsteps/footstep on concrete 4.mp3"
+dest_files=["res://.godot/imported/footstep on concrete 4.mp3-3bd1979c23125dac3756fe3b75cd50f4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
