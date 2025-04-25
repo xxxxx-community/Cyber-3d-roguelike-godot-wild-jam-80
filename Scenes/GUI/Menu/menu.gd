@@ -26,3 +26,7 @@ func _on_quit_button_pressed() -> void:
 
 func _on_cam_player_animation_finished(anim_name: StringName) -> void:
 	get_tree().change_scene_to_packed(scene)
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed(&"ui_accept"):
+		$"../AnimationPlayer".speed_scale *= 2

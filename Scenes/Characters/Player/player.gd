@@ -1,7 +1,6 @@
 extends Character
 
-
-const BULLET_SCENE : PackedScene = preload("res://Scenes/Projectiles/projectile.tscn")
+const PROJECTILE = preload("uid://1huy1acvith")
 const MOUSE_SENSITIVITY : float = 0.01
 
 @onready var head = $Body/Head
@@ -133,8 +132,9 @@ func _process(delta: float) -> void:
 		shoot()
 		
 func shoot() -> void:
+	print(1)
 	if not randi_range(0, 4): health_points += 15
-	var new_bullet : Area3D = BULLET_SCENE.instantiate()
+	var new_bullet : Area3D = PROJECTILE.instantiate()
 	get_tree().current_scene.add_child(new_bullet)
 	# Получаем направление взгляда игрока (вперед от камеры)
 	var shoot_direction : Vector3 = -camera.global_transform.basis.z.normalized()

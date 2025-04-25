@@ -1,7 +1,8 @@
 extends Enemy
 
 
-const BULLET_SCENE : PackedScene = preload("res://Scenes/Projectiles/projectile.tscn")
+const BULLET_SCENE = preload("uid://1huy1acvith")
+
 const BLAZE : Array[PackedScene] = [
 	preload("uid://1jlq2hixdbyy"),
 	preload("uid://0b5gernd2bd1")

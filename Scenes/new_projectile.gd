@@ -51,7 +51,6 @@ func _apply_spread(base_dir: Vector3, angle: float) -> Vector3:
 	var random_angle_y : float = randf_range(-angle, angle)
 	
 	# Создаем базовую ориентацию
-	@warning_ignore("shadowed_variable_base_class")
 	var basis : Basis = Basis()
 	
 	# Поворачиваем вокруг осей

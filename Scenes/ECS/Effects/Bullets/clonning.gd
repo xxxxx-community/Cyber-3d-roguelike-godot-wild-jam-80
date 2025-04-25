@@ -10,5 +10,5 @@ func _collide(body : Node3D) -> void:
 
 func apply_effect(body : Node3D) -> void:
 	var new_body : Node3D = body.duplicate()
-	get_tree().current_scene.add_child(new_body)
+	get_tree().current_scene.get_node("SpawnRooms").current_room.add_child(new_body)
 	new_body.global_position = body.global_position + Vector3(1, 0, 1)

@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0mmlivrbu315"]
+[gd_scene load_steps=8 format=3 uid="uid://1huy1acvith"]
 
-[ext_resource type="Script" uid="uid://dwyefov2uektv" path="res://Scenes/Projectiles/projectile.gd" id="1_2re41"]
+[ext_resource type="Script" uid="uid://clvbffrjcsbid" path="res://Scenes/new_projectile.gd" id="1_i6no0"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_1bece"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_i6no0"]
 
 [sub_resource type="Animation" id="Animation_o6i24"]
 length = 0.001
@@ -82,17 +82,17 @@ _data = {
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aihi3"]
 shading_mode = 0
 
-[sub_resource type="SphereMesh" id="SphereMesh_aihi3"]
+[sub_resource type="SphereMesh" id="SphereMesh_w570y"]
 material = SubResource("StandardMaterial3D_aihi3")
 radius = 0.1
 height = 0.2
 
-[node name="Projectile" type="Area3D"]
-script = ExtResource("1_2re41")
+[node name="NewProjectile" type="Area3D"]
+script = ExtResource("1_i6no0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-shape = SubResource("SphereShape3D_1bece")
+shape = SubResource("SphereShape3D_i6no0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -102,4 +102,4 @@ libraries = {
 [node name="Components" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_aihi3")
+mesh = SubResource("SphereMesh_w570y")

@@ -12,10 +12,12 @@ func _ready() -> void:
 		for point in get_node("Spawn Points").get_children():
 			var rand : int = randi_range(0, 2)
 			
-			var new_enemy : Enemy = ENEMIES[rand].instantiate()
-			add_child(new_enemy)
-			new_enemy.global_position = point.global_position
+			for i in randi_range(1, 2):
+				var new_enemy : Enemy = ENEMIES[rand].instantiate()
+				add_child(new_enemy)
+				new_enemy.global_position = point.global_position
 			
-			# дроны
-			if rand == 0:
-				new_enemy.global_position.y += randf_range(3, 5)
+				
+				# дроны
+				if rand == 0:
+					new_enemy.global_position.y += randf_range(3, 9)

@@ -34,8 +34,9 @@ sky_material = SubResource("ProceduralSkyMaterial_5hu2p")
 
 [sub_resource type="Environment" id="Environment_4fgm6"]
 background_mode = 1
+background_color = Color(0.4, 0, 1, 1)
 sky = SubResource("Sky_wowpa")
-tonemap_mode = 2
+tonemap_mode = 3
 ssr_max_steps = 56
 ssao_enabled = true
 ssil_enabled = true
