@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cpxrlrta5ft8c"]
+
+[node name="Room" type="Node3D"]
+
+[node name="SpawnMobs" type="Node3D" parent="."]
+
+[node name="PlayerSpawnPoint" type="Node3D" parent="."]
+
+[node name="Level" type="Node3D" parent="."]
