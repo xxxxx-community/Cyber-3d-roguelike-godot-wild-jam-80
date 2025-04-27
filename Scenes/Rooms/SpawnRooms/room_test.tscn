@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dc0gcva7dodic" path="res://Scenes/ECS/Projectiles/black_hole.tscn" id="9_u58wy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aoynx"]
-size = Vector3(10, 1, 10)
+size = Vector3(100, 1, 100)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p6rco"]
 
@@ -61,13 +61,20 @@ emission = Color(0.364, 0, 0.78, 1)
 
 [node name="RoomTest" instance=ExtResource("1_aoynx")]
 
-[node name="PlayerSpawnPoint" parent="." index="1"]
+[node name="GridMap" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+data = {
+"cells": PackedInt32Array(131069, 6, 2, 131069, 7, 2, 131069, 8, 2, 131069, 9, 2, 131069, 10, 2, 131067, 6, 2, 131067, 7, 2, 131067, 8, 2, 131067, 9, 2, 131067, 10, 2, 131066, 10, 2, 131065, 10, 2, 131064, 10, 2, 131064, 11, 2, 131064, 12, 2, 131064, 13, 2, 131064, 14, 2, 131064, 15, 2, 131064, 16, 2, 131064, 17, 2, 131065, 17, 2, 131066, 17, 2, 131070, 10, 2, 131071, 10, 2, 65536, 10, 2, 65537, 11, 2, 65537, 10, 2, 65537, 12, 2, 65537, 13, 2, 65537, 14, 2, 65537, 15, 2, 65537, 16, 2, 65537, 17, 2, 65536, 17, 2, 131071, 17, 2, 131070, 17, 2, 131067, 17, 2, 131068, 17, 2, 131068, 18, 2, 131068, 19, 2, 131068, 20, 2, 131070, 18, 2, 131070, 19, 2, 131070, 20, 2, 131070, 21, 2, 131070, 22, 2, 131070, 23, 2, 131070, 24, 2, 131068, 21, 2, 131068, 22, 2, 131068, 23, 2, 131068, 24, 2, 131071, 24, 2, 65536, 24, 2, 65537, 24, 2, 65538, 24, 2, 65539, 24, 2, 65539, 25, 2, 65539, 26, 2, 65539, 27, 2, 65539, 30, 2, 65539, 31, 2, 131067, 24, 2, 131066, 24, 2, 131065, 24, 2, 131064, 24, 2, 131064, 25, 2, 131064, 26, 2, 131064, 27, 2, 131064, 29, 2, 131064, 30, 2, 131064, 31, 2, 131064, 32, 2, 131065, 32, 2, 131066, 32, 2, 131067, 32, 2, 131068, 32, 2, 131069, 32, 2, 131070, 32, 2, 131071, 32, 2, 65536, 32, 2, 65537, 32, 2, 65538, 32, 2, 65539, 32, 2, 65539, 29, 2, 131063, 26, 2, 131062, 26, 2, 131061, 26, 2, 131061, 27, 2, 131061, 28, 2, 131061, 29, 2, 131061, 30, 2, 131061, 31, 2, 131061, 32, 2, 131068, 35, 2, 131067, 35, 2, 131066, 35, 2, 131065, 35, 2, 131064, 35, 2, 131063, 35, 2, 131062, 35, 2, 131061, 35, 2, 131060, 35, 2, 131059, 35, 2, 131058, 35, 2, 131059, 34, 2, 131059, 33, 2, 131060, 27, 2, 131059, 27, 2, 131058, 27, 2, 131057, 27, 2, 131056, 27, 2, 131056, 28, 2, 131055, 28, 2, 131055, 29, 2, 131055, 30, 2, 131055, 31, 2, 131055, 32, 2, 131055, 33, 2, 131057, 35, 2, 131056, 35, 2, 131055, 35, 2, 131054, 35, 2, 131053, 35, 2, 131052, 35, 2, 131051, 35, 2, 131051, 34, 2, 131051, 33, 2, 131052, 32, 2, 131052, 31, 2, 131052, 30, 2, 131051, 32, 2, 131052, 29, 2, 131052, 28, 2, 131052, 27, 2, 131052, 26, 2, 131053, 25, 2, 131053, 24, 2, 131052, 25, 2, 131053, 23, 2, 131053, 22, 2, 131053, 21, 2, 131053, 20, 2, 131060, 19, 2, 131059, 19, 2, 131058, 19, 2, 131057, 19, 2, 131056, 19, 2, 131055, 19, 2, 131054, 19, 2, 131053, 19, 2, 131060, 20, 2, 131060, 21, 2, 131060, 22, 2, 131060, 23, 2, 131062, 19, 2, 131061, 19, 2, 131063, 19, 2, 131064, 19, 2, 131064, 18, 2, 131060, 26, 2, 131070, 34, 2, 131070, 35, 2, 131070, 36, 2, 131070, 37, 2, 131070, 38, 2, 131070, 33, 2, 131068, 37, 2, 131068, 38, 2, 131068, 39, 2, 131068, 36, 2, 131070, 39, 2, 65540, 31, 2, 65542, 31, 2, 65543, 31, 2, 65541, 31, 2, 65544, 31, 2, 65545, 31, 2, 65545, 30, 2, 65546, 30, 2, 65546, 29, 2, 65546, 28, 2, 65546, 27, 2, 65546, 26, 2, 65546, 25, 2, 65546, 24, 2, 65545, 24, 2, 65545, 23, 2, 65544, 23, 2, 65544, 22, 2, 65543, 23, 2, 65542, 23, 2, 65541, 23, 2, 65539, 23, 2, 65539, 20, 2, 65539, 19, 2, 65539, 18, 2, 65539, 17, 2, 65538, 17, 2, 65540, 17, 2, 65541, 17, 2, 65542, 17, 2, 65543, 17, 2, 65544, 17, 2, 65545, 18, 2, 65545, 19, 2, 65545, 20, 2, 65545, 21, 2, 65544, 21, 2, 65545, 17, 2)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="PlayerSpawnPoint" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76831, 1.33162, 3.43813)
 
 [node name="Platform" type="StaticBody3D" parent="Level" index="0"]
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Level/Platform" index="0"]
-size = Vector3(10, 1, 10)
+size = Vector3(100, 1, 100)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Platform" index="1"]
 shape = SubResource("BoxShape3D_aoynx")
@@ -211,26 +218,26 @@ omni_range = 0.05
 omni_attenuation = 0.5
 metadata/_edit_lock_ = true
 
-[node name="Mannequin" parent="." index="3" instance=ExtResource("2_p6rco")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.45995, 1.63876, -3.12599)
+[node name="Mannequin" parent="." index="4" instance=ExtResource("2_p6rco")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.45995, 0.545178, -3.12599)
 
-[node name="Blaze" parent="." index="4" instance=ExtResource("3_xiwtb")]
+[node name="Blaze" parent="." index="5" instance=ExtResource("3_xiwtb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 0)
 
-[node name="Freeze" parent="." index="5" instance=ExtResource("4_oe5ox")]
+[node name="Freeze" parent="." index="6" instance=ExtResource("4_oe5ox")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -4)
 
-[node name="ChangeSize" parent="." index="6" instance=ExtResource("5_dirig")]
+[node name="ChangeSize" parent="." index="7" instance=ExtResource("5_dirig")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 3)
 
-[node name="Heal" parent="." index="7" instance=ExtResource("6_4onmq")]
+[node name="Heal" parent="." index="8" instance=ExtResource("6_4onmq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.42472, 1, -1.29097)
 
-[node name="Clone" parent="." index="8" instance=ExtResource("7_1x6fu")]
+[node name="Clone" parent="." index="9" instance=ExtResource("7_1x6fu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -4)
 
-[node name="Explosion" parent="." index="9" instance=ExtResource("8_sevfp")]
+[node name="Explosion" parent="." index="10" instance=ExtResource("8_sevfp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -4)
 
-[node name="BlackHole" parent="." index="10" instance=ExtResource("9_u58wy")]
+[node name="BlackHole" parent="." index="11" instance=ExtResource("9_u58wy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.38369, 1, -11.1454)

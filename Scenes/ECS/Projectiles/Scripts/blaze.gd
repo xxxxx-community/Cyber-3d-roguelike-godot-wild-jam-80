@@ -3,10 +3,12 @@ extends Projectile
 
 # сколько раз нанесёт урон (сначала происходит просто урон от снаряда,
 # а потом дополнительно duration_damage раз)
-var duration_damage : int = 5
+var duration_damage : int = randi_range(10, 20)
 
 func _collide(body : Node3D) -> void:
 	if not body.has_method("take_damage") or body == attacker:
+		animation_player.play("end_projectile")
+		projectile_speed = 0
 		return 
 		
 	body.take_damage(damage, knockback_direction)
