@@ -248,6 +248,8 @@ shadow_mesh = SubResource("ArrayMesh_6b6qj")
 [node name="Player" instance=ExtResource("1_27cb7")]
 script = ExtResource("2_lyjr2")
 acceleration = 2.0
+max_health_points = 100.0
+health_points = 100.0
 
 [node name="CollisionShape3D" parent="." index="1"]
 shape = SubResource("CapsuleShape3D_27cb7")
@@ -286,7 +288,7 @@ metadata/_edit_lock_ = true
 
 [node name="Marker3D" type="Marker3D" parent="Body/Camera3D/Rifle" index="0"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-08, 0, 0.701929)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.7)
 metadata/_edit_lock_ = true
 
 [node name="Cylinder" type="MeshInstance3D" parent="Body/Camera3D" index="1"]

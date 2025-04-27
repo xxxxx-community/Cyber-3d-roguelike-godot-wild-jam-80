@@ -7,7 +7,3 @@ func _ready() -> void:
 	get_viewport().screen_space_aa = 0 as Viewport.ScreenSpaceAA
 	get_viewport().positional_shadow_atlas_size = 8192
 	get_viewport().mesh_lod_threshold = 0.0
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

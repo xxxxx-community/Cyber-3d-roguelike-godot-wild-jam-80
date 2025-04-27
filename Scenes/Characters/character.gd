@@ -4,9 +4,11 @@ class_name Character extends CharacterBody3D
 const FRICTION          : float = 0.1
 
 @export var jump_velocity  : float = 5.0
-
 @export var acceleration   : float = 10.0
 @onready var accel : float = acceleration
+@export var max_health_points : float = 10.0
+@export var health_points : float = 10.0: set = set_hp
+signal hp_changed(new_hp)
 
 @onready var state_machine : Node = get_node("FiniteStateMachine")
 
@@ -31,3 +33,17 @@ func gravity(delta : float) -> void:
 		
 		if global_position.y < -50:
 			velocity.y = jump_velocity * 7
+
+func set_hp(new_hp: float) -> void:
+	health_points = clamp(new_hp, 0, max_health_points)
+	emit_signal("hp_changed", health_points)
+
+func take_damage(damage : float, _dir : Vector3 = Vector3.ZERO) -> void:
+	health_points += damage
+	print("Health of " + str(self.name) + " : " + str(health_points))
+	if health_points > 0:
+		pass
+		#parent.state_machine.set_state(parent.state_machine.states.hurt)
+	else:
+		can_move = false
+		#state_machine.set_state(state_machine.states.dead)

@@ -25,9 +25,8 @@ sdfgi_cascades = 3
 sdfgi_min_cell_size = 0.25
 sdfgi_y_scale = 0
 glow_enabled = true
-glow_intensity = 1.0
 glow_strength = 0.8
-glow_bloom = 0.3
+glow_blend_mode = 0
 fog_mode = 1
 fog_light_color = Color(0.396078, 0, 0.909804, 1)
 fog_light_energy = 0.5
@@ -44,6 +43,7 @@ environment = SubResource("Environment_2poj3")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.891007, -0.247261, 0.380749, 0, 0.838671, 0.544639, -0.453991, -0.485277, 0.747261, 4, 6, 8)
+visible = false
 light_specular = 2.0
 shadow_enabled = true
 shadow_bias = 0.04

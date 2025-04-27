@@ -1,0 +1,129 @@
+[gd_scene load_steps=11 format=3 uid="uid://be7o2y1cx7qj4"]
+
+[ext_resource type="PackedScene" uid="uid://e2e0dskfvbx0" path="res://Scenes/ECS/Projectiles/projectile.tscn" id="1_10py3"]
+[ext_resource type="Script" uid="uid://ca7kwxu3hecwp" path="res://Scenes/ECS/Projectiles/Scripts/clone.gd" id="2_f52r0"]
+
+[sub_resource type="Animation" id="Animation_f52r0"]
+resource_name = "RESET"
+length = 0.001
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles3D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_chkum"]
+resource_name = "end_projectile"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles3D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mjwx2"]
+_data = {
+&"RESET": SubResource("Animation_f52r0"),
+&"end_projectile": SubResource("Animation_chkum")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chkum"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_mjwx2"]
+material = SubResource("StandardMaterial3D_chkum")
+radius = 0.1
+height = 0.2
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_chkum"]
+spread = 180.0
+initial_velocity_min = 2.5
+initial_velocity_max = 2.5
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -5.0
+radial_accel_max = -5.0
+scale_min = 0.1
+scale_max = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mjwx2"]
+albedo_color = Color(0, 0, 1, 1)
+emission_enabled = true
+emission = Color(0, 0, 1, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_1f36l"]
+material = SubResource("StandardMaterial3D_mjwx2")
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Clone" instance=ExtResource("1_10py3")]
+script = ExtResource("2_f52r0")
+delay_attack = 2.0
+
+[node name="AnimationPlayer" parent="." index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_mjwx2")
+}
+
+[node name="MeshInstance3D" parent="." index="3"]
+mesh = SubResource("SphereMesh_mjwx2")
+
+[node name="OmniLight3D" parent="." index="4"]
+light_color = Color(0, 0, 1, 1)
+
+[node name="GPUParticles3D" parent="." index="5"]
+cast_shadow = 0
+process_material = SubResource("ParticleProcessMaterial_chkum")
+draw_pass_1 = SubResource("BoxMesh_1f36l")

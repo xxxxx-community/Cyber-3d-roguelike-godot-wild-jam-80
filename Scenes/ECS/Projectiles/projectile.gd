@@ -1,15 +1,18 @@
-extends Area3D
+class_name Projectile extends Hitbox
 
+
+const DEATH_ZONE_PLAYER : int = 100
 
 @onready var collision_shape_3d : CollisionShape3D = get_node(^"CollisionShape3D")
+@onready var modificators : Node3D = $Modificators
+@onready var gpu_particles_3d : GPUParticles3D = $GPUParticles3D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var projectile_speed : int
-var attacker_entity : Node3D
-var deading : bool = true
-var knockback_direction : Vector3
+var attacker : Node3D
 
-func launch(attacker : Node3D, pos : Vector3, dir : Vector3 = Vector3.ZERO, speed : int = 10, spread_angle : float = 0.0):
-	attacker_entity = attacker
+func launch(attacker_character : Node3D, pos : Vector3, dir : Vector3 = Vector3.ZERO, speed : int = 10, spread_angle : float = 0.0):
+	attacker = attacker_character
 	position = pos
 	knockback_direction = dir
 	projectile_speed = speed 
@@ -18,7 +21,22 @@ func launch(attacker : Node3D, pos : Vector3, dir : Vector3 = Vector3.ZERO, spee
 	if spread_angle > 0:
 		knockback_direction = _apply_spread(dir, spread_angle).normalized()
 		
-	rotation = knockback_direction
+	#rotation = knockback_direction
+
+func _physics_process(delta):
+	position += knockback_direction * projectile_speed * delta 
+	
+	var player_pos : Vector3 = get_tree().current_scene.get_node("Player").global_position
+	var distance : float = global_position.distance_to(player_pos)
+	
+	if distance > DEATH_ZONE_PLAYER:
+		queue_free()
+
+func _collide(body : Node3D) -> void:
+	if body != attacker:
+		if body.has_method("take_damage"):
+			body.take_damage(damage, knockback_direction)
+		queue_free()
 
 # Применяем случайное отклонение к направлению
 func _apply_spread(base_dir: Vector3, angle: float) -> Vector3:
@@ -32,11 +50,3 @@ func _apply_spread(base_dir: Vector3, angle: float) -> Vector3:
 	
 	# Применяем поворот к исходному направлению
 	return basis * base_dir
-	
-func _physics_process(delta):
-	position += knockback_direction * projectile_speed * delta 
-	
-	var player_pos : Vector3 = get_tree().current_scene.get_node("Player").global_position
-	var distance : float = global_position.distance_to(player_pos)
-	if distance > 100:
-		queue_free()

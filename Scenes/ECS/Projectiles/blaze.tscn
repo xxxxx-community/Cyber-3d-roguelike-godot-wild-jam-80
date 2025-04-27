@@ -1,0 +1,155 @@
+[gd_scene load_steps=14 format=3 uid="uid://celbp7y0yh5qv"]
+
+[ext_resource type="PackedScene" uid="uid://e2e0dskfvbx0" path="res://Scenes/ECS/Projectiles/projectile.tscn" id="1_4854l"]
+[ext_resource type="Script" uid="uid://diw0h3ibenwsh" path="res://Scenes/ECS/Projectiles/Scripts/blaze.gd" id="2_wq540"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wq540"]
+radius = 0.1
+
+[sub_resource type="Animation" id="Animation_apf4w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles3D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_wq540"]
+resource_name = "end_projectile"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles3D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_apf4w"]
+_data = {
+&"RESET": SubResource("Animation_apf4w"),
+&"end_projectile": SubResource("Animation_wq540")
+}
+
+[sub_resource type="Gradient" id="Gradient_4854l"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.0482315, 0.424437, 0.707395, 1)
+colors = PackedColorArray(0.258824, 0.0705882, 0, 1, 0.686275, 0.188235, 0, 1, 0.780392, 0.658824, 0, 1, 1, 0.0784314, 0, 0.447059, 0.25098, 0.25098, 0.25098, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wq540"]
+gradient = SubResource("Gradient_4854l")
+
+[sub_resource type="Curve" id="Curve_apf4w"]
+_data = [Vector2(0, 0.992353), 0.0, -0.991177, 0, 1, Vector2(0.501484, 0.495294), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.993536, 0.0, 1, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_o3npa"]
+curve = SubResource("Curve_apf4w")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6bopn"]
+emission_shape = 2
+emission_sphere_radius = 0.25
+direction = Vector3(0, 1, 0)
+spread = 3.5
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 360.0
+gravity = Vector3(0, 0, 0)
+damping_min = 2.0
+damping_max = 2.0
+scale_min = 0.1
+scale_max = 0.8
+scale_curve = SubResource("CurveTexture_o3npa")
+color = Color(4, 4, 4, 1)
+color_ramp = SubResource("GradientTexture1D_wq540")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4854l"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.270588, 0.270588, 0.270588, 1)
+emission_enabled = true
+emission = Color(1, 0.196078, 0, 1)
+emission_energy_multiplier = 1.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_wq540"]
+material = SubResource("StandardMaterial3D_4854l")
+size = Vector3(0.25, 0.25, 0.25)
+
+[node name="Blaze" instance=ExtResource("1_4854l")]
+script = ExtResource("2_wq540")
+damage = -15.0
+delay_attack = 0.3
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("SphereShape3D_wq540")
+
+[node name="AnimationPlayer" parent="." index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_apf4w")
+}
+
+[node name="MeshInstance3D" parent="." index="3"]
+visible = false
+
+[node name="OmniLight3D" parent="." index="4"]
+light_color = Color(1, 0.466667, 0, 1)
+
+[node name="GPUParticles3D" parent="." index="5"]
+amount = 125
+fixed_fps = 0
+interpolate = false
+process_material = SubResource("ParticleProcessMaterial_6bopn")
+draw_pass_1 = SubResource("BoxMesh_wq540")

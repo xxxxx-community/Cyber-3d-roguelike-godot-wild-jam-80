@@ -1,0 +1,125 @@
+[gd_scene load_steps=14 format=3 uid="uid://dc0gcva7dodic"]
+
+[ext_resource type="PackedScene" uid="uid://e2e0dskfvbx0" path="res://Scenes/ECS/Projectiles/projectile.tscn" id="1_gherq"]
+[ext_resource type="Script" uid="uid://btm46mscqxrvj" path="res://Scenes/ECS/Projectiles/Scripts/black_hole.gd" id="2_mw6st"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mw6st"]
+radius = 3.0
+
+[sub_resource type="Animation" id="Animation_mw6st"]
+resource_name = "RESET"
+length = 0.001
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_u81yq"]
+resource_name = "end_projectile"
+length = 2.5
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0djgo"]
+_data = {
+&"RESET": SubResource("Animation_mw6st"),
+&"end_projectile": SubResource("Animation_u81yq")
+}
+
+[sub_resource type="Gradient" id="Gradient_mw6st"]
+colors = PackedColorArray(0, 0, 0, 1, 0.501961, 0, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_u81yq"]
+gradient = SubResource("Gradient_mw6st")
+
+[sub_resource type="Curve" id="Curve_0djgo"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_kr2ws"]
+curve = SubResource("Curve_0djgo")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mw6st"]
+spread = 180.0
+initial_velocity_min = 2.5
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = 5.0
+radial_accel_min = -10.0
+radial_accel_max = -10.0
+tangential_accel_min = -15.0
+tangential_accel_max = 15.0
+scale_min = 0.1
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_kr2ws")
+color_ramp = SubResource("GradientTexture1D_u81yq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mw6st"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u81yq"]
+material = SubResource("StandardMaterial3D_mw6st")
+
+[node name="BlackHole" instance=ExtResource("1_gherq")]
+script = ExtResource("2_mw6st")
+damage = -0.1
+delay_attack = 0.001
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("SphereShape3D_mw6st")
+
+[node name="AnimationPlayer" parent="." index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_0djgo")
+}
+
+[node name="MeshInstance3D" parent="." index="3"]
+visible = false
+
+[node name="GPUParticles3D" parent="." index="5"]
+amount = 1000
+lifetime = 1.5
+fixed_fps = 0
+interpolate = false
+process_material = SubResource("ParticleProcessMaterial_mw6st")
+draw_pass_1 = SubResource("BoxMesh_u81yq")

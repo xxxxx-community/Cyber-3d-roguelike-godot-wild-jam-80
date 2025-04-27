@@ -1,6 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://dsfw5ll7c0pk7"]
+[gd_scene load_steps=23 format=3 uid="uid://dsfw5ll7c0pk7"]
 
 [ext_resource type="PackedScene" uid="uid://cpxrlrta5ft8c" path="res://Scenes/Rooms/room.tscn" id="1_aoynx"]
+[ext_resource type="PackedScene" uid="uid://3skhirmskeur" path="res://Scenes/Characters/Mannequin/mannequin.tscn" id="2_p6rco"]
+[ext_resource type="PackedScene" uid="uid://celbp7y0yh5qv" path="res://Scenes/ECS/Projectiles/blaze.tscn" id="3_xiwtb"]
+[ext_resource type="PackedScene" uid="uid://bl6mk48e7m7nr" path="res://Scenes/ECS/Projectiles/freeze.tscn" id="4_oe5ox"]
+[ext_resource type="PackedScene" uid="uid://dk41xobm0y4rp" path="res://Scenes/ECS/Projectiles/change_size.tscn" id="5_dirig"]
+[ext_resource type="PackedScene" uid="uid://brcxindiob2mu" path="res://Scenes/ECS/Projectiles/heal.tscn" id="6_4onmq"]
+[ext_resource type="PackedScene" uid="uid://be7o2y1cx7qj4" path="res://Scenes/ECS/Projectiles/clone.tscn" id="7_1x6fu"]
+[ext_resource type="PackedScene" uid="uid://36u6o0orsecq" path="res://Scenes/ECS/Projectiles/explosion.tscn" id="8_sevfp"]
+[ext_resource type="PackedScene" uid="uid://dc0gcva7dodic" path="res://Scenes/ECS/Projectiles/black_hole.tscn" id="9_u58wy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aoynx"]
 size = Vector3(10, 1, 10)
@@ -27,10 +35,18 @@ fill_to = Vector2(0.5, 0)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_u58wy"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_oe5ox"]
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_aoynx"]
 radius = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dirig"]
+albedo_color = Color(0.517647, 0.258824, 1, 1)
+metallic = 1.0
+roughness = 0.0
+emission_enabled = true
+emission = Color(0.364706, 0, 1, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oe5ox"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dirig"]
 
@@ -98,16 +114,7 @@ shadow_blur = 2.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Platform/CubeWithSphere/Sphere" index="4"]
 shape = SubResource("SphereShape3D_u58wy")
 
-[node name="StaticBody3D3" type="StaticBody3D" parent="Level/Platform" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Platform/StaticBody3D3" index="0"]
-shape = SubResource("BoxShape3D_oe5ox")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Level/Platform/StaticBody3D3" index="1"]
-material = SubResource("StandardMaterial3D_xiwtb")
-
-[node name="Crystall" type="StaticBody3D" parent="Level/Platform" index="4"]
+[node name="Crystall" type="StaticBody3D" parent="Level/Platform" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2.70662)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Platform/Crystall" index="0"]
@@ -117,26 +124,40 @@ shape = SubResource("SphereShape3D_aoynx")
 [node name="CSGBox3D3" type="CSGBox3D" parent="Level/Platform/Crystall" index="1"]
 transform = Transform3D(1, 0, 0, 0, 0.988167, -0.153383, 0, 0.153383, 0.988167, 0, -0.103979, -0.0288258)
 size = Vector3(0.2, 1.1, 0.2)
-material = SubResource("StandardMaterial3D_xiwtb")
+material = SubResource("StandardMaterial3D_dirig")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Level/Platform/Crystall" index="2"]
 transform = Transform3D(0.051447, 0.31748, -0.946869, 0, 0.948124, 0.3179, 0.998676, -0.016355, 0.0487782, 0.0714023, -0.422016, -0.0442944)
 size = Vector3(0.2, 1, 0.2)
-material = SubResource("StandardMaterial3D_xiwtb")
+material = SubResource("StandardMaterial3D_dirig")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Level/Platform/Crystall" index="3"]
 transform = Transform3D(0.933464, 0.130547, 0.33407, -0.199846, 0.962739, 0.182194, -0.297838, -0.236834, 0.924772, -0.00177187, -0.267468, -0.108009)
 size = Vector3(0.2, 1, 0.2)
-material = SubResource("StandardMaterial3D_xiwtb")
+material = SubResource("StandardMaterial3D_dirig")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Level/Platform/Crystall" index="4"]
 transform = Transform3D(-0.196819, -0.311682, 0.929579, 1.67504e-09, 0.948124, 0.3179, -0.98044, 0.0625689, -0.186609, -0.108755, -0.422016, -0.0790522)
 size = Vector3(0.2, 1, 0.2)
-material = SubResource("StandardMaterial3D_xiwtb")
+material = SubResource("StandardMaterial3D_dirig")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Level/Platform/Crystall" index="5"]
 transform = Transform3D(-0.870948, -0.0269457, 0.490635, 0.173636, 0.917199, 0.358602, -0.459673, 0.397516, -0.794155, -0.0765827, -0.422016, 0.0264683)
 size = Vector3(0.2, 1, 0.2)
+material = SubResource("StandardMaterial3D_dirig")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Level/Platform/Crystall" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
+light_color = Color(0.447059, 0, 1, 1)
+omni_range = 1.0
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Level/Platform" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Platform/StaticBody3D3" index="0"]
+shape = SubResource("BoxShape3D_oe5ox")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level/Platform/StaticBody3D3" index="1"]
 material = SubResource("StandardMaterial3D_xiwtb")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="Level/Platform" index="5"]
@@ -189,3 +210,27 @@ shadow_blur = 2.0
 omni_range = 0.05
 omni_attenuation = 0.5
 metadata/_edit_lock_ = true
+
+[node name="Mannequin" parent="." index="3" instance=ExtResource("2_p6rco")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.45995, 1.63876, -3.12599)
+
+[node name="Blaze" parent="." index="4" instance=ExtResource("3_xiwtb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 0)
+
+[node name="Freeze" parent="." index="5" instance=ExtResource("4_oe5ox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -4)
+
+[node name="ChangeSize" parent="." index="6" instance=ExtResource("5_dirig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 3)
+
+[node name="Heal" parent="." index="7" instance=ExtResource("6_4onmq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.42472, 1, -1.29097)
+
+[node name="Clone" parent="." index="8" instance=ExtResource("7_1x6fu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -4)
+
+[node name="Explosion" parent="." index="9" instance=ExtResource("8_sevfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -4)
+
+[node name="BlackHole" parent="." index="10" instance=ExtResource("9_u58wy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.38369, 1, -11.1454)

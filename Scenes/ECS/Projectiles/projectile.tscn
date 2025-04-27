@@ -1,53 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://e2e0dskfvbx0"]
+[gd_scene load_steps=4 format=3 uid="uid://e2e0dskfvbx0"]
 
 [ext_resource type="Script" uid="uid://xpuhbxoepb2g" path="res://Scenes/ECS/Projectiles/projectile.gd" id="1_b4v68"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_b4v68"]
+radius = 0.1
 
-[sub_resource type="Gradient" id="Gradient_b4v68"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.0482315, 0.424437, 0.707395, 1)
-colors = PackedColorArray(0.258824, 0.0705882, 0, 1, 0.686275, 0.188235, 0, 1, 0.780392, 0.658824, 0, 1, 1, 0.0784314, 0, 0.447059, 0.25098, 0.25098, 0.25098, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_xdc6x"]
-gradient = SubResource("Gradient_b4v68")
-
-[sub_resource type="Curve" id="Curve_1utan"]
-_data = [Vector2(0, 0.992353), 0.0, -0.991177, 0, 1, Vector2(0.501484, 0.495294), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.993536, 0.0, 1, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_pb0bb"]
-curve = SubResource("Curve_1utan")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b4v68"]
-emission_shape = 2
-emission_sphere_radius = 0.25
-direction = Vector3(0, 1, 0)
-spread = 3.5
-initial_velocity_min = 1.0
-initial_velocity_max = 4.0
-angular_velocity_min = -1.60933e-05
-angular_velocity_max = 360.0
-gravity = Vector3(0, 0, 0)
-damping_min = 2.0
-damping_max = 2.0
-scale_min = 0.1
-scale_max = 0.8
-scale_curve = SubResource("CurveTexture_pb0bb")
-color = Color(4, 4, 4, 1)
-color_ramp = SubResource("GradientTexture1D_xdc6x")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4v68"]
-transparency = 3
-alpha_hash_scale = 1.0
-alpha_antialiasing_mode = 0
-shading_mode = 0
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.270588, 0.270588, 0.270588, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_xdc6x"]
-material = SubResource("StandardMaterial3D_b4v68")
-size = Vector3(0.25, 0.25, 0.25)
+[sub_resource type="SphereMesh" id="SphereMesh_b4v68"]
+radius = 0.1
+height = 0.2
 
 [node name="Projectile" type="Area3D"]
 script = ExtResource("1_b4v68")
@@ -55,19 +15,18 @@ script = ExtResource("1_b4v68")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_b4v68")
 
+[node name="Modificators" type="Node3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_b4v68")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-light_color = Color(1, 0.466667, 0, 1)
 light_specular = 2.0
 shadow_enabled = true
 shadow_bias = 0.04
 shadow_blur = 2.0
-omni_range = 2.0
+omni_range = 1.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-amount = 125
-fixed_fps = 0
-interpolate = false
-process_material = SubResource("ParticleProcessMaterial_b4v68")
-draw_pass_1 = SubResource("BoxMesh_xdc6x")

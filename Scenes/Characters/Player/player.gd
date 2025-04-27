@@ -1,7 +1,7 @@
 extends Character
 
 
-const PROJECTILE : PackedScene = preload("res://Scenes/ECS/Projectiles/projectile.tscn")
+const PROJECTILE : PackedScene = preload("res://Scenes/ECS/Projectiles/blaze.tscn")
 const MOUSE_SENSITIVITY : float = 0.01
 
 #fov variables
@@ -20,24 +20,30 @@ const BOB_AMP : float = 0.08
 var swing : float = 0.0
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
-func _input(event):
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed(&"ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		
+	if event is InputEventMouseButton:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		
 	if can_move:
-		if event is InputEventMouseButton:
-			if event.button_index == MOUSE_BUTTON_LEFT and not animation_player.is_playing():
-				animation_player.play(&"recoil")
-				shoot()
-				
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and (event is InputEventMouseMotion):
 			body.rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
 			camera.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
 		
 	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
+		
 func _physics_process(delta: float) -> void:
 	super(delta)
 	if can_move:
+		health_points += 0.01
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not animation_player.is_playing():
+			animation_player.play(&"recoil")
+			shoot()
 			
 		var input_dir : Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 		move_direction = (body.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
